@@ -8,8 +8,6 @@ import type { UMKM } from '@/types';
 
 export default function UMKMSearch() {
   const [searchTerm, setSearchTerm] = useState('');
-  const [results, setResults] = useState<UMKM[]>([]);
-  const [isSearching, setIsSearching] = useState(false);
   const [data, setData] = useState<UMKM[] | null>(null);
 
   useEffect(() => {
@@ -20,22 +18,14 @@ export default function UMKMSearch() {
     }
   }, [searchTerm, data]);
 
-  useEffect(() => {
-    if (!data) return;
-    
-    if (searchTerm.trim() === '') {
-      setResults([]);
-      setIsSearching(false);
-      return;
-    }
-
-    setIsSearching(true);
-    const filtered = data.filter((umkm) => 
-      umkm.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
-      umkm.description.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-    setResults(filtered);
-  }, [searchTerm, data]);
+  const isSearching = searchTerm.trim().length > 0;
+  
+  const results = isSearching && data 
+    ? data.filter((umkm) => 
+        umkm.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
+        umkm.description.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+    : [];
 
   return (
     <div className="relative w-full max-w-xl mx-auto mb-16">

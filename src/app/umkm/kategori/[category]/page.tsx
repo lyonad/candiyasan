@@ -5,11 +5,16 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export default function UMKMCategory({ params }: { params: any }) {
+export default async function UMKMCategory({ params }: { params: any }) {
+  const resolvedParams = await params;
   const categories = ['Semua', 'Makanan & Minuman', 'Kerajinan', 'Jasa', 'Lainnya'];
   
+  const createSlug = (text: string) => {
+    return text.toLowerCase().replace(/ & /g, '-').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  };
+  
   const actualCategory = categories.find(
-    c => c.toLowerCase() === decodeURIComponent(params.category)
+    c => createSlug(c) === resolvedParams.category
   );
 
   if (!actualCategory) {
@@ -41,7 +46,7 @@ export default function UMKMCategory({ params }: { params: any }) {
             return (
               <Link
                 key={category}
-                href={category === 'Semua' ? '/umkm' : `/umkm/kategori/${encodeURIComponent(category.toLowerCase())}`}
+                href={category === 'Semua' ? '/umkm' : `/umkm/kategori/${createSlug(category)}`}
                 className={`uppercase tracking-widest text-xs font-semibold pb-1 transition-all ${
                   isActive
                     ? 'text-emerald-800 border-b-2 border-emerald-800' 
@@ -75,7 +80,11 @@ export default function UMKMCategory({ params }: { params: any }) {
 export function generateStaticParams() {
   const categories = ['Makanan & Minuman', 'Kerajinan', 'Jasa', 'Lainnya'];
   
+  const createSlug = (text: string) => {
+    return text.toLowerCase().replace(/ & /g, '-').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  };
+  
   return categories.map((category) => ({
-    category: category.toLowerCase(),
+    category: createSlug(category),
   }));
 }

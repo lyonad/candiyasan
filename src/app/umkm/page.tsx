@@ -6,6 +6,10 @@ import Link from 'next/link';
 export default function UMKMDirectory() {
   const categories = ['Semua', 'Makanan & Minuman', 'Kerajinan', 'Jasa', 'Lainnya'];
 
+  const createSlug = (text: string) => {
+    return text.toLowerCase().replace(/ & /g, '-').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  };
+
   return (
     <div className="bg-stone-50 min-h-screen pt-32 pb-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -27,7 +31,7 @@ export default function UMKMDirectory() {
           {categories.map((category) => (
             <Link
               key={category}
-              href={category === 'Semua' ? '/umkm' : `/umkm/kategori/${encodeURIComponent(category.toLowerCase())}`}
+              href={category === 'Semua' ? '/umkm' : `/umkm/kategori/${createSlug(category)}`}
               className={`uppercase tracking-widest text-xs font-semibold pb-1 transition-all ${
                 category === 'Semua' 
                   ? 'text-emerald-800 border-b-2 border-emerald-800' 

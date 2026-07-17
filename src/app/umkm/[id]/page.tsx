@@ -6,8 +6,9 @@ import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export default function UMKMDetail({ params }: { params: any }) {
-  const umkm = umkmData.find((u) => u.id === params.id);
+export default async function UMKMDetail({ params }: { params: any }) {
+  const resolvedParams = await params;
+  const umkm = umkmData.find((u) => u.id === resolvedParams.id);
 
   if (!umkm) {
     notFound();
