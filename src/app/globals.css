@@ -1,15 +1,13 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+@theme {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+}
+
+:root {
+  --background: #fcfbf9; /* Soft cream/stone 50 */
+  --foreground: #1c1917; /* Stone 900 */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,7 +18,20 @@
 }
 
 body {
-  background: var(--background);
   color: var(--foreground);
+  background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  @apply selection:bg-rose-200 selection:text-rose-950;
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 12px; /* Scales down by 25% */
+  }
+}
+
+@media (min-width: 1536px) {
+  html {
+    font-size: 14px; /* Scales down by 12.5% */
+  }
 }
