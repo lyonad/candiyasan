@@ -12,11 +12,11 @@ export default function Footer() {
                 Candiyasan
               </span>
               <span className="text-[10px] uppercase tracking-[0.2em] text-emerald-500 font-semibold mt-2">
-                Koleksi Lokal
+                Industri & Manufaktur
               </span>
             </Link>
             <p className="text-stone-400 mb-8 max-w-sm text-lg font-light leading-relaxed">
-              Mengangkat mahakarya lokal dan produk autentik dari para pelaku UMKM di Desa Candiyasan ke panggung digital.
+              Pusat informasi dan katalog digital dari produk industri, manufaktur, dan kerajinan lokal Desa Candiyasan ke panggung global.
             </p>
           </div>
 

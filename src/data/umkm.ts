@@ -84,11 +84,11 @@ export const umkmData: UMKM[] = [
     ]
   },
   {
-    id: 'jasa-jahit-indah',
-    name: 'Rumah Jahit Indah',
-    ownerName: 'Ibu Indah Pertiwi',
-    category: 'Jasa',
-    description: 'Melayani jasa jahit pakaian wanita, pria, dan seragam. Kualitas jahitan rapi dengan harga terjangkau. Menerima pesanan dalam jumlah besar maupun satuan.',
+    id: 'konveksi-candiyasan-maju',
+    name: 'Konveksi Candiyasan Maju',
+    ownerName: 'Bapak Ahmad Rifai',
+    category: 'Fesyen',
+    description: 'Produsen pakaian jadi berskala home industry. Memproduksi kemeja, kaos, dan seragam dalam partai besar dengan kualitas jahitan berstandar industri garmen.',
     address: 'Jalan Raya Candiyasan KM 2, RT 01/RW 01',
     phone: '082211223344',
     whatsapp: '082211223344',
@@ -96,17 +96,17 @@ export const umkmData: UMKM[] = [
     products: [
       {
         id: 'p7',
-        name: 'Jasa Jahit Kebaya',
-        description: 'Jasa jahit kebaya modern atau tradisional (belum termasuk kain).',
-        price: 150000,
-        imageUrl: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
+        name: 'Kemeja Flannel Pria (Grosir)',
+        description: 'Kemeja flannel produksi massal kualitas premium. (Min. order 1 kodi)',
+        price: 1500000, // Harga per kodi misalnya, tapi kita tulis per pcs juga bisa.
+        imageUrl: 'https://images.unsplash.com/photo-1591076482161-42ce6da69f67?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
       },
       {
         id: 'p8',
-        name: 'Jasa Jahit Seragam (per set)',
-        description: 'Jahit kemeja dan celana/rok seragam.',
-        price: 120000,
-        imageUrl: 'https://images.unsplash.com/photo-1591076482161-42ce6da69f67?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
+        name: 'Kaos Polos Cotton Combed 30s',
+        description: 'Produksi kaos polos untuk kebutuhan distro atau sablon.',
+        price: 35000,
+        imageUrl: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
       }
     ]
   }

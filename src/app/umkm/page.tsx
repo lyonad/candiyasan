@@ -4,22 +4,22 @@ import UMKMSearch from '@/components/UMKMSearch';
 import Link from 'next/link';
 
 export default function UMKMDirectory() {
-  const categories = ['Semua', 'Makanan & Minuman', 'Kerajinan', 'Jasa', 'Lainnya'];
+  const categories = ['Semua', 'Makanan & Minuman', 'Kerajinan', 'Fesyen', 'Agroindustri'];
 
   const createSlug = (text: string) => {
     return text.toLowerCase().replace(/ & /g, '-').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   };
 
   return (
-    <div className="bg-stone-50 min-h-screen pt-32 pb-24">
+    <div className="bg-stone-50 bg-batik min-h-screen pt-32 pb-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header Section */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-xs uppercase tracking-[0.3em] font-bold text-rose-500 mb-4 block">Direktori Lengkap</span>
-          <h1 className="text-5xl font-serif text-stone-900 mb-6">Katalog Karya Lokal</h1>
+          <span className="text-xs uppercase tracking-[0.3em] font-bold text-rose-500 mb-4 block">Direktori Produsen</span>
+          <h1 className="text-5xl font-serif text-stone-900 mb-6">Katalog Produk Industri Lokal</h1>
           <p className="text-lg text-stone-500 font-light leading-relaxed">
-            Jelajahi dan dukung seluruh koleksi kerajinan serta produk kuliner dari para pelaku UMKM Desa Candiyasan.
+            Jelajahi dan dukung seluruh koleksi industri, kerajinan, serta produk manufaktur dari para produsen Desa Candiyasan.
           </p>
         </div>
 

@@ -8,7 +8,7 @@ export default function Home() {
   const featuredUMKM = umkmData.slice(0, 3);
 
   return (
-    <div className="flex flex-col min-h-screen bg-stone-50">
+    <div className="flex flex-col min-h-screen bg-stone-50 bg-batik">
       
       {/* High-End Hero Section */}
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
@@ -22,11 +22,11 @@ export default function Home() {
                 </span>
               </div>
               <h1 className="text-5xl md:text-7xl font-serif text-stone-900 leading-[1.1] mb-8">
-                Esensi Karya <br />
-                <span className="italic text-emerald-900">Lokal Autentik.</span>
+                Produk Asli <br />
+                <span className="italic text-emerald-900">Industri Lokal.</span>
               </h1>
               <p className="text-lg md:text-xl text-stone-500 font-light max-w-lg leading-relaxed mb-10">
-                Eksplorasi koleksi eksklusif dari para perajin dan pelaku UMKM kami. Sebuah dedikasi untuk kualitas, tradisi, dan kemajuan ekonomi desa.
+                Eksplorasi lini produksi eksklusif dari para produsen dan pelaku manufaktur kami. Sebuah dedikasi untuk kualitas standar industri dan kemajuan ekonomi desa.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-6">
@@ -50,7 +50,7 @@ export default function Home() {
               <div className="aspect-[3/4] relative w-full max-w-md mx-auto lg:ml-auto">
                 <Image 
                   src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
-                  alt="Karya Lokal" 
+                  alt="Produksi Lokal" 
                   fill
                   className="object-cover grayscale-[30%] hover:grayscale-0 transition-all duration-700"
                   priority
@@ -71,11 +71,11 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 divide-y md:divide-y-0 md:divide-x divide-emerald-900/50 text-center">
             <div className="flex flex-col items-center py-4">
               <h3 className="text-5xl font-serif text-stone-100 mb-4">50<span className="text-rose-400">+</span></h3>
-              <p className="uppercase tracking-widest text-xs font-medium">Produk Lokal</p>
+              <p className="uppercase tracking-widest text-xs font-medium">Lini Produk</p>
             </div>
             <div className="flex flex-col items-center py-4">
               <h3 className="text-5xl font-serif text-stone-100 mb-4">24</h3>
-              <p className="uppercase tracking-widest text-xs font-medium">Pengrajin & UMKM</p>
+              <p className="uppercase tracking-widest text-xs font-medium">Pabrik & Produsen</p>
             </div>
             <div className="flex flex-col items-center py-4">
               <h3 className="text-5xl font-serif text-stone-100 mb-4">3</h3>

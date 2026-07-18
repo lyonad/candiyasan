@@ -19,7 +19,7 @@ export default function Navbar() {
                 Candiyasan
               </span>
               <span className="text-[10px] uppercase tracking-[0.2em] text-emerald-700 font-semibold mt-1">
-                Koleksi Lokal
+                Industri Lokal
               </span>
             </Link>
           </div>

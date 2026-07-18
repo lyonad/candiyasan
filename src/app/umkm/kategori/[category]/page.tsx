@@ -7,7 +7,7 @@ import { notFound } from 'next/navigation';
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default async function UMKMCategory({ params }: { params: any }) {
   const resolvedParams = await params;
-  const categories = ['Semua', 'Makanan & Minuman', 'Kerajinan', 'Jasa', 'Lainnya'];
+  const categories = ['Semua', 'Makanan & Minuman', 'Kerajinan', 'Fesyen', 'Agroindustri'];
   
   const createSlug = (text: string) => {
     return text.toLowerCase().replace(/ & /g, '-').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
@@ -24,15 +24,15 @@ export default async function UMKMCategory({ params }: { params: any }) {
   const filteredData = umkmData.filter(u => u.category === actualCategory);
 
   return (
-    <div className="bg-stone-50 min-h-screen pt-32 pb-24">
+    <div className="bg-stone-50 bg-batik min-h-screen pt-32 pb-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header Section */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-xs uppercase tracking-[0.3em] font-bold text-rose-500 mb-4 block">Kategori Spesifik</span>
+          <span className="text-xs uppercase tracking-[0.3em] font-bold text-rose-500 mb-4 block">Kategori Produsen</span>
           <h1 className="text-5xl font-serif text-stone-900 mb-6">{actualCategory}</h1>
           <p className="text-lg text-stone-500 font-light leading-relaxed">
-            Menampilkan karya eksklusif dan jasa dari para pelaku UMKM lokal dalam klasifikasi {actualCategory.toLowerCase()}.
+            Menampilkan produk unggulan dari para produsen lokal dalam sektor industri {actualCategory.toLowerCase()}.
           </p>
         </div>
 
@@ -68,7 +68,7 @@ export default async function UMKMCategory({ params }: { params: any }) {
           </div>
         ) : (
           <div className="text-center py-32 bg-stone-100">
-            <p className="text-stone-500 text-lg font-light italic">Belum ada karya untuk kategori ini.</p>
+            <p className="text-stone-500 text-lg font-light italic">Belum ada produsen yang terdaftar untuk kategori ini.</p>
           </div>
         )}
 
@@ -78,7 +78,7 @@ export default async function UMKMCategory({ params }: { params: any }) {
 }
 
 export function generateStaticParams() {
-  const categories = ['Makanan & Minuman', 'Kerajinan', 'Jasa', 'Lainnya'];
+  const categories = ['Makanan & Minuman', 'Kerajinan', 'Fesyen', 'Agroindustri'];
   
   const createSlug = (text: string) => {
     return text.toLowerCase().replace(/ & /g, '-').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
