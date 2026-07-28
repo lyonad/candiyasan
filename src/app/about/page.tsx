@@ -1,87 +1,171 @@
 import Image from 'next/image';
+import ScrollReveal from '@/components/ScrollReveal';
+
+const FOCUS_POINTS = [
+  {
+    num: '01',
+    title: 'Inventarisasi Terpusat',
+    desc: 'Mendokumentasikan seluruh lini produksi desa dalam satu direktori digital yang dapat diakses siapa pun, kapan pun. Data yang akurat adalah fondasi dari ekosistem ekonomi yang sehat.',
+  },
+  {
+    num: '02',
+    title: 'Promosi Langsung',
+    desc: 'Menghubungkan produsen langsung ke pembeli tanpa perantara yang membebani. Setiap halaman produsen berfungsi sebagai etalase mandiri yang siap menerima kontak B2C dan B2B.',
+  },
+  {
+    num: '03',
+    title: 'Jangkauan B2B',
+    desc: 'Membuka jalur kerjasama bisnis ke bisnis — memungkinkan distributor, retailer, dan agregator menemukan pemasok lokal berkualitas langsung dari sumbernya.',
+  },
+  {
+    num: '04',
+    title: 'Ekosistem Digital',
+    desc: 'Berperan sebagai "satelit digital" dari portal administrasi resmi desa. Spesifik pada sektor industri, komplementer terhadap kebutuhan informasi warga lainnya.',
+  },
+];
+
+const META_TAGS = ['UNNES Giat 16', '2024 / 2025', 'Desa Candiyasan', 'Kec. Kertek', 'Kab. Wonosobo'];
 
 export default function AboutPage() {
   return (
-    <div className="bg-stone-50 bg-batik min-h-screen pt-32 pb-24">
-      
-      {/* Hero Section */}
-      <section className="relative mb-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto">
-            <span className="text-xs uppercase tracking-[0.3em] font-bold text-rose-500 mb-6 block">Latar Belakang</span>
-            <h1 className="text-5xl md:text-6xl font-serif text-stone-900 leading-[1.1] mb-8">
-              Katalis Manufaktur & Ekonomi Desa
-            </h1>
-            <p className="text-lg md:text-xl text-stone-500 font-light leading-relaxed">
-              Sebuah inisiatif digital untuk mendigitalisasi rantai pasok dan promosi pabrik skala rumahan (home-industry) hingga pabrik menengah dari Desa Candiyasan ke pasar yang lebih luas.
-            </p>
-          </div>
+    <div className="bg-[#faf9f7] min-h-screen">
+
+      {/* ── Cinematic Full-Bleed Hero ──────────────────────────── */}
+      <section className="relative min-h-[90vh] flex flex-col justify-end overflow-hidden">
+        <Image
+          src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1800&q=85"
+          alt="Lanskap pegunungan dan desa Candiyasan"
+          fill
+          className="object-cover"
+          priority
+        />
+        {/* Multi-stop gradient for depth */}
+        <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-900/55 to-stone-900/15" />
+
+        <div className="relative max-w-7xl mx-auto w-full px-5 sm:px-8 pb-20 pt-40">
+          <p className="eyebrow text-emerald-400 mb-6">Latar Belakang Program</p>
+          <h1 className="heading-hero text-stone-100 max-w-4xl mb-8">
+            Katalis Industri &amp;<br />
+            <em className="text-emerald-400 font-normal">Ekonomi Digital</em> Desa.
+          </h1>
+          <p className="body-lead text-stone-300 max-w-2xl">
+            Inisiatif strategis untuk mendigitalisasi rantai pasok dan etalase promosi produk manufaktur, agroindustri, serta kriya Desa Candiyasan langsung ke pasar nasional.
+          </p>
         </div>
       </section>
 
-      {/* Main Content */}
-      <section className="mb-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            
-            <div className="relative h-[70vh] w-full bg-stone-200">
-              <Image 
-                src="https://images.unsplash.com/photo-1596524430615-b46475ddff6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
-                alt="Fasilitas Produksi Lokal" 
-                fill
-                className="object-cover grayscale-[20%]"
-              />
-              <div className="absolute inset-0 border border-emerald-900/10 m-6 pointer-events-none"></div>
-            </div>
+      {/* ── Meta strip ──────────────────────────────────────────── */}
+      <div className="bg-emerald-950 border-b border-emerald-900/60">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 py-4">
+          <div className="flex flex-wrap gap-x-8 gap-y-1.5 items-center">
+            {META_TAGS.map((item, i) => (
+              <span key={i} className="eyebrow text-stone-400">{item}</span>
+            ))}
+          </div>
+        </div>
+      </div>
 
-            <div className="lg:pr-12">
-              <h2 className="text-3xl font-serif text-stone-900 mb-8">Esensi Permasalahan</h2>
-              <div className="space-y-6 text-stone-500 font-light text-lg leading-relaxed mb-12">
+      {/* ── Context — editorial 2-col heading/body ──────────────── */}
+      <section className="py-24 lg:py-32 px-5 sm:px-8">
+        <div className="max-w-7xl mx-auto">
+
+          <ScrollReveal>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 mb-20 lg:mb-28">
+              {/* Left: Heading */}
+              <div className="lg:col-span-4">
+                <p className="eyebrow text-rose-500 mb-4">Mengapa Ini Penting</p>
+                <h2 className="heading-section text-stone-900">
+                  Kapasitas Besar,<br />Jangkauan<br />Terbatas
+                </h2>
+              </div>
+              {/* Right: Body */}
+              <div className="lg:col-span-7 lg:col-start-6 lg:pt-3 space-y-5 body-lead text-stone-500">
                 <p>
-                  Desa Candiyasan menaungi sentra-sentra produksi unggulan—dari fasilitas agroindustri yang mengolah panen lokal hingga pabrik garmen dan manufaktur kriya. Namun, kapasitas produksi ini kerap tidak teroptimalisasi akibat tidak memadainya jembatan informasi digital ke distributor maupun pembeli skala besar (*B2B*).
+                  Desa Candiyasan menaungi sentra produksi unggulan — dari agroindustri yang mengolah hasil panen lokal hingga industri garmen dan manufaktur kriya berskala rumahan.
                 </p>
                 <p>
-                  Tanpa etalase terpadu, para produsen kehilangan peluang untuk menjangkau pasar nasional. Direktori ini dibuat khusus sebagai ruang pajang katalog industri resmi desa kami.
+                  Namun kapasitas produksi ini kerap tidak teroptimalisasi akibat minimnya jembatan informasi digital ke distributor dan pembeli. Tanpa etalase terpadu, peluang pasar terlewatkan setiap harinya.
                 </p>
               </div>
-
-              <h2 className="text-3xl font-serif text-stone-900 mb-8">Fokus Inisiatif</h2>
-              <ul className="space-y-6">
-                {[
-                  "Inventarisasi data produksi dan manufaktur yang akurat dan terpusat.",
-                  "Mempromosikan langsung produsen (bukan pengecer) untuk memotong rantai pasok.",
-                  "Membuka jalur kerjasama B2B bagi hasil industri desa Candiyasan.",
-                  "Berperan sebagai ekosistem digital satelit dari portal administrasi desa utama."
-                ].map((item, index) => (
-                  <li key={index} className="flex items-start gap-4">
-                    <span className="text-rose-400 font-serif text-xl italic mt-[-4px]">0{index + 1}</span>
-                    <span className="text-stone-600 font-light">{item}</span>
-                  </li>
-                ))}
-              </ul>
             </div>
-            
+          </ScrollReveal>
+
+          {/* Full-width image with pull quote */}
+          <ScrollReveal>
+            <div className="relative w-full h-[45vh] lg:h-[58vh] overflow-hidden mb-24 lg:mb-32">
+              <Image
+                src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1800&q=80"
+                alt="Tim mendiskusikan strategi digitalisasi produk lokal"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-stone-950/80 via-stone-950/25 to-transparent" />
+              <div className="absolute bottom-8 left-8 sm:bottom-12 sm:left-12 max-w-sm">
+                <div className="border-l-2 border-emerald-400 pl-5">
+                  <p className="font-serif italic text-stone-100 text-xl sm:text-2xl leading-snug">
+                    &ldquo;Produk berkualitas<br />butuh jembatan yang tepat.&rdquo;
+                  </p>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* Editorial numbered manifesto */}
+          <div className="max-w-4xl mx-auto lg:mx-0">
+            <p className="eyebrow text-rose-500 mb-10">Fokus Program</p>
+            <div className="divide-y divide-stone-100">
+              {FOCUS_POINTS.map(({ num, title, desc }, i) => (
+                <ScrollReveal key={num} delay={i * 70}>
+                  <div className="grid grid-cols-12 gap-4 sm:gap-8 py-9 items-start">
+                    {/* Large ordinal number */}
+                    <div className="col-span-3 sm:col-span-2">
+                      <span className="font-serif text-5xl sm:text-6xl text-emerald-800 font-semibold leading-none select-none">
+                        {num}
+                      </span>
+                    </div>
+                    {/* Content */}
+                    <div className="col-span-9 sm:col-span-10 pt-1 sm:pt-2">
+                      <h3 className="font-serif text-2xl sm:text-3xl text-stone-900 mb-3">{title}</h3>
+                      <p className="body-base text-stone-500 max-w-xl">{desc}</p>
+                    </div>
+                  </div>
+                </ScrollReveal>
+              ))}
+            </div>
           </div>
+
         </div>
       </section>
 
-      {/* Distinction Section */}
-      <section className="bg-emerald-950 text-stone-300 py-24">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <span className="text-rose-400 text-sm uppercase tracking-[0.2em] font-semibold block mb-6">Informasi Administratif</span>
-          <h2 className="text-3xl md:text-4xl font-serif text-stone-100 mb-8">Mendukung Portal Utama</h2>
-          <p className="text-lg font-light leading-relaxed mb-12 max-w-2xl mx-auto">
-            Situs ini berdedikasi sepenuhnya pada kurasi produk dan entitas bisnis. Untuk keperluan administratif, birokrasi, dan berita operasional desa, silakan merujuk pada portal utama pemerintahan desa.
-          </p>
-          <a 
-            href="https://candiyasan-kertek.desa.id/" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="inline-block border border-stone-300 px-10 py-4 uppercase tracking-widest text-sm font-semibold text-stone-100 hover:bg-stone-100 hover:text-emerald-950 transition-colors duration-300"
-          >
-            Kunjungi Portal Desa
-          </a>
+      {/* ── Distinction note ────────────────────────────────────── */}
+      <section className="bg-stone-900 relative overflow-hidden py-24 lg:py-32 px-5 sm:px-8">
+        <div className="absolute inset-0 batik-accent opacity-10" />
+        {/* Watermark word */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <span className="font-serif font-bold text-white leading-none select-none"
+            style={{ fontSize: '18vw', opacity: 0.03 }}>
+            DESA
+          </span>
         </div>
+        <ScrollReveal>
+          <div className="relative max-w-3xl mx-auto text-center">
+            <p className="eyebrow text-rose-400 mb-4">Penting untuk Diketahui</p>
+            <h2 className="heading-section text-stone-100 mb-6">
+              Ini Bukan Pengganti<br />Website Utama Desa
+            </h2>
+            <p className="text-stone-400 text-base leading-relaxed mb-10 max-w-xl mx-auto">
+              Situs ini difokuskan sepenuhnya pada katalog produksi. Untuk keperluan administratif, birokrasi, dan berita desa, silakan kunjungi portal resmi.
+            </p>
+            <a
+              href="https://candiyasan-kertek.desa.id/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 border border-stone-500/40 text-stone-200 px-8 py-4 hover:bg-stone-100/10 transition-colors eyebrow"
+            >
+              candiyasan-kertek.desa.id ↗
+            </a>
+          </div>
+        </ScrollReveal>
       </section>
 
     </div>

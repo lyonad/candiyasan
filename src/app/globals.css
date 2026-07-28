@@ -1,59 +1,143 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-cormorant), ui-serif, Georgia, serif;
+
+  /* Lotus Color Palette */
+  --color-cream: #faf9f7;
+  --color-lotus-green-950: #0a2218;
+  --color-lotus-green-900: #0f3426;
+  --color-lotus-green-800: #144d38;
+  --color-lotus-green-700: #1a6649;
+  --color-lotus-green-600: #217a57;
+  --color-lotus-green-500: #2d9d70;
+  --color-lotus-pink-600: #c2185b;
+  --color-lotus-pink-500: #e91e8c;
+  --color-lotus-pink-400: #f06292;
+  --color-lotus-pink-300: #f48fb1;
 }
 
 :root {
-  --background: #fcfbf9; /* Soft cream/stone 50 */
-  --foreground: #1c1917; /* Stone 900 */
+  --background: #faf9f7;
+  --foreground: #1c1917;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ─── Smooth scroll ─── */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   color: var(--foreground);
   background-color: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
   @apply selection:bg-rose-200 selection:text-rose-950;
 }
 
-@layer utilities {
-  .bg-batik {
-    position: relative;
-  }
-  .bg-batik::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url("/batik-bg.jpg");
-    background-size: 400px;
-    background-repeat: repeat;
-    opacity: 0.15; /* Increased opacity from 0.05 to 0.15 */
-    mix-blend-mode: multiply;
-    pointer-events: none;
-    z-index: 0;
-  }
-  .bg-batik > * {
-    position: relative;
-    z-index: 1;
-  }
+/* ─── Batik Pattern ─── */
+.batik-accent {
+  background-image: url("/batik-bg.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
+/* ─── Dot grid — subtle background texture for light panels ─── */
+.dot-grid {
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.07) 1px, transparent 1px);
+  background-size: 26px 26px;
+}
+
+/* ─── Marquee ticker animation ─── */
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  animation: marquee-scroll 45s linear infinite;
+  will-change: transform;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* ─── Hero scroll indicator pulse ─── */
+@keyframes hero-pulse {
+  0%, 100% { opacity: 0.4; transform: translateY(0); }
+  50%      { opacity: 1; transform: translateY(6px); }
+}
+
+.scroll-indicator {
+  animation: hero-pulse 2.5s ease-in-out infinite;
+}
+
+/* ─── Divider line ornament ─── */
+.ornament-line::before,
+.ornament-line::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, currentColor, transparent);
+  opacity: 0.3;
+}
+
+/* ─── Typography utility for editorial contrast ─── */
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+/* ─── Standardized Typography Pattern Hierarchy ─── */
+.heading-hero {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-size: 2.75rem;
+  line-height: 1.08;
+}
+@media (min-width: 640px) {
+  .heading-hero { font-size: 3.75rem; }
+}
 @media (min-width: 1024px) {
-  html {
-    font-size: 12px; /* Scales down by 25% */
-  }
+  .heading-hero { font-size: 5rem; }
 }
 
+.heading-section {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-size: 2.25rem;
+  line-height: 1.15;
+}
+@media (min-width: 640px) {
+  .heading-section { font-size: 3rem; }
+}
+
+.heading-card {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 1.25;
+}
+
+.body-lead {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.body-base {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ─── Desktop responsive scale ─── */
+@media (min-width: 1024px) {
+  html { font-size: 13px; }
+}
 @media (min-width: 1536px) {
-  html {
-    font-size: 14px; /* Scales down by 12.5% */
-  }
+  html { font-size: 15px; }
 }

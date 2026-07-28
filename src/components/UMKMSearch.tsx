@@ -12,65 +12,58 @@ export default function UMKMSearch() {
 
   useEffect(() => {
     if (searchTerm.length > 0 && !data) {
-      import('@/data/umkm').then((module) => {
-        setData(module.umkmData);
-      });
+      import('@/data/umkm').then((m) => setData(m.umkmData));
     }
   }, [searchTerm, data]);
 
   const isSearching = searchTerm.trim().length > 0;
-  
-  const results = isSearching && data 
-    ? data.filter((umkm) => 
-        umkm.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
-        umkm.description.toLowerCase().includes(searchTerm.toLowerCase())
+  const results = isSearching && data
+    ? data.filter((u) =>
+        u.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        u.description.toLowerCase().includes(searchTerm.toLowerCase())
       )
     : [];
 
   return (
-    <div className="relative w-full max-w-xl mx-auto mb-16">
-      <div className="relative border-b border-stone-300 flex items-center pb-2">
-        <Search className="h-5 w-5 text-stone-400 shrink-0" />
+    <div className="relative max-w-lg mb-10">
+      <div className="flex items-center gap-3 border-b-2 border-stone-200 focus-within:border-emerald-800 transition-colors pb-2">
+        <Search className="h-4 w-4 text-stone-400 shrink-0" />
         <input
           type="text"
-          placeholder="Cari karya atau nama perajin..."
-          className="block w-full pl-4 pr-10 py-2 bg-transparent text-stone-900 placeholder-stone-400 focus:outline-none text-lg font-light"
+          placeholder="Cari nama produsen atau produk..."
+          className="w-full bg-transparent text-stone-900 placeholder-stone-400 focus:outline-none text-base"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
         {searchTerm && (
-          <button 
-            onClick={() => setSearchTerm('')}
-            className="absolute right-0 text-stone-400 hover:text-rose-500 transition-colors"
-          >
-            <X className="h-5 w-5" />
+          <button onClick={() => setSearchTerm('')} className="text-stone-400 hover:text-rose-500 transition-colors shrink-0">
+            <X className="h-4 w-4" />
           </button>
         )}
       </div>
 
       {isSearching && (
-        <div className="absolute z-50 w-full mt-4 bg-white shadow-2xl max-h-96 overflow-y-auto border border-stone-100">
+        <div className="absolute z-50 top-full mt-2 w-full bg-white border border-stone-200 shadow-xl max-h-80 overflow-y-auto">
           {results.length > 0 ? (
-            <div className="p-4 flex flex-col gap-2">
-              {results.map((umkm) => (
-                <Link 
-                  key={umkm.id} 
-                  href={`/umkm/${umkm.id}`}
-                  className="flex items-center gap-4 p-4 hover:bg-stone-50 transition-colors group"
-                >
-                  <div className="relative h-14 w-14 shrink-0 bg-stone-100">
-                    <Image src={umkm.imageUrl} alt={umkm.name} fill className="object-cover" />
-                  </div>
-                  <div>
-                    <h4 className="font-serif text-lg text-stone-900 group-hover:text-emerald-800 transition-colors">{umkm.name}</h4>
-                    <p className="text-xs uppercase tracking-widest text-stone-400 mt-1">{umkm.category}</p>
-                  </div>
-                </Link>
-              ))}
-            </div>
+            results.map((umkm) => (
+              <Link
+                key={umkm.id}
+                href={`/umkm/${umkm.id}`}
+                className="flex items-center gap-4 px-4 py-3 hover:bg-stone-50 transition-colors group border-b border-stone-50 last:border-0"
+                onClick={() => setSearchTerm('')}
+              >
+                <div className="relative h-12 w-12 bg-stone-100 shrink-0 overflow-hidden">
+                  <Image src={umkm.imageUrl} alt={umkm.name} fill className="object-cover" />
+                </div>
+                <div>
+                  <p className="font-medium text-stone-900 group-hover:text-emerald-800 transition-colors text-sm">{umkm.name}</p>
+                  <p className="eyebrow text-stone-400 mt-0.5">{umkm.category}</p>
+                </div>
+              </Link>
+            ))
           ) : (
-            <div className="p-8 text-center text-stone-500 font-light">
-              Karya tidak ditemukan untuk &quot;<span className="italic">{searchTerm}</span>&quot;
+            <div className="px-4 py-8 text-center text-stone-400 text-sm italic">
+              Tidak ditemukan untuk &ldquo;{searchTerm}&rdquo;
             </div>
           )}
         </div>

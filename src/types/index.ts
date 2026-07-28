@@ -10,7 +10,7 @@ export interface UMKM {
   id: string;
   name: string;
   ownerName: string;
-  category: 'Makanan & Minuman' | 'Kerajinan' | 'Jasa' | 'Lainnya';
+  category: 'Makanan & Minuman' | 'Kerajinan' | 'Fesyen' | 'Agroindustri' | 'Jasa' | 'Lainnya';
   description: string;
   address: string;
   phone: string;
