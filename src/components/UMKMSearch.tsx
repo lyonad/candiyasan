@@ -89,6 +89,13 @@ export default function UMKMSearch() {
         )}
       </div>
 
+      {/* Live announcement for screen readers */}
+      <div className="sr-only" aria-live="polite">
+        {isSearching
+          ? `${results.length} hasil ditemukan untuk ${searchTerm}`
+          : ''}
+      </div>
+
       {isSearching && isOpen && (
         <div
           id="search-results-list"

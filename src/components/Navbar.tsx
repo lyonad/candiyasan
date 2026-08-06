@@ -62,10 +62,10 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-500 ${
+      className={`fixed top-0 w-full z-50 transition-all duration-500 border-b ${
         scrolled
-          ? 'bg-[#faf9f7]/95 backdrop-blur-md shadow-sm'
-          : 'bg-transparent'
+          ? 'bg-[#faf9f7]/95 backdrop-blur-md shadow-sm border-stone-200/50'
+          : 'bg-transparent border-transparent'
       }`}
       role="navigation"
       aria-label="Navigasi Utama"

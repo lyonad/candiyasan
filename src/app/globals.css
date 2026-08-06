@@ -43,6 +43,18 @@ body {
   @apply selection:bg-rose-200 selection:text-rose-950;
 }
 
+/* ─── Cross-Browser Focus Visible Accessibility ─── */
+:focus-visible {
+  outline: 2px solid #2d9d70;
+  outline-offset: 3px;
+}
+
+/* ─── Legacy Webkit Backdrop Filter Compatibility Fallback ─── */
+.backdrop-blur-md,
+.backdrop-blur-sm {
+  -webkit-backdrop-filter: blur(12px);
+}
+
 /* ─── Batik Pattern ─── */
 .batik-accent {
   background-image: url("/batik-bg.jpg");
