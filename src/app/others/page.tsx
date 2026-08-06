@@ -347,26 +347,38 @@ export default function OthersPage() {
           {/* DPL Section */}
           <ScrollReveal>
             <div className="border-t border-stone-800 pt-16">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                <div className="lg:col-span-7">
-                  <p className="eyebrow text-rose-400 mb-3">Dosen Pembimbing Lapangan</p>
-                  <h3 className="font-serif text-3xl sm:text-4xl text-stone-100 mb-2">Dr. Drs. Cahyo Yuwono, M.Pd.</h3>
-                  <p className="body-lead text-emerald-400 mb-4">Universitas Negeri Semarang</p>
-                  <p className="text-sm text-stone-400 leading-relaxed max-w-xl">
-                    Terima kasih sebesar-besarnya atas bimbingan, arahan, dan dedikasi tanpa henti selama pelaksanaan program pengabdian UNNES Giat 16 di Desa Candiyasan, Kecamatan Kertek, Kabupaten Wonosobo.
-                  </p>
-                </div>
-                <div className="lg:col-span-5">
-                  <div className="relative w-full aspect-[16/10] rounded-lg overflow-hidden border border-stone-700/80 shadow-2xl group">
-                    <ZoomableImage
-                      src="/images/tim/Foto Bersama DPL.jpeg"
-                      alt="Foto Bersama DPL UNNES Giat 16 Desa Candiyasan"
-                      caption="Foto Bersama Tim UNNES Giat 16 dengan Dosen Pembimbing Lapangan Dr. Drs. Cahyo Yuwono, M.Pd."
-                      fill
-                      sizes="(max-width: 1024px) 100vw, 500px"
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-transparent to-transparent pointer-events-none" />
+              <div className="bg-stone-950/70 border border-stone-800/80 rounded-2xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center relative z-10">
+                  {/* Photo Column */}
+                  <div className="md:col-span-4 lg:col-span-3 flex justify-center">
+                    <div className="relative w-44 h-44 sm:w-52 sm:h-52 rounded-2xl overflow-hidden border-2 border-stone-700/80 group shadow-xl hover:border-emerald-400 transition-all duration-500 bg-gradient-to-b from-stone-850 to-stone-950 shrink-0">
+                      <ZoomableImage
+                        src="/images/tim/Cahyo.png"
+                        alt="Dr. Drs. Cahyo Yuwono, M.Pd. — Dosen Pembimbing Lapangan"
+                        caption="Dr. Drs. Cahyo Yuwono, M.Pd. — Dosen Pembimbing Lapangan UNNES Giat 16 Desa Candiyasan"
+                        fill
+                        unoptimized
+                        sizes="(max-width: 768px) 208px, 208px"
+                        className="object-contain p-0 scale-[1.12] group-hover:scale-[1.18] transition-transform duration-500 drop-shadow-lg"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Info Column */}
+                  <div className="md:col-span-8 lg:col-span-9 text-center md:text-left">
+                    <span className="inline-block eyebrow text-rose-400 bg-rose-950/60 border border-rose-900/50 px-3 py-1 rounded-full text-xs mb-3">
+                      Dosen Pembimbing Lapangan
+                    </span>
+                    <h3 className="font-serif text-3xl sm:text-4xl text-stone-100 mb-1">
+                      Dr. Drs. Cahyo Yuwono, M.Pd.
+                    </h3>
+                    <p className="body-lead text-emerald-400 mb-4 font-medium">
+                      Universitas Negeri Semarang
+                    </p>
+                    <p className="text-sm sm:text-base text-stone-300 leading-relaxed max-w-2xl">
+                      Terima kasih sebesar-besarnya atas bimbingan, arahan, dan dedikasi tanpa henti selama pelaksanaan program pengabdian UNNES Giat 16 di Desa Candiyasan, Kecamatan Kertek, Kabupaten Wonosobo.
+                    </p>
                   </div>
                 </div>
               </div>
