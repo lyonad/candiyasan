@@ -11,10 +11,10 @@ const createSlug = (text: string) =>
   text.toLowerCase().replace(/ & /g, '-').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
 const CATEGORY_IMAGES: Record<string, string> = {
-  'Makanan & Minuman': 'https://images.unsplash.com/photo-1559525839-b184a4d698c7?auto=format&fit=crop&w=600&q=80',
-  'Kerajinan': 'https://images.unsplash.com/photo-1590080826978-0056637de257?auto=format&fit=crop&w=600&q=80',
-  'Fesyen': 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&w=600&q=80',
-  'Agroindustri': 'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=600&q=80',
+  'Makanan & Minuman': '/images/umkm/cimoring-jhofani.jpg',
+  'Kerajinan': '/images/categories/kerajinan.jpg',
+  'Fesyen': '/images/categories/fesyen.jpg',
+  'Agroindustri': '/images/umkm/kopi-nastiti.jpg',
 };
 
 export default function UMKMDirectory() {
@@ -29,8 +29,8 @@ export default function UMKMDirectory() {
       {/* ── Cinematic Hero ──────────────────────────────────────── */}
       <section className="relative min-h-[65vh] flex flex-col justify-end overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1800&q=85"
-          alt="Katalog Industri Lokal"
+          src="/images/hero/candiyasan-landscape.jpg"
+          alt="Katalog Industri Lokal Desa Candiyasan"
           fill
           className="object-cover"
           priority

@@ -34,8 +34,8 @@ export default function AboutPage() {
       {/* ── Cinematic Full-Bleed Hero ──────────────────────────── */}
       <section className="relative min-h-[90vh] flex flex-col justify-end overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1800&q=85"
-          alt="Lanskap pegunungan dan desa Candiyasan"
+          src="/images/hero/candiyasan-landscape.jpg"
+          alt="Lanskap pegunungan dan Desa Candiyasan"
           fill
           className="object-cover"
           priority

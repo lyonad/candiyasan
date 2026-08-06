@@ -26,8 +26,8 @@ export default function Home() {
       {/* ── CINEMATIC HERO — full bleed ────────────────────────────── */}
       <section className="relative min-h-screen flex flex-col justify-end overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1800&q=85"
-          alt="Produk Lokal Candiyasan"
+          src="/images/hero/candiyasan-landscape.jpg"
+          alt="Produk Industri Lokal Desa Candiyasan"
           fill
           className="object-cover"
           priority
