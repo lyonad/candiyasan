@@ -125,7 +125,7 @@ export const umkmData: UMKM[] = [
   {
     id: 'mitra-mandiri-farm',
     name: 'Mitra Mandiri Farm',
-    ownerName: 'Bapak Yayan (Area rumah)',
+    ownerName: 'Warga Jurangjero (Dekat Rumah Pak Yayan)',
     category: 'Agroindustri',
     description: 'Peternakan yang berfokus pada budidaya hewan ternak, mendukung ketahanan pangan dan agroindustri lokal di Desa Candiyasan.',
     address: 'Dekat rumah Pak Yayan, Dusun Jurang Jero',
