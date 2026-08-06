@@ -143,6 +143,74 @@ export default function OthersPage() {
         </div>
       </section>
 
+      {/* ── Photo Gallery Section ─────────────────────────────────── */}
+      <section className="py-20 px-5 sm:px-8 bg-stone-100/70 border-y border-stone-200/80">
+        <div className="max-w-7xl mx-auto">
+          <ScrollReveal>
+            <div className="mb-14">
+              <p className="eyebrow text-emerald-700 mb-3">Dokumentasi Momen</p>
+              <h2 className="heading-section text-stone-900">Galeri Foto Kegiatan</h2>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
+            {/* Kepsek & Guru Photo Card */}
+            <ScrollReveal delay={100}>
+              <div className="bg-white border border-stone-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full group">
+                <div className="relative w-full aspect-[16/10] bg-stone-900 overflow-hidden">
+                  <ZoomableImage
+                    src="/images/tim/Foto Bersama Kepsek dan Para Guru.jpg"
+                    alt="Foto Bersama Kepala Sekolah dan Para Guru Desa Candiyasan"
+                    caption="Foto Bersama Tim UNNES Giat 16 Candiyasan dengan Kepala Sekolah dan Para Guru"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 600px"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <span className="absolute top-4 left-4 z-20 eyebrow bg-emerald-900/90 text-emerald-300 px-3 py-1 text-xs">
+                    Edukasi &amp; Sekolah
+                  </span>
+                </div>
+                <div className="p-6 sm:p-8 flex flex-col flex-grow bg-white">
+                  <h3 className="font-serif text-2xl text-stone-900 mb-3 group-hover:text-emerald-800 transition-colors">
+                    Pendampingan Edukasi Bersama Kepala Sekolah &amp; Para Guru
+                  </h3>
+                  <p className="body-base text-stone-600 leading-relaxed flex-grow">
+                    Dokumentasi kebersamaan tim mahasiswa UNNES Giat 16 Candiyasan bersama Bapak/Ibu Kepala Sekolah serta jajaran guru dalam pelaksanaan sosialisasi dan program pengabdian di lingkungan sekolah setempat.
+                  </p>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* DPL & Team Photo Card */}
+            <ScrollReveal delay={200}>
+              <div className="bg-white border border-stone-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full group">
+                <div className="relative w-full aspect-[16/10] bg-stone-900 overflow-hidden">
+                  <ZoomableImage
+                    src="/images/tim/Foto Bersama DPL.jpeg"
+                    alt="Foto Bersama DPL Dr. Drs. Cahyo Yuwono, M.Pd."
+                    caption="Foto Bersama Tim UNNES Giat 16 Candiyasan bersama DPL Dr. Drs. Cahyo Yuwono, M.Pd."
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 600px"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <span className="absolute top-4 left-4 z-20 eyebrow bg-rose-900/90 text-rose-200 px-3 py-1 text-xs">
+                    Monitoring &amp; Pengabdian
+                  </span>
+                </div>
+                <div className="p-6 sm:p-8 flex flex-col flex-grow bg-white">
+                  <h3 className="font-serif text-2xl text-stone-900 mb-3 group-hover:text-emerald-800 transition-colors">
+                    Monitoring &amp; Evaluasi Lapangan Bersama DPL
+                  </h3>
+                  <p className="body-base text-stone-600 leading-relaxed flex-grow">
+                    Momen kebersamaan seluruh anggota mahasiswa UNNES Giat 16 Desa Candiyasan bersama Dosen Pembimbing Lapangan (Dr. Drs. Cahyo Yuwono, M.Pd.) saat evaluasi dan pendampingan program pengabdian.
+                  </p>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
       {/* ── Members Section (Dark Editorial) ─────────────────────── */}
       <section className="bg-stone-900 py-24 lg:py-32 px-5 sm:px-8 relative overflow-hidden">
         <div className="absolute inset-0 batik-accent opacity-5" />

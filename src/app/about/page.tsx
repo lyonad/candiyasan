@@ -95,9 +95,9 @@ export default function AboutPage() {
           <ScrollReveal>
             <div className="relative w-full h-[45vh] lg:h-[58vh] overflow-hidden mb-24 lg:mb-32">
               <ZoomableImage
-                src="/images/tim/Foto Bersama DPL.jpeg"
-                alt="Tim Mahasiswa UNNES Giat 16 Desa Candiyasan bersama DPL"
-                caption="Tim Mahasiswa UNNES Giat 16 Desa Candiyasan bersama Dosen Pembimbing Lapangan"
+                src="/images/tim/Foto Bersama Kepsek dan Para Guru.jpg"
+                alt="Foto Bersama Kepala Sekolah dan Para Guru Desa Candiyasan"
+                caption="Dokumentasi Kegiatan Tim UNNES Giat 16 Candiyasan bersama Kepala Sekolah & Para Guru"
                 fill
                 sizes="(max-width: 1200px) 100vw, 1200px"
                 className="object-cover"
