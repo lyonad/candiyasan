@@ -52,13 +52,20 @@ export default function Footer() {
 
           {/* Contact */}
           <div className="md:col-span-4">
-            <h3 className="eyebrow text-stone-500 mb-5">Informasi</h3>
-            <address className="not-italic text-sm text-stone-400 leading-relaxed space-y-2">
-              <p className="text-stone-200 font-medium">Balai Desa Candiyasan</p>
-              <p>Kecamatan Kertek</p>
-              <p>Kabupaten Wonosobo</p>
+            <h3 className="eyebrow text-stone-500 mb-5">Informasi & Lokasi</h3>
+            <address className="not-italic text-sm text-stone-400 leading-relaxed space-y-2 mb-4">
+              <p className="text-stone-200 font-medium">Kantor Desa Candiyasan</p>
+              <p>Kecamatan Kertek, Kabupaten Wonosobo</p>
               <p>Jawa Tengah, Indonesia</p>
             </address>
+            <a
+              href="https://maps.app.goo.gl/rcLMD7fut89sNeT86"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 eyebrow text-xs bg-stone-800 text-emerald-400 hover:bg-stone-700 px-3.5 py-2 transition-colors border border-stone-700"
+            >
+              📍 Petunjuk Arah Google Maps ↗
+            </a>
           </div>
         </div>
       </div>

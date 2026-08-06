@@ -1,8 +1,22 @@
 import Image from 'next/image';
 import ScrollReveal from '@/components/ScrollReveal';
+import LiteYouTube from '@/components/LiteYouTube';
+import ZoomableImage from '@/components/ZoomableImage';
 
 export default function OthersPage() {
   const videos = [
+    {
+      id: 'v-cedera',
+      title: 'Tutorial Pelatihan Pemulihan Otot & Penanganan Pertama Cidera',
+      description: 'Video panduan dan edukasi kesehatan pemulihan otot serta pertolongan pertama pada cedera oleh tim UNNES Giat 16 Desa Candiyasan.',
+      youtubeId: '4Q7l4_cOiSM',
+    },
+    {
+      id: 'v-cimoring',
+      title: 'Profil UMKM: CIMORING JHOFANI Jurangjero',
+      description: 'Liputan profil usaha rumahan Cimoring Jhofani oleh Mbak Murni di Dusun Jurangjero, Desa Candiyasan yang diminati hingga luar kota.',
+      youtubeId: 'uwhfARqJeQo',
+    },
     {
       id: 'v1',
       title: 'Perkenalan UNNES Giat 16 Desa Candiyasan',
@@ -27,36 +41,21 @@ export default function OthersPage() {
       description: 'Cerita keseharian tim Giat 16 selama menjalani program pengabdian masyarakat di Desa Candiyasan.',
       youtubeId: 'kJQP7kiw5Fk',
     },
-    {
-      id: 'v5',
-      title: 'Produk Unggulan: Kopi Arabika Candiyasan',
-      description: 'Liputan khusus tentang proses produksi dan keunggulan kopi arabika asli lereng Sindoro dari Desa Candiyasan.',
-      youtubeId: 'M7FIvfx5J10',
-    },
-    {
-      id: 'v6',
-      title: 'Penutupan & Kenangan UNNES Giat 16',
-      description: 'Momen haru penutupan dan perpisahan tim mahasiswa UNNES Giat 16 bersama warga Desa Candiyasan.',
-      youtubeId: 'fRh_vgS2dFE',
-    },
   ];
 
   const members = [
-    { id: 'm1',  name: 'Rayhan Raynata Marton',         prodi: 'S1 Manajemen',                                    faculty: 'FE',    role: 'Kormades' },
-    { id: 'm2',  name: 'Damar Maulana Ramadhan',        prodi: 'S1 Pendidikan Jasmani, Kesehatan, dan Rekreasi', faculty: 'FIK',   role: 'Wakil Kormades' },
-    { id: 'm3',  name: 'Tazhafina Klarisa',             prodi: 'S1 Ilmu Politik',                                 faculty: 'FIS',   role: 'Sekretaris' },
-    { id: 'm4',  name: 'Salsabila Zain Anisah',         prodi: 'S1 Akuntansi',                                    faculty: 'FE',    role: 'Bendahara' },
-    { id: 'm5',  name: 'Deswita Maharani',              prodi: 'S1 Manajemen',                                    faculty: 'FE',    role: 'Humas' },
-    { id: 'm6',  name: 'Fazarani Hasnan Afisah',        prodi: 'S1 Ilmu Politik',                                 faculty: 'FIS',   role: 'Humas' },
-    { id: 'm7',  name: 'Lyon Ambrosio Djuanda',         prodi: 'S1 Teknik Informatika',                           faculty: 'FMIPA', role: 'PDD' },
-    { id: 'm8',  name: 'Anisa Yulina Rahmawati',        prodi: 'S1 Pendidikan IPA',                               faculty: 'FMIPA', role: 'PDD' },
-    { id: 'm9',  name: 'Zalfa Shofiyatun Nabila',       prodi: 'S1 Pendidikan Seni Rupa',                         faculty: 'FBS',   role: 'PDD' },
-    { id: 'm10', name: 'Adnin Djiogasa Harahap',        prodi: 'S1 Teknik Mesin',                                 faculty: 'FT',    role: 'Logistik' },
-    { id: 'm11', name: 'Nisfa Laila Kamila',            prodi: 'S1 Pendidikan Guru Sekolah Dasar',                faculty: 'FIP',   role: 'Logistik' },
+    { id: 'm1',  name: 'Rayhan Raynata Marton',         prodi: 'S1 Manajemen',                                    faculty: 'FE',    role: 'Kormades',        image: '/images/tim/Rayhan.jpg' },
+    { id: 'm2',  name: 'Damar Maulana Ramadhan',        prodi: 'S1 Pendidikan Jasmani, Kesehatan, dan Rekreasi', faculty: 'FIK',   role: 'Wakil Kormades',  image: '/images/tim/Damar.jpg' },
+    { id: 'm3',  name: 'Tazhafina Klarisa',             prodi: 'S1 Ilmu Politik',                                 faculty: 'FIS',   role: 'Sekretaris',      image: '/images/tim/Klarisa.jpg' },
+    { id: 'm4',  name: 'Salsabila Zain Anisah',         prodi: 'S1 Akuntansi',                                    faculty: 'FE',    role: 'Bendahara',       image: '/images/tim/Zain.jpg' },
+    { id: 'm5',  name: 'Deswita Maharani',              prodi: 'S1 Manajemen',                                    faculty: 'FE',    role: 'Humas',           image: '/images/tim/Deswita.jpg' },
+    { id: 'm6',  name: 'Fazarani Hasnan Afisah',        prodi: 'S1 Ilmu Politik',                                 faculty: 'FIS',   role: 'Humas',           image: '/images/tim/Fazarani.jpg' },
+    { id: 'm7',  name: 'Lyon Ambrosio Djuanda',         prodi: 'S1 Teknik Informatika',                           faculty: 'FMIPA', role: 'PDD',             image: '/images/tim/Lyon.jpg' },
+    { id: 'm8',  name: 'Anisa Yulina Rahmawati',        prodi: 'S1 Pendidikan IPA',                               faculty: 'FMIPA', role: 'PDD',             image: '/images/tim/Anisa.jpg' },
+    { id: 'm9',  name: 'Zalfa Shofiyatun Nabila',       prodi: 'S1 Pendidikan Seni Rupa',                         faculty: 'FBS',   role: 'PDD',             image: '/images/tim/Zalfa.jpg' },
+    { id: 'm10', name: 'Adnin Djiogasa Harahap',        prodi: 'S1 Teknik Mesin',                                 faculty: 'FT',    role: 'Logistik',        image: '/images/tim/Adnin.jpg' },
+    { id: 'm11', name: 'Nisfa Laila Kamila',            prodi: 'S1 Pendidikan Guru Sekolah Dasar',                faculty: 'FIP',   role: 'Logistik',        image: '/images/tim/Nisfa.jpg' },
   ];
-
-  const initials = (name: string) =>
-    name.split(' ').slice(0, 2).map(n => n[0]).join('').toUpperCase();
 
   const [featuredVideo, ...restVideos] = videos;
 
@@ -65,15 +64,17 @@ export default function OthersPage() {
 
       {/* ── Cinematic Full-Bleed Hero ──────────────────────────── */}
       <section className="relative min-h-[70vh] flex flex-col justify-end overflow-hidden">
-        <Image
-          src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1800&q=85"
-          alt="Tim bekerja bersama"
+        <ZoomableImage
+          src="/images/tim/Foto Bersama DPL.jpeg"
+          alt="Tim UNNES Giat 16 Desa Candiyasan bersama DPL"
+          caption="Foto Bersama Mahasiswa UNNES Giat 16 Desa Candiyasan dengan DPL Dr. Drs. Cahyo Yuwono, M.Pd."
           fill
+          sizes="100vw"
           className="object-cover"
+          containerClassName="absolute inset-0 w-full h-full"
           priority
         />
-        {/* Multi-stop gradient for depth */}
-        <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-900/55 to-stone-900/15" />
+        <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-900/65 to-stone-900/25 pointer-events-none" />
 
         <div className="relative max-w-7xl mx-auto w-full px-5 sm:px-8 pb-16 pt-40">
           <p className="eyebrow text-emerald-400 mb-6">UNNES Giat 16 — Desa Candiyasan</p>
@@ -103,13 +104,10 @@ export default function OthersPage() {
             <div className="bg-white border border-stone-100 mb-8 lg:mb-12 group hover:shadow-lg transition-all duration-500">
               <div className="grid grid-cols-1 lg:grid-cols-2">
                 <div className="relative w-full aspect-video lg:aspect-auto lg:h-full">
-                  <iframe
-                    className="absolute inset-0 w-full h-full"
-                    src={`https://www.youtube.com/embed/${featuredVideo.youtubeId}`}
+                  <LiteYouTube
+                    youtubeId={featuredVideo.youtubeId}
                     title={featuredVideo.title}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
+                    aspectRatio="auto"
                   />
                 </div>
                 <div className="p-8 lg:p-12 flex flex-col justify-center bg-stone-50">
@@ -127,13 +125,10 @@ export default function OthersPage() {
               <ScrollReveal key={video.id} delay={i * 100}>
                 <div className="bg-white border border-stone-100 group hover:shadow-md transition-all duration-300 h-full flex flex-col">
                   <div className="relative w-full aspect-video">
-                    <iframe
-                      className="absolute inset-0 w-full h-full"
-                      src={`https://www.youtube.com/embed/${video.youtubeId}`}
+                    <LiteYouTube
+                      youtubeId={video.youtubeId}
                       title={video.title}
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
+                      aspectRatio="video"
                     />
                   </div>
                   <div className="p-6 flex-grow flex flex-col">
@@ -170,21 +165,32 @@ export default function OthersPage() {
           </ScrollReveal>
 
           {/* Members Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-10 mb-24">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-24">
             {members.map((member, i) => (
               <ScrollReveal key={member.id} delay={i * 50}>
-                <div className="group border-l border-stone-700/50 pl-5 hover:border-emerald-500 transition-colors duration-300">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 rounded-full bg-stone-800 flex items-center justify-center font-serif text-lg text-emerald-400 shrink-0 group-hover:bg-emerald-900 group-hover:text-emerald-300 transition-colors">
-                      {initials(member.name)}
+                <div className="group bg-stone-950/60 border border-stone-800 p-5 rounded-lg hover:border-emerald-500 transition-all duration-300 h-full flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="relative w-16 h-16 rounded-full overflow-hidden bg-stone-800 border-2 border-stone-700 group-hover:border-emerald-400 transition-colors shrink-0 shadow-md">
+                        <ZoomableImage
+                          src={member.image}
+                          alt={member.name}
+                          caption={`${member.name} — ${member.role} (${member.prodi})`}
+                          fill
+                          sizes="64px"
+                          className="object-cover"
+                        />
+                      </div>
+                      <div>
+                        <span className="inline-block eyebrow text-emerald-400 bg-emerald-950/80 px-2 py-0.5 rounded text-[11px] mb-1">
+                          {member.role}
+                        </span>
+                        <p className="text-xs text-stone-400 uppercase tracking-wider">{member.faculty}</p>
+                      </div>
                     </div>
-                    <div>
-                      <p className="eyebrow text-emerald-500 mb-0.5">{member.role}</p>
-                    </div>
+                    <h4 className="font-serif text-lg text-stone-100 mb-1 group-hover:text-emerald-300 transition-colors">{member.name}</h4>
                   </div>
-                  <h4 className="font-serif text-xl text-stone-100 mb-2">{member.name}</h4>
-                  <p className="text-sm text-stone-400">{member.prodi}</p>
-                  <p className="text-xs text-stone-500 mt-1 uppercase tracking-widest">{member.faculty}</p>
+                  <p className="text-xs text-stone-400 mt-2 border-t border-stone-800/80 pt-2">{member.prodi}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -193,17 +199,28 @@ export default function OthersPage() {
           {/* DPL Section */}
           <ScrollReveal>
             <div className="border-t border-stone-800 pt-16">
-              <div className="max-w-2xl">
-                <p className="eyebrow text-rose-500 mb-8">Dosen Pembimbing Lapangan</p>
-                <div className="flex items-start gap-6">
-                  <div className="w-16 h-16 rounded-full bg-emerald-900/50 border border-emerald-800 flex items-center justify-center font-serif text-2xl text-emerald-300 shrink-0">
-                    CY
-                  </div>
-                  <div>
-                    <h3 className="font-serif text-3xl text-stone-100 mb-2">Dr. Drs. Cahyo Yuwono, M.Pd.</h3>
-                    <p className="body-lead text-stone-400 mb-2">Universitas Negeri Semarang</p>
-                    <p className="text-sm text-stone-500 leading-relaxed max-w-lg">
-                      Terima kasih atas bimbingan, arahan, dan dukungan tanpa henti selama pelaksanaan program UNNES Giat 16 di Desa Candiyasan.
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div className="lg:col-span-7">
+                  <p className="eyebrow text-rose-400 mb-3">Dosen Pembimbing Lapangan</p>
+                  <h3 className="font-serif text-3xl sm:text-4xl text-stone-100 mb-2">Dr. Drs. Cahyo Yuwono, M.Pd.</h3>
+                  <p className="body-lead text-emerald-400 mb-4">Universitas Negeri Semarang</p>
+                  <p className="text-sm text-stone-400 leading-relaxed max-w-xl">
+                    Terima kasih sebesar-besarnya atas bimbingan, arahan, dan dedikasi tanpa henti selama pelaksanaan program pengabdian UNNES Giat 16 di Desa Candiyasan, Kecamatan Kertek, Kabupaten Wonosobo.
+                  </p>
+                </div>
+                <div className="lg:col-span-5">
+                  <div className="relative w-full aspect-[16/10] rounded-lg overflow-hidden border border-stone-700/80 shadow-2xl group">
+                    <ZoomableImage
+                      src="/images/tim/Foto Bersama DPL.jpeg"
+                      alt="Foto Bersama DPL UNNES Giat 16 Desa Candiyasan"
+                      caption="Foto Bersama Tim UNNES Giat 16 dengan Dosen Pembimbing Lapangan Dr. Drs. Cahyo Yuwono, M.Pd."
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 500px"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-transparent to-transparent pointer-events-none" />
+                    <p className="absolute bottom-3 left-4 text-xs font-mono text-stone-200 pointer-events-none z-20">
+                      Tim UNNES Giat 16 bersama DPL
                     </p>
                   </div>
                 </div>

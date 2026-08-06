@@ -13,18 +13,25 @@ export default function ScrollReveal({ children, delay = 0, className = '' }: Sc
   const domRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
+    if (typeof window === 'undefined' || !('IntersectionObserver' in window)) {
+      setIsVisible(true);
+      return;
+    }
+
+    let timerId: NodeJS.Timeout | null = null;
+    let observer: IntersectionObserver | null = null;
+
+    observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // Add a small delay for smoother sequential animations if needed,
-            // though actual delay is handled by CSS transition-delay or setTimeout here
-            setTimeout(() => {
+            timerId = setTimeout(() => {
               setIsVisible(true);
             }, delay);
-            // Once visible, stop observing
-            if (domRef.current) {
+
+            if (domRef.current && observer) {
               observer.unobserve(domRef.current);
+              observer.disconnect();
             }
           }
         });
@@ -38,8 +45,10 @@ export default function ScrollReveal({ children, delay = 0, className = '' }: Sc
     }
 
     return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef);
+      if (timerId) clearTimeout(timerId);
+      if (observer) {
+        if (currentRef) observer.unobserve(currentRef);
+        observer.disconnect();
       }
     };
   }, [delay]);

@@ -17,5 +17,7 @@ export interface UMKM {
   whatsapp: string;
   instagram?: string;
   imageUrl: string;
+  youtubeId?: string;
+  mapsUrl?: string;
   products: Product[];
 }

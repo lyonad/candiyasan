@@ -14,9 +14,14 @@ export default function CountUp({ target, className = '', duration = 2000, suffi
   const elementRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
+    if (typeof window === 'undefined' || !('IntersectionObserver' in window)) {
+      setCount(target);
+      return;
+    }
+
     let startTime: number | null = null;
-    let animationFrameId: number;
-    let observer: IntersectionObserver;
+    let animationFrameId: number | null = null;
+    let observer: IntersectionObserver | null = null;
 
     const animateCount = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
@@ -37,34 +42,38 @@ export default function CountUp({ target, className = '', duration = 2000, suffi
     };
 
     const startAnimation = () => {
-      startTime = null; // Reset start time in case it restarts
+      startTime = null;
       animationFrameId = requestAnimationFrame(animateCount);
     };
 
     const stopAnimation = () => {
-      if (animationFrameId) {
+      if (animationFrameId !== null) {
         cancelAnimationFrame(animationFrameId);
       }
     };
 
-    // Use IntersectionObserver to only animate when in view
-    if (elementRef.current) {
+    const currentEl = elementRef.current;
+    if (currentEl) {
       observer = new IntersectionObserver(
         (entries) => {
           if (entries[0].isIntersecting) {
             startAnimation();
+            if (observer && currentEl) {
+              observer.unobserve(currentEl);
+              observer.disconnect();
+            }
           }
         },
         { threshold: 0.1 }
       );
-      observer.observe(elementRef.current);
+      observer.observe(currentEl);
     }
 
     return () => {
       stopAnimation();
-      if (observer && elementRef.current) {
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-        observer.unobserve(elementRef.current);
+      if (observer) {
+        if (currentEl) observer.unobserve(currentEl);
+        observer.disconnect();
       }
     };
   }, [target, duration]);

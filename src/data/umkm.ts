@@ -11,21 +11,22 @@ export const umkmData: UMKM[] = [
     phone: '-',
     whatsapp: '',
     instagram: '',
-    imageUrl: 'https://images.unsplash.com/photo-1559525839-b184a4d698c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    mapsUrl: 'https://maps.app.goo.gl/rcLMD7fut89sNeT86',
+    imageUrl: '/images/umkm/kopi-nastiti.jpg',
     products: [
       {
         id: 'p-kopi-1',
         name: 'Kopi Arabica Bubuk (1 kg)',
         description: 'Kopi Arabica bubuk murni, sangat disukai oleh konsumen rumah tangga.',
         price: 25000,
-        imageUrl: 'https://images.unsplash.com/photo-1611162458324-aae1eb4129a4?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
+        imageUrl: '/images/umkm/kopi-nastiti.jpg',
       },
       {
         id: 'p-kopi-2',
         name: 'Green Bean Kopi Arabica',
         description: 'Biji kopi mentah (green bean) kualitas ekspor.',
         price: 0,
-        imageUrl: 'https://images.unsplash.com/photo-1524350876685-274059332603?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
+        imageUrl: '/images/umkm/kopi-nastiti.jpg',
       }
     ]
   },
@@ -38,21 +39,22 @@ export const umkmData: UMKM[] = [
     address: 'Dusun Jurang Jero, Desa Candiyasan',
     phone: '088215629804',
     whatsapp: '088215629804',
-    imageUrl: 'https://images.unsplash.com/photo-1627308595171-d1b5d6721584?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    mapsUrl: 'https://maps.app.goo.gl/rcLMD7fut89sNeT86',
+    imageUrl: '/images/umkm/pabrik-tahu.jpg',
     products: [
       {
         id: 'p-tahu-1',
         name: 'Tahu Segar (Plastik isi 10)',
         description: 'Tahu putih segar dalam kemasan plastik praktis isi 10 buah.',
         price: 5000,
-        imageUrl: 'https://images.unsplash.com/photo-1596649281358-86d11a28a3f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
+        imageUrl: '/images/umkm/pabrik-tahu.jpg',
       },
       {
         id: 'p-tahu-2',
         name: 'Tahu Grosir (Ember 75kg)',
         description: 'Pembelian tahu skala besar/grosir menggunakan kemasan ember 75kg untuk pedagang pasar.',
         price: 0,
-        imageUrl: 'https://images.unsplash.com/photo-1596649281358-86d11a28a3f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
+        imageUrl: '/images/umkm/pabrik-tahu.jpg',
       }
     ]
   },
@@ -65,34 +67,37 @@ export const umkmData: UMKM[] = [
     address: 'Jalan bawah depan posko, Dusun Jurang Jero',
     phone: '-',
     whatsapp: '',
-    imageUrl: 'https://images.unsplash.com/photo-1597481499750-3e6b22687e12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    mapsUrl: 'https://maps.app.goo.gl/rcLMD7fut89sNeT86',
+    imageUrl: '/images/umkm/teh-candiyasan.jpg',
     products: [
       {
         id: 'p-teh-1',
         name: 'Teh Kering Lokal (1 kg)',
         description: 'Daun teh kering olahan asli Candiyasan. Kemasan dan berat bisa disesuaikan dengan permintaan pembeli.',
         price: 80000,
-        imageUrl: 'https://images.unsplash.com/photo-1597481499750-3e6b22687e12?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
+        imageUrl: '/images/umkm/teh-candiyasan.jpg',
       }
     ]
   },
   {
-    id: 'cimolring-pak-rt',
-    name: 'Cimolring Pak RT 2',
-    ownerName: 'Bapak RT 2 Jurang Jero',
+    id: 'cimoring-jhofani',
+    name: 'Cimoring Jhofani',
+    ownerName: 'Mbak Murni (RT 2 Jurang Jero)',
     category: 'Makanan & Minuman',
-    description: 'Produsen camilan cimolring (cimol kering) skala rumah tangga yang renyah dan gurih. Saat ini berfokus sebagai produsen suplai murni dan belum merambah ke marketplace online.',
+    description: 'Cimoring Jhofani merupakan usaha rumahan produksi camilan cimol kering (cimoring) khas Dusun Jurang Jero yang sangat diminati oleh warga Desa Candiyasan, Wonosobo, hingga melayani pesanan ke luar kota. Berkat ketekunan Mbak Murni dalam menjaga kualitas dan berinovasi, camilan renyah dan gurih ini selalu konsisten diminati pelanggan.',
     address: 'Dusun Jurang Jero, RT 2, Desa Candiyasan',
     phone: '-',
     whatsapp: '',
-    imageUrl: 'https://images.unsplash.com/photo-1599507963248-283fb24240a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // snack placeholder
+    youtubeId: 'uwhfARqJeQo',
+    mapsUrl: 'https://maps.app.goo.gl/rcLMD7fut89sNeT86',
+    imageUrl: '/images/umkm/cimoring-jhofani.jpg',
     products: [
       {
-        id: 'p-cimol-1',
-        name: 'Cimolring (1 kg)',
-        description: 'Cimol kering kiloan, cocok untuk camilan atau dijual kembali.',
+        id: 'p-cimoring-1',
+        name: 'Cimoring Jhofani (1 kg)',
+        description: 'Cimol kering kiloan bercita rasa gurih dan renyah, cocok untuk camilan keluarga atau dijual kembali (reseller).',
         price: 45000,
-        imageUrl: 'https://images.unsplash.com/photo-1599507963248-283fb24240a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
+        imageUrl: '/images/umkm/cimoring-jhofani.jpg',
       }
     ]
   },
@@ -105,8 +110,17 @@ export const umkmData: UMKM[] = [
     address: 'Dusun Kabelukan, Desa Candiyasan',
     phone: '-',
     whatsapp: '',
-    imageUrl: 'https://images.unsplash.com/photo-1532008709559-0a6b7d59b4c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // corn / grain placeholder
-    products: []
+    mapsUrl: 'https://maps.app.goo.gl/rcLMD7fut89sNeT86',
+    imageUrl: '/images/umkm/nasi-jagung.jpg',
+    products: [
+      {
+        id: 'p-jagung-1',
+        name: 'Nasi Jagung / Beras Jagung (1 kg)',
+        description: 'Olahan jagung murni higienis dan gurih, kaya serat pangan alami, cocok untuk makanan pokok sehat pengganti atau campuran beras.',
+        price: 20000,
+        imageUrl: '/images/umkm/nasi-jagung.jpg',
+      }
+    ]
   },
   {
     id: 'mitra-mandiri-farm',
@@ -117,7 +131,16 @@ export const umkmData: UMKM[] = [
     address: 'Dekat rumah Pak Yayan, Dusun Jurang Jero',
     phone: '-',
     whatsapp: '',
-    imageUrl: 'https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', // farm placeholder
-    products: []
+    mapsUrl: 'https://maps.app.goo.gl/rcLMD7fut89sNeT86',
+    imageUrl: '/images/umkm/mitra-farm.jpg',
+    products: [
+      {
+        id: 'p-ternak-1',
+        name: 'Hewan Ternak Unggul (Kambing / Domba)',
+        description: 'Hewan ternak terawat dan berkualitas untuk kebutuhan bibit unggul, aqiqah, maupun qurban.',
+        price: 0,
+        imageUrl: '/images/umkm/mitra-farm.jpg',
+      }
+    ]
   }
 ];

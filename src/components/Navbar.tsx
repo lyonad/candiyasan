@@ -24,22 +24,57 @@ export default function Navbar() {
     href === '/' ? pathname === '/' : pathname.startsWith(href);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 40);
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 40);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isOpen) {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+      window.addEventListener('keydown', handleKeyDown);
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isOpen]);
+
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-      scrolled
-        ? 'bg-[#faf9f7]/95 backdrop-blur-md shadow-sm'
-        : 'bg-transparent'
-    }`}>
+    <nav
+      className={`fixed top-0 w-full z-50 transition-all duration-500 ${
+        scrolled
+          ? 'bg-[#faf9f7]/95 backdrop-blur-md shadow-sm'
+          : 'bg-transparent'
+      }`}
+      role="navigation"
+      aria-label="Navigasi Utama"
+    >
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         <div className="flex justify-between items-center h-20">
 
           {/* Logo */}
-          <Link href="/" className="group flex flex-col leading-none">
+          <Link href="/" className="group flex flex-col leading-none" aria-label="Beranda Candiyasan">
             <span className={`font-serif text-[1.6rem] tracking-tight transition-colors duration-300 ${
               scrolled ? 'text-stone-900 group-hover:text-emerald-800' : 'text-stone-100 group-hover:text-emerald-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]'
             }`}>
@@ -58,13 +93,14 @@ export default function Navbar() {
                 <Link
                   key={href}
                   href={href}
-                  className={`eyebrow transition-colors duration-200 relative after:absolute after:bottom-[-3px] after:left-0 after:h-[1px] after:bg-rose-400 after:transition-all ${
+                  className={`eyebrow transition-colors duration-200 relative py-2 after:absolute after:bottom-[-3px] after:left-0 after:h-[1px] after:bg-rose-400 after:transition-all ${
                     active ? 'after:w-full' : 'after:w-0 hover:after:w-full'
                   } ${
                     useDarkText
                       ? active ? 'text-stone-900' : 'text-stone-500 hover:text-stone-900'
                       : active ? 'text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]' : 'text-stone-200 hover:text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]'
                   }`}
+                  aria-current={active ? 'page' : undefined}
                 >
                   {label}
                 </Link>
@@ -87,8 +123,10 @@ export default function Navbar() {
           {/* Mobile Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={`md:hidden p-1 ${useDarkText ? 'text-stone-800' : 'text-stone-200'}`}
-            aria-label="Toggle menu"
+            className={`md:hidden p-2 rounded-sm -mr-2 min-w-[44px] min-h-[44px] flex items-center justify-center ${useDarkText ? 'text-stone-800' : 'text-stone-200'}`}
+            aria-label={isOpen ? "Tutup menu navigasi" : "Buka menu navigasi"}
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
           >
             {isOpen ? <X className="h-6 w-6 stroke-[1.5]" /> : <Menu className="h-6 w-6 stroke-[1.5]" />}
           </button>
@@ -97,26 +135,30 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-[#faf9f7] border-t border-stone-100 shadow-lg">
-          <div className="px-6 pt-6 pb-10 flex flex-col gap-8">
+        <div
+          id="mobile-menu"
+          className="md:hidden bg-[#faf9f7] border-t border-stone-100 shadow-xl max-h-[calc(100vh-5rem)] overflow-y-auto"
+        >
+          <div className="px-6 pt-6 pb-10 flex flex-col gap-6">
             {NAV_LINKS.map(({ href, label }) => (
               <Link
                 key={href}
                 href={href}
-                className={`font-serif text-3xl transition-colors ${
-                  isActive(href) ? 'text-emerald-800' : 'text-stone-800 hover:text-emerald-800'
+                className={`font-serif text-3xl py-1 transition-colors ${
+                  isActive(href) ? 'text-emerald-800 font-medium' : 'text-stone-800 hover:text-emerald-800'
                 }`}
                 onClick={() => setIsOpen(false)}
+                aria-current={isActive(href) ? 'page' : undefined}
               >
                 {label}
               </Link>
             ))}
-            <div className="border-t border-stone-100 pt-6">
+            <div className="border-t border-stone-200 pt-6">
               <a
                 href="https://candiyasan-kertek.desa.id/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="eyebrow text-emerald-800 border border-emerald-800/40 px-5 py-3 inline-block hover:bg-emerald-800 hover:text-white transition-colors"
+                className="eyebrow text-emerald-800 border border-emerald-800/40 px-5 py-3.5 block text-center hover:bg-emerald-800 hover:text-white transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 Kunjungi Web Utama Desa ↗

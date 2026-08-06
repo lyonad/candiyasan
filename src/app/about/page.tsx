@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import ScrollReveal from '@/components/ScrollReveal';
+import ZoomableImage from '@/components/ZoomableImage';
 
 const FOCUS_POINTS = [
   {
@@ -93,14 +94,17 @@ export default function AboutPage() {
           {/* Full-width image with pull quote */}
           <ScrollReveal>
             <div className="relative w-full h-[45vh] lg:h-[58vh] overflow-hidden mb-24 lg:mb-32">
-              <Image
-                src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1800&q=80"
-                alt="Tim mendiskusikan strategi digitalisasi produk lokal"
+              <ZoomableImage
+                src="/images/tim/Foto Bersama DPL.jpeg"
+                alt="Tim Mahasiswa UNNES Giat 16 Desa Candiyasan bersama DPL"
+                caption="Tim Mahasiswa UNNES Giat 16 Desa Candiyasan bersama Dosen Pembimbing Lapangan"
                 fill
+                sizes="(max-width: 1200px) 100vw, 1200px"
                 className="object-cover"
+                containerClassName="w-full h-full"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-stone-950/80 via-stone-950/25 to-transparent" />
-              <div className="absolute bottom-8 left-8 sm:bottom-12 sm:left-12 max-w-sm">
+              <div className="absolute inset-0 bg-gradient-to-r from-stone-950/80 via-stone-950/25 to-transparent pointer-events-none" />
+              <div className="absolute bottom-8 left-8 sm:bottom-12 sm:left-12 max-w-sm pointer-events-none z-20">
                 <div className="border-l-2 border-emerald-400 pl-5">
                   <p className="font-serif italic text-stone-100 text-xl sm:text-2xl leading-snug">
                     &ldquo;Produk berkualitas<br />butuh jembatan yang tepat.&rdquo;

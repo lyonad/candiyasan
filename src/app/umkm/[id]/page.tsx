@@ -1,50 +1,55 @@
 import { umkmData } from '@/data/umkm';
 import { notFound } from 'next/navigation';
-import Image from 'next/image';
 import ProductCard from '@/components/ProductCard';
 import ScrollReveal from '@/components/ScrollReveal';
+import LiteYouTube from '@/components/LiteYouTube';
+import ZoomableImage from '@/components/ZoomableImage';
 import { ArrowLeft, MapPin, Phone, AtSign, MessageCircle } from 'lucide-react';
 import Link from 'next/link';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export default async function UMKMDetail({ params }: { params: any }) {
+interface PageProps {
+  params: Promise<{ id: string }>;
+}
+
+export default async function UMKMDetail({ params }: PageProps) {
   const resolvedParams = await params;
   const umkm = umkmData.find((u) => u.id === resolvedParams.id);
 
   if (!umkm) notFound();
+
+  const rawDigits = (umkm.whatsapp || umkm.phone || '').replace(/[^0-9]/g, '');
+  const cleanWaNumber = rawDigits.startsWith('0') ? '62' + rawDigits.slice(1) : rawDigits;
+  const hasValidContact = cleanWaNumber.length >= 8;
 
   return (
     <div className="bg-[#faf9f7] min-h-screen">
 
       {/* ── Cinematic Hero ────────────────────────────────────── */}
       <section className="relative min-h-[60vh] flex flex-col justify-end overflow-hidden">
-        <Image
+        <ZoomableImage
           src={umkm.imageUrl}
           alt={umkm.name}
+          caption={`${umkm.name} — ${umkm.address}`}
           fill
-          className="object-cover"
           priority
+          sizes="100vw"
+          className="object-cover"
+          containerClassName="absolute inset-0 w-full h-full"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-900/40 to-stone-900/10" />
-        <div className="absolute inset-0 bg-gradient-to-r from-stone-950/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/60 to-stone-900/20 pointer-events-none" />
 
-        {/* Back nav */}
-        <div className="absolute top-0 left-0 right-0 pt-24 px-5 sm:px-8 z-10">
-          <div className="max-w-7xl mx-auto">
-            <Link
-              href="/umkm"
-              className="inline-flex items-center gap-2 eyebrow text-stone-300 hover:text-white transition-colors group"
-            >
-              <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform" />
-              Kembali ke Katalog
-            </Link>
-          </div>
-        </div>
-
-        {/* Title overlay */}
-        <div className="relative max-w-7xl mx-auto w-full px-5 sm:px-8 pb-14 pt-40">
-          <span className="eyebrow text-emerald-400 block mb-3">{umkm.category}</span>
-          <h1 className="heading-hero text-stone-100 max-w-2xl">{umkm.name}</h1>
+        <div className="relative max-w-7xl mx-auto w-full px-5 sm:px-8 pb-14 pt-36">
+          <Link
+            href="/umkm"
+            className="inline-flex items-center gap-2 eyebrow text-emerald-400 hover:text-emerald-300 transition-colors mb-6 group cursor-pointer"
+          >
+            <ArrowLeft className="h-3.5 w-3.5 group-hover:-translate-x-1 transition-transform" />
+            Kembali ke Katalog
+          </Link>
+          <span className="eyebrow bg-emerald-900/80 text-emerald-300 px-3 py-1.5 inline-block mb-3">
+            {umkm.category}
+          </span>
+          <h1 className="heading-hero text-stone-100">{umkm.name}</h1>
           <p className="eyebrow text-stone-400 mt-4">{umkm.ownerName}</p>
         </div>
       </section>
@@ -66,6 +71,25 @@ export default async function UMKMDetail({ params }: { params: any }) {
               </div>
             </ScrollReveal>
 
+            {/* Video Documentation if available */}
+            {umkm.youtubeId && (
+              <ScrollReveal>
+                <div className="mb-16">
+                  <div className="flex items-center justify-between gap-4 mb-6 border-b border-stone-200 pb-4">
+                    <h2 className="heading-section text-stone-900">Dokumentasi Video Usaha</h2>
+                    <span className="eyebrow text-rose-500">Video Liputan</span>
+                  </div>
+                  <div className="border border-stone-200 bg-stone-900 overflow-hidden shadow-md">
+                    <LiteYouTube
+                      youtubeId={umkm.youtubeId}
+                      title={`Video Usaha ${umkm.name}`}
+                      aspectRatio="video"
+                    />
+                  </div>
+                </div>
+              </ScrollReveal>
+            )}
+
             {/* Products */}
             <ScrollReveal>
               <div className="flex items-center gap-4 mb-8 border-b border-stone-200 pb-4">
@@ -76,7 +100,7 @@ export default async function UMKMDetail({ params }: { params: any }) {
               {umkm.products.length > 0 ? (
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   {umkm.products.map((product) => (
-                    <ProductCard key={product.id} product={product} whatsappNumber={umkm.whatsapp} />
+                    <ProductCard key={product.id} product={product} whatsappNumber={cleanWaNumber} />
                   ))}
                 </div>
               ) : (
@@ -104,18 +128,26 @@ export default async function UMKMDetail({ params }: { params: any }) {
                 </div>
 
                 <div className="flex gap-3">
-                  <MapPin className="h-4 w-4 text-stone-500 mt-0.5 shrink-0" />
+                  <MapPin className="h-4 w-4 text-emerald-400 mt-0.5 shrink-0" />
                   <div>
                     <p className="text-stone-500 text-xs mb-0.5">Alamat</p>
-                    <p className="text-stone-300">{umkm.address}</p>
+                    <p className="text-stone-300 mb-1.5">{umkm.address}</p>
+                    <a
+                      href={umkm.mapsUrl || 'https://maps.app.goo.gl/rcLMD7fut89sNeT86'}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs text-emerald-400 hover:text-emerald-300 transition-colors font-medium border-b border-emerald-400/40 pb-0.5"
+                    >
+                      Buka di Google Maps ↗
+                    </a>
                   </div>
                 </div>
 
                 <div className="flex gap-3">
                   <Phone className="h-4 w-4 text-stone-500 mt-0.5 shrink-0" />
                   <div>
-                    <p className="text-stone-500 text-xs mb-0.5">Telepon</p>
-                    <p className="text-stone-300">{umkm.phone}</p>
+                    <p className="text-stone-500 text-xs mb-0.5">Telepon / Kontak</p>
+                    <p className="text-stone-300">{umkm.phone || 'Dapat dihubungi di lokasi'}</p>
                   </div>
                 </div>
 
@@ -130,15 +162,23 @@ export default async function UMKMDetail({ params }: { params: any }) {
                 )}
               </div>
 
-              <a
-                href={`https://wa.me/${umkm.whatsapp}?text=${encodeURIComponent(`Halo, saya melihat profil ${umkm.name} di katalog Candiyasan dan ingin bertanya lebih lanjut.`)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 w-full bg-emerald-800 text-stone-50 py-4 eyebrow hover:bg-emerald-700 transition-colors duration-300"
-              >
-                <MessageCircle className="h-4 w-4" />
-                Hubungi via WhatsApp
-              </a>
+              {hasValidContact ? (
+                <a
+                  href={`https://wa.me/${cleanWaNumber}?text=${encodeURIComponent(`Halo, saya melihat profil ${umkm.name} di katalog Candiyasan dan ingin bertanya lebih lanjut.`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 w-full bg-emerald-800 text-stone-50 py-4 eyebrow hover:bg-emerald-700 transition-colors duration-300 min-h-[44px]"
+                >
+                  <MessageCircle className="h-4 w-4" />
+                  Hubungi via WhatsApp
+                </a>
+              ) : (
+                <div className="border border-stone-800 bg-stone-950/50 p-4 text-center">
+                  <p className="text-stone-400 text-xs leading-relaxed">
+                    Kontak digital belum terdaftar. Silakan kunjungi alamat produsen secara langsung di Dusun terkait.
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         </div>

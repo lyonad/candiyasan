@@ -162,9 +162,11 @@ export default function Home() {
 
           {/* Asymmetric editorial grid */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 lg:gap-4">
-            <ScrollReveal className="lg:col-span-2">
-              <UMKMCard umkm={featured} size="large" />
-            </ScrollReveal>
+            {featured && (
+              <ScrollReveal className="lg:col-span-2">
+                <UMKMCard umkm={featured} size="large" />
+              </ScrollReveal>
+            )}
 
             <div className="flex flex-col gap-3 lg:gap-4">
               {rest.slice(0, 2).map((umkm, i) => (

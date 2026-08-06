@@ -21,6 +21,7 @@ export default function UMKMCard({ umkm, size = 'medium' }: UMKMCardProps) {
     <Link
       href={`/umkm/${umkm.id}`}
       className={`group relative block overflow-hidden bg-stone-800 ${heightMap[size]}`}
+      aria-label={`Lihat profil produsen ${umkm.name}`}
     >
       {/* Photo */}
       <Image

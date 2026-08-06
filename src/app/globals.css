@@ -21,16 +21,25 @@
 :root {
   --background: #faf9f7;
   --foreground: #1c1917;
+  --sat: env(safe-area-inset-top, 0px);
+  --sab: env(safe-area-inset-bottom, 0px);
 }
 
-/* ─── Smooth scroll ─── */
+/* ─── Cross-Browser & Viewport Resets ─── */
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   color: var(--foreground);
   background-color: var(--background);
+  overflow-x: hidden;
   @apply selection:bg-rose-200 selection:text-rose-950;
 }
 
@@ -95,8 +104,9 @@ body {
 .heading-hero {
   font-family: var(--font-serif);
   font-weight: 300;
-  font-size: 2.75rem;
+  font-size: 2.5rem;
   line-height: 1.08;
+  word-break: break-word;
 }
 @media (min-width: 640px) {
   .heading-hero { font-size: 3.75rem; }
@@ -108,8 +118,9 @@ body {
 .heading-section {
   font-family: var(--font-serif);
   font-weight: 300;
-  font-size: 2.25rem;
+  font-size: 2rem;
   line-height: 1.15;
+  word-break: break-word;
 }
 @media (min-width: 640px) {
   .heading-section { font-size: 3rem; }
@@ -118,13 +129,13 @@ body {
 .heading-card {
   font-family: var(--font-serif);
   font-weight: 400;
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   line-height: 1.25;
 }
 
 .body-lead {
   font-family: var(--font-sans);
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   line-height: 1.7;
 }
 
@@ -134,10 +145,33 @@ body {
   line-height: 1.6;
 }
 
-/* ─── Desktop responsive scale ─── */
+/* ─── Accessible Desktop scaling (percentage preserves user browser zoom settings) ─── */
 @media (min-width: 1024px) {
-  html { font-size: 13px; }
+  html { font-size: 87.5%; } /* ~14px base for balanced editorial proportion */
 }
 @media (min-width: 1536px) {
-  html { font-size: 15px; }
+  html { font-size: 93.75%; } /* ~15px base */
+}
+
+/* ─── Accessibility: Reduced Motion Support ─── */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .marquee-track {
+    animation: none !important;
+  }
+
+  .scroll-indicator {
+    animation: none !important;
+  }
 }

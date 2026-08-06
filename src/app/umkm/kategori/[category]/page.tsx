@@ -18,8 +18,11 @@ const CATEGORY_IMAGES: Record<string, string> = {
   'Agroindustri': 'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=600&q=80',
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export default async function UMKMCategory({ params }: { params: any }) {
+interface PageProps {
+  params: Promise<{ category: string }>;
+}
+
+export default async function UMKMCategory({ params }: PageProps) {
   const resolvedParams = await params;
 
   const actualCategory = CATEGORIES.find(c => createSlug(c) === resolvedParams.category);
