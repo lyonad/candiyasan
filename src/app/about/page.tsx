@@ -25,7 +25,7 @@ const FOCUS_POINTS = [
   },
 ];
 
-const META_TAGS = ['UNNES Giat 16', '2024 / 2025', 'Desa Candiyasan', 'Kec. Kertek', 'Kab. Wonosobo'];
+const META_TAGS = ['UNNES Giat 16', '2026', 'Desa Candiyasan', 'Kec. Kertek', 'Kab. Wonosobo'];
 
 export default function AboutPage() {
   return (

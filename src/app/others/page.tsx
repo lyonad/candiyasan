@@ -233,35 +233,115 @@ export default function OthersPage() {
           </ScrollReveal>
 
           {/* Members Grid */}
+          <style>{`
+            @keyframes matrix-fall {
+              0%   { transform: translateY(-100%); opacity: 0; }
+              10%  { opacity: 1; }
+              90%  { opacity: 0.6; }
+              100% { transform: translateY(400%); opacity: 0; }
+            }
+            .matrix-col {
+              position: absolute;
+              top: 0;
+              font-family: 'Courier New', monospace;
+              font-size: 11px;
+              color: rgba(34, 211, 238, 0.5);
+              animation: matrix-fall linear infinite;
+              user-select: none;
+              writing-mode: vertical-lr;
+              letter-spacing: 6px;
+            }
+          `}</style>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-24">
-            {members.map((member, i) => (
-              <ScrollReveal key={member.id} delay={i * 50}>
-                <div className="group bg-stone-950/60 border border-stone-800 p-5 rounded-lg hover:border-emerald-500 transition-all duration-300 h-full flex flex-col justify-between">
-                  <div>
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="relative w-16 h-16 rounded-full overflow-hidden bg-stone-800 border-2 border-stone-700 group-hover:border-emerald-400 transition-colors shrink-0 shadow-md">
-                        <ZoomableImage
-                          src={member.image}
-                          alt={member.name}
-                          caption={`${member.name} — ${member.role} (${member.prodi})`}
-                          fill
-                          sizes="64px"
-                          className="object-cover"
-                        />
+            {members.map((member, i) => {
+              const isDev = member.id === 'm7';
+              return (
+                <ScrollReveal key={member.id} delay={i * 50}>
+                  {isDev ? (
+                    <div className="group relative bg-stone-950/60 border border-stone-800 p-5 rounded-lg h-full flex flex-col justify-between overflow-hidden transition-all duration-500 hover:border-cyan-400 hover:shadow-[0_0_30px_rgba(34,211,238,0.2)] hover:bg-stone-950">
+
+                      {/* Matrix rain — visible on hover only */}
+                      <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 overflow-hidden rounded-lg" aria-hidden="true">
+                        {Array.from({ length: 10 }).map((_, col) => (
+                          <span
+                            key={col}
+                            className="matrix-col"
+                            style={{
+                              left: `${col * 10}%`,
+                              animationDelay: `${col * 0.18}s`,
+                              animationDuration: `${1.4 + (col % 3) * 0.45}s`,
+                            }}
+                          >
+                            {['1', '0', '<', '>', '{', '}', '/', ';', '=', '('][col]}
+                          </span>
+                        ))}
                       </div>
-                      <div>
-                        <span className="inline-block eyebrow text-emerald-400 bg-emerald-950/80 px-2 py-0.5 rounded text-[11px] mb-1">
-                          {member.role}
-                        </span>
-                        <p className="text-xs text-stone-400 uppercase tracking-wider">{member.faculty}</p>
+
+                      {/* Glowing top accent line */}
+                      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                      <div className="relative z-10">
+                        <div className="flex items-center gap-4 mb-4">
+                          <div className="relative w-16 h-16 rounded-full overflow-hidden bg-stone-800 border-2 border-stone-700 group-hover:border-cyan-400 group-hover:shadow-[0_0_16px_rgba(34,211,238,0.55)] transition-all duration-500 shrink-0">
+                            <ZoomableImage
+                              src={member.image}
+                              alt={member.name}
+                              caption={`${member.name} — ${member.role} (${member.prodi})`}
+                              fill
+                              unoptimized
+                              sizes="64px"
+                              className="object-cover group-hover:brightness-110 transition-all duration-500"
+                            />
+                          </div>
+                          <div>
+                            <span className="inline-block eyebrow px-2 py-0.5 rounded text-[11px] mb-1 transition-all duration-300 text-emerald-400 bg-emerald-950/80 group-hover:text-cyan-300 group-hover:bg-cyan-950/80">
+                              <span className="group-hover:hidden">{member.role}</span>
+                              <span className="hidden group-hover:inline font-mono">{'<'}/Web Dev{'>'}</span>
+                            </span>
+                            <p className="text-xs uppercase tracking-wider transition-colors duration-300 text-stone-400 group-hover:text-cyan-600">{member.faculty}</p>
+                          </div>
+                        </div>
+                        <h4 className="font-serif text-lg mb-1 transition-colors duration-300 text-stone-100 group-hover:text-cyan-300">
+                          {member.name}
+                          <span className="ml-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200 inline-block w-[2px] h-[0.9em] bg-cyan-400 align-middle animate-pulse" />
+                        </h4>
+                      </div>
+
+                      <div className="relative z-10 mt-2 border-t pt-2 transition-colors duration-300 border-stone-800/80 group-hover:border-cyan-900/60">
+                        <p className="text-xs text-stone-400 group-hover:hidden">{member.prodi}</p>
+                        <p className="hidden group-hover:block text-xs font-mono text-cyan-500 tracking-wide">Next.js · TypeScript · CSS</p>
                       </div>
                     </div>
-                    <h4 className="font-serif text-lg text-stone-100 mb-1 group-hover:text-emerald-300 transition-colors">{member.name}</h4>
-                  </div>
-                  <p className="text-xs text-stone-400 mt-2 border-t border-stone-800/80 pt-2">{member.prodi}</p>
-                </div>
-              </ScrollReveal>
-            ))}
+                  ) : (
+                    <div className="group bg-stone-950/60 border border-stone-800 p-5 rounded-lg hover:border-emerald-500 transition-all duration-300 h-full flex flex-col justify-between">
+                      <div>
+                        <div className="flex items-center gap-4 mb-4">
+                          <div className="relative w-16 h-16 rounded-full overflow-hidden bg-stone-800 border-2 border-stone-700 group-hover:border-emerald-400 transition-colors shrink-0 shadow-md">
+                            <ZoomableImage
+                              src={member.image}
+                              alt={member.name}
+                              caption={`${member.name} — ${member.role} (${member.prodi})`}
+                              fill
+                              unoptimized
+                              sizes="64px"
+                              className="object-cover"
+                            />
+                          </div>
+                          <div>
+                            <span className="inline-block eyebrow text-emerald-400 bg-emerald-950/80 px-2 py-0.5 rounded text-[11px] mb-1">
+                              {member.role}
+                            </span>
+                            <p className="text-xs text-stone-400 uppercase tracking-wider">{member.faculty}</p>
+                          </div>
+                        </div>
+                        <h4 className="font-serif text-lg text-stone-100 mb-1 group-hover:text-emerald-300 transition-colors">{member.name}</h4>
+                      </div>
+                      <p className="text-xs text-stone-400 mt-2 border-t border-stone-800/80 pt-2">{member.prodi}</p>
+                    </div>
+                  )}
+                </ScrollReveal>
+              );
+            })}
           </div>
 
           {/* DPL Section */}
@@ -287,9 +367,6 @@ export default function OthersPage() {
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-transparent to-transparent pointer-events-none" />
-                    <p className="absolute bottom-3 left-4 text-xs font-mono text-stone-200 pointer-events-none z-20">
-                      Tim UNNES Giat 16 bersama DPL
-                    </p>
                   </div>
                 </div>
               </div>
