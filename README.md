@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Website Direktori Industri & UMKM Desa Candiyasan
 
-## Getting Started
+Portal katalog digital dan informasi produsen industri lokal Desa Candiyasan, Kertek, Wonosobo. Dibangun menggunakan Next.js (App Router), TailwindCSS, TypeScript, dan performa tinggi yang dioptimalkan untuk Vercel.
 
-First, run the development server:
+---
+
+## 🚀 Cara Deploy ke Vercel
+
+### Opsi 1: Deploy Otomatis via GitHub (Sangat Direkomendasikan)
+
+1. **Push Proyek ke Repository GitHub**:
+   ```bash
+   git add .
+   git commit -m "Deploy siap Vercel"
+   git push origin main
+   ```
+
+2. **Hubungkan ke Vercel**:
+   - Buka [Vercel Dashboard](https://vercel.com/dashboard).
+   - Klik **"Add New..."** &rarr; **"Project"**.
+   - Pilih repository GitHub proyek `Proyek Website Desa Candiyasan v2`.
+   - Vercel akan secara otomatis mendeteksi Framework **Next.js**.
+
+3. **Deploy**:
+   - Klik tombol **"Deploy"**.
+   - Vercel akan menjalankan `npm run build` dan mempublikasikan website secara otomatis dengan domain HTTPS bawaan (misal: `candiyasan.vercel.app`).
+
+---
+
+### Opsi 2: Deploy Cepat via Vercel CLI
+
+Jika Anda memiliki Vercel CLI terpasang di komputer:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Login ke Vercel CLI
+npx vercel login
+
+# Jalankan deploy (pilih opsi default)
+npx vercel --prod
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Konfigurasi Vercel yang Telah Disiapkan
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **`next.config.ts`**:
+   - Mendukung Vercel Native Image Optimization (AVIF/WebP) untuk gambar internal dan domain eksternal (`images.unsplash.com`, `img.youtube.com`, `i.ytimg.com`).
+   - Prerendering Statis (SSG) 17 rute otomatis saat prapublikasi.
 
-## Learn More
+2. **`vercel.json`**:
+   - Pengaturan header keamanan bawaan (`X-Content-Type-Options`, `X-Frame-Options`, `X-XSS-Protection`, `Referrer-Policy`).
+   - Caching immutable untuk aset statis di `public/images/`.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 💻 Menjalankan Secara Lokal
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+# Install dependensi
+npm install
 
-## Deploy on Vercel
+# Jalankan dev server
+npm run dev
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Uji build produksi
+npm run build
+```
