@@ -29,6 +29,7 @@ export default function LiteYouTube({
           className="absolute inset-0 w-full h-full"
           src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0`}
           title={title}
+          loading="lazy"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         />
@@ -40,7 +41,7 @@ export default function LiteYouTube({
     <div
       className={`relative w-full ${
         aspectRatio === 'video' ? 'aspect-video' : 'h-full min-h-[260px]'
-      } bg-stone-900 overflow-hidden cursor-pointer group ${className}`}
+      } bg-stone-900 overflow-hidden cursor-pointer group focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:outline-none ${className}`}
       onClick={() => setIsPlaying(true)}
       role="button"
       tabIndex={0}
@@ -63,7 +64,7 @@ export default function LiteYouTube({
 
       {/* Play button */}
       <div className="absolute inset-0 flex items-center justify-center">
-        <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-emerald-900/90 text-stone-50 flex items-center justify-center shadow-xl backdrop-blur-sm group-hover:bg-emerald-700 group-hover:scale-110 transition-all duration-300">
+        <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-emerald-900/90 text-stone-50 flex items-center justify-center backdrop-blur-sm group-hover:bg-emerald-700 group-hover:scale-105 transition-all duration-300">
           <Play className="w-6 h-6 sm:w-7 sm:h-7 fill-current ml-1" />
         </div>
       </div>

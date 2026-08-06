@@ -20,9 +20,14 @@ export default function BackToTop() {
   }, []);
 
   const scrollToTop = () => {
+    const prefersReducedMotion =
+      typeof window !== 'undefined' &&
+      window.matchMedia &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
+      behavior: prefersReducedMotion ? 'auto' : 'smooth',
     });
   };
 
@@ -31,7 +36,8 @@ export default function BackToTop() {
   return (
     <button
       onClick={scrollToTop}
-      className="fixed bottom-6 right-6 z-40 bg-stone-900/90 hover:bg-emerald-700 text-stone-200 hover:text-white border border-stone-700/80 p-3 rounded-full shadow-2xl backdrop-blur-md transition-all duration-300 transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-emerald-400 cursor-pointer min-w-[48px] min-h-[48px] flex items-center justify-center group"
+      className="fixed right-6 z-40 bg-stone-900 hover:bg-emerald-700 text-stone-200 hover:text-white border border-stone-700 p-3 rounded-full backdrop-blur-md transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 cursor-pointer min-w-[48px] min-h-[48px] flex items-center justify-center group"
+      style={{ bottom: 'max(1.5rem, calc(env(safe-area-inset-bottom, 0px) + 1rem))' }}
       aria-label="Kembali ke atas halaman"
       title="Kembali ke atas"
     >

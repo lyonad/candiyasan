@@ -14,7 +14,13 @@ export default function CountUp({ target, className = '', duration = 2000, suffi
   const elementRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
-    if (typeof window === 'undefined' || !('IntersectionObserver' in window)) {
+    // Check reduced motion preference for accessibility
+    const prefersReducedMotion =
+      typeof window !== 'undefined' &&
+      window.matchMedia &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReducedMotion || typeof window === 'undefined' || !('IntersectionObserver' in window)) {
       setCount(target);
       return;
     }
@@ -78,5 +84,13 @@ export default function CountUp({ target, className = '', duration = 2000, suffi
     };
   }, [target, duration]);
 
-  return <span ref={elementRef} className={className}>{count}{suffix}</span>;
+  return (
+    <span
+      ref={elementRef}
+      className={className}
+      aria-label={`${target}${suffix}`}
+    >
+      {count}{suffix}
+    </span>
+  );
 }

@@ -41,12 +41,12 @@ export default function ProductCard({ product, whatsappNumber }: ProductCardProp
       </div>
       <div className="p-5 flex flex-col flex-grow">
         <h4 className="font-serif text-xl text-stone-900 mb-2 leading-snug group-hover:text-emerald-800 transition-colors">{product.name}</h4>
-        <p className="body-base text-stone-500 line-clamp-2 mb-5 flex-grow">{product.description}</p>
+        <p className="body-base text-stone-600 line-clamp-2 mb-5 flex-grow">{product.description}</p>
         <a
           href={waHref}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 w-full bg-emerald-900 text-stone-50 py-3 eyebrow hover:bg-emerald-800 transition-colors duration-300 min-h-[44px]"
+          className="flex items-center justify-center gap-2 w-full bg-emerald-900 text-stone-50 py-3 eyebrow hover:bg-emerald-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 transition-colors duration-300 min-h-[44px] rounded-sm"
           aria-label={`Pesan ${product.name} via WhatsApp`}
         >
           <MessageCircle className="h-3.5 w-3.5" />

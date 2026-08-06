@@ -1,6 +1,16 @@
 import Image from 'next/image';
+import type { Metadata } from 'next';
 import ScrollReveal from '@/components/ScrollReveal';
 import ZoomableImage from '@/components/ZoomableImage';
+
+export const metadata: Metadata = {
+  title: 'Latar Belakang Program & Ekosistem Industri',
+  description: 'Inisiatif digitalisasi dan pemetaan potensi industri manufaktur & agroindustri lokal Desa Candiyasan oleh UNNES Giat 16.',
+  openGraph: {
+    title: 'Latar Belakang Program — Candiyasan',
+    description: 'Inisiatif digitalisasi dan pemetaan industri lokal Desa Candiyasan.',
+  },
+};
 
 const FOCUS_POINTS = [
   {
@@ -74,13 +84,13 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 mb-20 lg:mb-28">
               {/* Left: Heading */}
               <div className="lg:col-span-4">
-                <p className="eyebrow text-rose-500 mb-4">Mengapa Ini Penting</p>
+                <p className="eyebrow text-rose-600 mb-4">Mengapa Ini Penting</p>
                 <h2 className="heading-section text-stone-900">
                   Kapasitas Besar,<br />Jangkauan<br />Terbatas
                 </h2>
               </div>
               {/* Right: Body */}
-              <div className="lg:col-span-7 lg:col-start-6 lg:pt-3 space-y-5 body-lead text-stone-500">
+              <div className="lg:col-span-7 lg:col-start-6 lg:pt-3 space-y-5 body-lead text-stone-600">
                 <p>
                   Desa Candiyasan menaungi sentra produksi unggulan — dari agroindustri yang mengolah hasil panen lokal hingga industri garmen dan manufaktur kriya berskala rumahan.
                 </p>
@@ -116,7 +126,7 @@ export default function AboutPage() {
 
           {/* Editorial numbered manifesto */}
           <div className="max-w-4xl mx-auto lg:mx-0">
-            <p className="eyebrow text-rose-500 mb-10">Fokus Program</p>
+            <p className="eyebrow text-rose-600 mb-10">Fokus Program</p>
             <div className="divide-y divide-stone-100">
               {FOCUS_POINTS.map(({ num, title, desc }, i) => (
                 <ScrollReveal key={num} delay={i * 70}>
@@ -130,7 +140,7 @@ export default function AboutPage() {
                     {/* Content */}
                     <div className="col-span-9 sm:col-span-10 pt-1 sm:pt-2">
                       <h3 className="font-serif text-2xl sm:text-3xl text-stone-900 mb-3">{title}</h3>
-                      <p className="body-base text-stone-500 max-w-xl">{desc}</p>
+                      <p className="body-base text-stone-600 max-w-xl">{desc}</p>
                     </div>
                   </div>
                 </ScrollReveal>
@@ -145,7 +155,7 @@ export default function AboutPage() {
       <section className="bg-stone-900 relative overflow-hidden py-24 lg:py-32 px-5 sm:px-8">
         <div className="absolute inset-0 batik-accent opacity-10" />
         {/* Watermark word */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none" aria-hidden="true">
           <span className="font-serif font-bold text-white leading-none select-none"
             style={{ fontSize: '18vw', opacity: 0.03 }}>
             DESA
@@ -157,14 +167,14 @@ export default function AboutPage() {
             <h2 className="heading-section text-stone-100 mb-6">
               Ini Bukan Pengganti<br />Website Utama Desa
             </h2>
-            <p className="text-stone-400 text-base leading-relaxed mb-10 max-w-xl mx-auto">
+            <p className="text-stone-300 text-base leading-relaxed mb-10 max-w-xl mx-auto">
               Situs ini difokuskan sepenuhnya pada katalog produksi. Untuk keperluan administratif, birokrasi, dan berita desa, silakan kunjungi portal resmi.
             </p>
             <a
               href="https://candiyasan-kertek.desa.id/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 border border-stone-500/40 text-stone-200 px-8 py-4 hover:bg-stone-100/10 transition-colors eyebrow"
+              className="inline-flex items-center gap-2 border border-stone-500/40 text-stone-100 px-8 py-4 hover:bg-stone-100/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 transition-colors eyebrow rounded-sm"
             >
               candiyasan-kertek.desa.id ↗
             </a>

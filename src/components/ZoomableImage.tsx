@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import Image, { ImageProps } from 'next/image';
 import { X, ZoomIn } from 'lucide-react';
@@ -22,23 +22,31 @@ export default function ZoomableImage({
 }: ZoomableImageProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const triggerRef = useRef<HTMLDivElement>(null);
+  const closeBtnRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  const openModal = useCallback((e: React.MouseEvent) => {
+  const openModal = useCallback((e?: React.MouseEvent | React.KeyboardEvent) => {
     if (!enableZoom) return;
-    e.preventDefault();
-    e.stopPropagation();
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
     setIsOpen(true);
   }, [enableZoom]);
 
   const closeModal = useCallback(() => {
     setIsOpen(false);
+    // Restore focus to trigger element for screen readers & keyboard navigation
+    setTimeout(() => {
+      triggerRef.current?.focus();
+    }, 50);
   }, []);
 
-  // Handle ESC key to close modal
+  // Handle ESC key and focus trapping inside modal
   useEffect(() => {
     if (!isOpen) return;
 
@@ -51,6 +59,11 @@ export default function ZoomableImage({
     const originalOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
     window.addEventListener('keydown', handleKeyDown);
+
+    // Auto-focus close button when modal opens
+    setTimeout(() => {
+      closeBtnRef.current?.focus();
+    }, 50);
 
     return () => {
       document.body.style.overflow = originalOverflow;
@@ -69,17 +82,19 @@ export default function ZoomableImage({
   return (
     <>
       <div
-        className={`${baseContainerClass} ${enableZoom ? 'cursor-pointer' : ''} ${containerClassName}`}
+        ref={triggerRef}
+        className={`${baseContainerClass} ${enableZoom ? 'cursor-pointer focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:outline-none' : ''} ${containerClassName}`}
         onClick={openModal}
         role={enableZoom ? 'button' : undefined}
         tabIndex={enableZoom ? 0 : undefined}
+        aria-haspopup={enableZoom ? 'dialog' : undefined}
+        aria-expanded={enableZoom ? isOpen : undefined}
         onKeyDown={(e) => {
           if (enableZoom && (e.key === 'Enter' || e.key === ' ')) {
-            e.preventDefault();
-            setIsOpen(true);
+            openModal(e);
           }
         }}
-        aria-label={enableZoom ? `Perbesar gambar ${alt}` : undefined}
+        aria-label={enableZoom ? `Perbesar gambar: ${alt || caption || 'Pratinjau'}` : undefined}
       >
         <Image
           src={src}
@@ -90,7 +105,7 @@ export default function ZoomableImage({
 
         {enableZoom && (
           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100 pointer-events-none z-10">
-            <span className="bg-stone-900/85 backdrop-blur-sm text-white p-2.5 rounded-full shadow-lg transform scale-90 group-hover:scale-100 transition-all duration-300">
+            <span className="bg-stone-900/85 backdrop-blur-sm text-white p-2.5 rounded-full transform scale-90 group-hover:scale-100 transition-all duration-300">
               <ZoomIn className="w-5 h-5 text-emerald-400" />
             </span>
           </div>
@@ -104,12 +119,13 @@ export default function ZoomableImage({
           onClick={closeModal}
           role="dialog"
           aria-modal="true"
-          aria-label={alt}
+          aria-label={caption || alt || 'Tampilan pembesar gambar'}
         >
           {/* Close button */}
           <button
+            ref={closeBtnRef}
             onClick={closeModal}
-            className="absolute top-4 right-4 sm:top-6 sm:right-6 text-stone-300 hover:text-white bg-stone-900/80 hover:bg-stone-800 border border-stone-700 p-3 rounded-full transition-all duration-200 z-50 focus:outline-none focus:ring-2 focus:ring-emerald-400 cursor-pointer shadow-lg"
+            className="absolute top-4 right-4 sm:top-6 sm:right-6 text-stone-300 hover:text-white bg-stone-900/80 hover:bg-stone-800 border border-stone-700 p-3 rounded-full transition-colors duration-200 z-50 focus:outline-none focus:ring-2 focus:ring-emerald-400 cursor-pointer min-w-[48px] min-h-[48px] flex items-center justify-center"
             aria-label="Tutup tampilan gambar"
           >
             <X className="w-6 h-6" />

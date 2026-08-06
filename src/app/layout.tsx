@@ -82,7 +82,7 @@ export default function RootLayout({
       <body className="font-sans bg-[#faf9f7] text-stone-900 min-h-screen flex flex-col antialiased">
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2.5 focus:bg-emerald-800 focus:text-white focus:rounded-md focus:shadow-2xl focus:outline-none focus:ring-2 focus:ring-white eyebrow text-xs"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[99999] focus:px-5 focus:py-3 focus:bg-emerald-900 focus:text-white focus:rounded-md focus:outline-none focus:ring-4 focus:ring-emerald-400 eyebrow text-xs"
         >
           Lompati ke konten utama
         </a>

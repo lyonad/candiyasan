@@ -1,6 +1,7 @@
 "use client";
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
@@ -64,7 +65,7 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-500 border-b ${
         scrolled
-          ? 'bg-[#faf9f7]/95 backdrop-blur-md shadow-sm border-stone-200/50'
+          ? 'bg-[#faf9f7]/95 backdrop-blur-md border-stone-200/60'
           : 'bg-transparent border-transparent'
       }`}
       role="navigation"
@@ -74,15 +75,26 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-20">
 
           {/* Logo */}
-          <Link href="/" className="group flex flex-col leading-none" aria-label="Beranda Candiyasan">
-            <span className={`font-serif text-[1.6rem] tracking-tight transition-colors duration-300 ${
-              scrolled ? 'text-stone-900 group-hover:text-emerald-800' : 'text-stone-100 group-hover:text-emerald-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]'
-            }`}>
-              Candiyasan
-            </span>
-            <span className={`eyebrow mt-0.5 ${scrolled ? 'text-emerald-700' : 'text-emerald-400 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]'}`}>
-              Industri Lokal
-            </span>
+          <Link href="/" className="group flex items-center gap-3" aria-label="Beranda Candiyasan">
+            <Image
+              src="/images/elemen/LOGO GIAT 16 Desa Candiyasan.png"
+              alt="Logo UNNES Giat 16 Desa Candiyasan"
+              width={40}
+              height={40}
+              className="w-10 h-10 object-contain transition-transform duration-300 group-hover:scale-105"
+              unoptimized
+              priority
+            />
+            <div className="flex flex-col leading-none">
+              <span className={`font-serif text-[1.55rem] tracking-tight transition-colors duration-300 ${
+                scrolled ? 'text-stone-900 group-hover:text-emerald-800' : 'text-stone-100 group-hover:text-emerald-300'
+              }`}>
+                Candiyasan
+              </span>
+              <span className={`eyebrow mt-0.5 ${scrolled ? 'text-emerald-700' : 'text-emerald-400'}`}>
+                Industri Lokal
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Nav */}
@@ -93,12 +105,12 @@ export default function Navbar() {
                 <Link
                   key={href}
                   href={href}
-                  className={`eyebrow transition-colors duration-200 relative py-2 after:absolute after:bottom-[-3px] after:left-0 after:h-[1px] after:bg-rose-400 after:transition-all ${
+                  className={`eyebrow transition-colors duration-200 relative py-2 rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 after:absolute after:bottom-[-3px] after:left-0 after:h-[1px] after:bg-rose-400 after:transition-all ${
                     active ? 'after:w-full' : 'after:w-0 hover:after:w-full'
                   } ${
                     useDarkText
-                      ? active ? 'text-stone-900' : 'text-stone-500 hover:text-stone-900'
-                      : active ? 'text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]' : 'text-stone-200 hover:text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]'
+                      ? active ? 'text-stone-900 font-bold' : 'text-stone-600 hover:text-stone-950'
+                      : active ? 'text-white font-bold' : 'text-stone-200 hover:text-white'
                   }`}
                   aria-current={active ? 'page' : undefined}
                 >
@@ -106,24 +118,12 @@ export default function Navbar() {
                 </Link>
               );
             })}
-            <a
-              href="https://candiyasan-kertek.desa.id/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`eyebrow px-5 py-2.5 transition-colors duration-200 ${
-                useDarkText
-                  ? 'bg-emerald-900 text-stone-50 hover:bg-emerald-800'
-                  : 'bg-stone-100/20 text-stone-100 border border-stone-100/30 hover:bg-stone-100/30 backdrop-blur-sm shadow-[0_4px_12px_rgba(0,0,0,0.5)] drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]'
-              }`}
-            >
-              Web Desa ↗
-            </a>
           </div>
 
           {/* Mobile Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={`md:hidden p-2 rounded-sm -mr-2 min-w-[44px] min-h-[44px] flex items-center justify-center ${useDarkText ? 'text-stone-800' : 'text-stone-200'}`}
+            className={`md:hidden p-2 rounded -mr-2 min-w-[44px] min-h-[44px] flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 ${useDarkText ? 'text-stone-800' : 'text-stone-100'}`}
             aria-label={isOpen ? "Tutup menu navigasi" : "Buka menu navigasi"}
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
@@ -137,14 +137,15 @@ export default function Navbar() {
       {isOpen && (
         <div
           id="mobile-menu"
-          className="md:hidden bg-[#faf9f7] border-t border-stone-100 shadow-xl max-h-[calc(100vh-5rem)] overflow-y-auto"
+          className="md:hidden bg-[#faf9f7] border-t border-b border-stone-200 max-h-[calc(100vh-5rem)] overflow-y-auto"
+          style={{ paddingBottom: 'max(1.5rem, env(safe-area-inset-bottom, 0px))' }}
         >
           <div className="px-6 pt-6 pb-10 flex flex-col gap-6">
             {NAV_LINKS.map(({ href, label }) => (
               <Link
                 key={href}
                 href={href}
-                className={`font-serif text-3xl py-1 transition-colors ${
+                className={`font-serif text-3xl py-1 transition-colors rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 ${
                   isActive(href) ? 'text-emerald-800 font-medium' : 'text-stone-800 hover:text-emerald-800'
                 }`}
                 onClick={() => setIsOpen(false)}
@@ -153,17 +154,6 @@ export default function Navbar() {
                 {label}
               </Link>
             ))}
-            <div className="border-t border-stone-200 pt-6">
-              <a
-                href="https://candiyasan-kertek.desa.id/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="eyebrow text-emerald-800 border border-emerald-800/40 px-5 py-3.5 block text-center hover:bg-emerald-800 hover:text-white transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Kunjungi Web Utama Desa ↗
-              </a>
-            </div>
           </div>
         </div>
       )}

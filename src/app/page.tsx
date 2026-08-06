@@ -7,14 +7,14 @@ import ScrollReveal from '@/components/ScrollReveal';
 import CountUp from '@/components/CountUp';
 
 const TICKER_ITEMS = [
-  'Kopi Arabika Sindoro',
-  'Carica Wonosobo',
-  'Kerajinan Bambu',
-  'Konveksi Garmen',
-  'Industri Lokal',
-  'Desa Candiyasan',
-  'Lereng Sindoro',
-  'Anyaman Tradisional',
+  'Kopi Arabika Nastiti',
+  'Cimoring Jurangjero',
+  'Teh Hijau Candiyasan',
+  'Pabrik Tahu Jurangjero',
+  'Kuliner Nasi Jagung',
+  'Mitra Mandiri Farm',
+  'Industri Lokal Candiyasan',
+  'Lereng Gunung Sindoro',
 ];
 
 export default function Home() {
@@ -53,14 +53,14 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/umkm"
-                className="group inline-flex items-center gap-3 bg-emerald-800 text-stone-50 px-8 py-4 hover:bg-emerald-700 transition-colors duration-300"
+                className="group inline-flex items-center gap-3 bg-emerald-800 text-stone-50 px-8 py-4 hover:bg-emerald-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 transition-colors duration-300 rounded-sm"
               >
                 <span className="eyebrow">Lihat Katalog</span>
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
                 href="/about"
-                className="inline-flex items-center gap-3 border border-stone-400/40 text-stone-200 px-8 py-4 hover:bg-stone-100/10 hover:text-white transition-colors duration-300"
+                className="inline-flex items-center gap-3 border border-stone-400/40 text-stone-200 px-8 py-4 hover:bg-stone-100/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 transition-colors duration-300 rounded-sm"
               >
                 <span className="eyebrow">Latar Belakang</span>
               </Link>
@@ -73,23 +73,23 @@ export default function Home() {
               <p className="font-serif italic text-stone-300 text-xl leading-snug">
                 &ldquo;Kualitas yang berbicara<br />sendiri.&rdquo;
               </p>
-              <p className="eyebrow text-stone-500 mt-2">Wonosobo, Jawa Tengah</p>
+              <p className="eyebrow text-stone-400 mt-2">Wonosobo, Jawa Tengah</p>
             </div>
           </div>
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 scroll-indicator">
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 scroll-indicator" aria-hidden="true">
           <ArrowDown className="h-5 w-5 text-stone-400" />
         </div>
       </section>
 
       {/* ── MARQUEE TICKER ─────────────────────────────────────────── */}
-      <div className="overflow-hidden border-b border-stone-200 bg-stone-50 py-4 select-none">
+      <div className="overflow-hidden border-b border-stone-200 bg-stone-50 py-4 select-none" aria-label="Sorotan Produk Unggulan">
         <div className="flex whitespace-nowrap marquee-track">
           {[...TICKER_ITEMS, ...TICKER_ITEMS].map((item, i) => (
             <span key={i} className="inline-flex items-center gap-6 px-8">
-              <span className="eyebrow text-stone-500 tracking-widest">{item}</span>
+              <span className="eyebrow text-stone-600 tracking-widest">{item}</span>
               <span className="text-rose-400 text-sm font-light">·</span>
             </span>
           ))}
@@ -97,7 +97,7 @@ export default function Home() {
       </div>
 
       {/* ── STATS BAR ─────────────────────────────────────────────── */}
-      <section className="bg-stone-900 text-stone-300">
+      <section className="bg-stone-900 text-stone-300" aria-label="Statistik Industri Desa Candiyasan">
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
           <div className="grid grid-cols-3 divide-x divide-stone-800">
             {[
@@ -111,7 +111,7 @@ export default function Home() {
                   suffix={suffix}
                   className="font-serif text-5xl sm:text-7xl lg:text-8xl text-stone-100 leading-none"
                 />
-                <span className="eyebrow text-stone-500 mt-4 text-center">{label}</span>
+                <span className="eyebrow text-stone-400 mt-4 text-center">{label}</span>
               </div>
             ))}
           </div>
@@ -123,12 +123,12 @@ export default function Home() {
         <ScrollReveal>
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
             <div className="lg:col-span-4">
-              <p className="eyebrow text-rose-500 mb-4">Tentang Direktori</p>
+              <p className="eyebrow text-rose-600 mb-4">Tentang Direktori</p>
               <h2 className="heading-section text-stone-900">
                 Dari Lereng<br />Sindoro, ke<br />Pasar Nasional
               </h2>
             </div>
-            <div className="lg:col-span-7 lg:col-start-6 lg:pt-3 space-y-5 body-lead text-stone-500">
+            <div className="lg:col-span-7 lg:col-start-6 lg:pt-3 space-y-5 body-lead text-stone-600">
               <p>
                 Desa Candiyasan, Kecamatan Kertek, Kabupaten Wonosobo — sebuah desa di lereng Gunung Sindoro yang menyimpan potensi industri luar biasa, dari kopi arabika hingga konveksi garmen.
               </p>
@@ -147,12 +147,12 @@ export default function Home() {
           <ScrollReveal>
             <div className="flex items-end justify-between mb-12 border-b border-stone-200 pb-6">
               <div>
-                <p className="eyebrow text-rose-500 mb-2">Pilihan Editor</p>
+                <p className="eyebrow text-rose-600 mb-2">Pilihan Editor</p>
                 <h2 className="heading-section text-stone-900">Produsen Unggulan</h2>
               </div>
               <Link
                 href="/umkm"
-                className="hidden sm:inline-flex items-center gap-2 eyebrow text-emerald-800 hover:text-rose-600 transition-colors group"
+                className="hidden sm:inline-flex items-center gap-2 eyebrow text-emerald-800 hover:text-rose-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded p-1 transition-colors group"
               >
                 Lihat Semua
                 <span className="h-px w-6 bg-current group-hover:w-10 transition-all duration-300" />
@@ -189,7 +189,7 @@ export default function Home() {
           )}
 
           <div className="mt-10 flex sm:hidden justify-center">
-            <Link href="/umkm" className="eyebrow text-emerald-800 border-b border-emerald-800 pb-1">
+            <Link href="/umkm" className="eyebrow text-emerald-800 border-b border-emerald-800 pb-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500">
               Lihat Semua Produsen
             </Link>
           </div>
@@ -200,7 +200,7 @@ export default function Home() {
       <section className="relative overflow-hidden bg-emerald-950 py-28 lg:py-36 px-5 sm:px-8">
         <div className="absolute inset-0 batik-accent opacity-10" />
         {/* Giant watermark */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none" aria-hidden="true">
           <span className="font-serif text-[18vw] font-bold text-white opacity-[0.03] leading-none select-none tracking-tighter">
             LOKAL
           </span>
@@ -212,14 +212,14 @@ export default function Home() {
             <h2 className="heading-section text-stone-100 mb-6">
               Anda Seorang Produsen Lokal?
             </h2>
-            <p className="text-stone-400 text-lg leading-relaxed mb-10 max-w-xl mx-auto">
+            <p className="text-stone-300 text-lg leading-relaxed mb-10 max-w-xl mx-auto">
               Daftarkan usaha Anda ke dalam direktori digital desa dan jangkau pembeli lebih luas tanpa biaya apapun.
             </p>
             <a
               href="https://candiyasan-kertek.desa.id/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 border border-stone-300/40 text-stone-100 px-8 py-4 hover:bg-stone-100/10 transition-colors"
+              className="inline-flex items-center gap-3 border border-stone-300/40 text-stone-100 px-8 py-4 hover:bg-stone-100/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 transition-colors rounded-sm"
             >
               <span className="eyebrow">Hubungi Perangkat Desa ↗</span>
             </a>

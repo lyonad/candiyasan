@@ -165,7 +165,7 @@ body {
   html { font-size: 93.75%; } /* ~15px base */
 }
 
-/* ─── Accessibility: Reduced Motion Support ─── */
+/* ─── Accessibility: Reduced Motion Support (WCAG 2.1 AAA) ─── */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto !important;
@@ -177,6 +177,7 @@ body {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
   }
 
   .marquee-track {
@@ -185,5 +186,59 @@ body {
 
   .scroll-indicator {
     animation: none !important;
+  }
+
+  .matrix-col {
+    animation: none !important;
+    display: none !important;
+  }
+}
+
+/* ─── Accessibility: High Contrast Mode / Windows Forced Colors ─── */
+@media (forced-colors: active) {
+  :focus-visible {
+    outline: 3px solid Highlight !important;
+    outline-offset: 3px !important;
+  }
+
+  .eyebrow,
+  .heading-hero,
+  .heading-section,
+  .heading-card {
+    forced-color-adjust: auto;
+  }
+
+  button,
+  a {
+    forced-color-adjust: auto;
+  }
+}
+
+/* ─── Compatibility: Print Stylesheet ─── */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  nav,
+  footer,
+  #mobile-menu,
+  .scroll-indicator,
+  .marquee-track,
+  .matrix-col,
+  button[aria-label="Kembali ke atas halaman"] {
+    display: none !important;
+  }
+
+  .heading-hero,
+  .heading-section,
+  .heading-card {
+    color: #000000 !important;
+  }
+
+  a {
+    text-decoration: underline !important;
+    color: #000000 !important;
   }
 }

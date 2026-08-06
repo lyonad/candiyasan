@@ -1,7 +1,17 @@
 import Image from 'next/image';
+import type { Metadata } from 'next';
 import ScrollReveal from '@/components/ScrollReveal';
 import LiteYouTube from '@/components/LiteYouTube';
 import ZoomableImage from '@/components/ZoomableImage';
+
+export const metadata: Metadata = {
+  title: 'Dokumentasi, Galeri Program & Tim',
+  description: 'Galeri foto kegiatan, dokumentasi video usaha & kesehatan, peta program kerja, serta profil tim pengabdi UNNES Giat 16 di Desa Candiyasan.',
+  openGraph: {
+    title: 'Dokumentasi & Tim — Candiyasan',
+    description: 'Dokumentasi video, galeri kegiatan pengabdian, dan profil tim UNNES Giat 16 Desa Candiyasan.',
+  },
+};
 
 export default function OthersPage() {
   const videos = [
@@ -44,17 +54,17 @@ export default function OthersPage() {
   ];
 
   const members = [
-    { id: 'm1',  name: 'Rayhan Raynata Marton',         prodi: 'S1 Manajemen',                                    faculty: 'FE',    role: 'Kormades',        image: '/images/tim/Rayhan.jpg' },
+    { id: 'm1',  name: 'Rayhan Raynata Marton',         prodi: 'S1 Manajemen',                                    faculty: 'FEB',   role: 'Kormades',        image: '/images/tim/Rayhan.jpg' },
     { id: 'm2',  name: 'Damar Maulana Ramadhan',        prodi: 'S1 Pendidikan Jasmani, Kesehatan, dan Rekreasi', faculty: 'FIK',   role: 'Wakil Kormades',  image: '/images/tim/Damar.jpg' },
-    { id: 'm3',  name: 'Tazhafina Klarisa',             prodi: 'S1 Ilmu Politik',                                 faculty: 'FIS',   role: 'Sekretaris',      image: '/images/tim/Klarisa.jpg' },
-    { id: 'm4',  name: 'Salsabila Zain Anisah',         prodi: 'S1 Akuntansi',                                    faculty: 'FE',    role: 'Bendahara',       image: '/images/tim/Zain.jpg' },
-    { id: 'm5',  name: 'Deswita Maharani',              prodi: 'S1 Manajemen',                                    faculty: 'FE',    role: 'Humas',           image: '/images/tim/Deswita.jpg' },
-    { id: 'm6',  name: 'Fazarani Hasnan Afisah',        prodi: 'S1 Ilmu Politik',                                 faculty: 'FIS',   role: 'Humas',           image: '/images/tim/Fazarani.jpg' },
+    { id: 'm3',  name: 'Tazhafina Klarisa',             prodi: 'S1 Ilmu Politik',                                 faculty: 'FISIP', role: 'Sekretaris',      image: '/images/tim/Klarisa.jpg' },
+    { id: 'm4',  name: 'Salsabila Zain Anisah',         prodi: 'S1 Akuntansi',                                    faculty: 'FEB',   role: 'Bendahara',       image: '/images/tim/Zain.jpg' },
+    { id: 'm5',  name: 'Deswita Maharani',              prodi: 'S1 Manajemen',                                    faculty: 'FEB',   role: 'Humas',           image: '/images/tim/Deswita.jpg' },
+    { id: 'm6',  name: 'Fazarani Hasnan Afisah',        prodi: 'S1 Ilmu Politik',                                 faculty: 'FISIP', role: 'Humas',           image: '/images/tim/Fazarani.jpg' },
     { id: 'm7',  name: 'Lyon Ambrosio Djuanda',         prodi: 'S1 Teknik Informatika',                           faculty: 'FMIPA', role: 'PDD',             image: '/images/tim/Lyon.jpg' },
     { id: 'm8',  name: 'Anisa Yulina Rahmawati',        prodi: 'S1 Pendidikan IPA',                               faculty: 'FMIPA', role: 'PDD',             image: '/images/tim/Anisa.jpg' },
     { id: 'm9',  name: 'Zalfa Shofiyatun Nabila',       prodi: 'S1 Pendidikan Seni Rupa',                         faculty: 'FBS',   role: 'PDD',             image: '/images/tim/Zalfa.jpg' },
     { id: 'm10', name: 'Adnin Djiogasa Harahap',        prodi: 'S1 Teknik Mesin',                                 faculty: 'FT',    role: 'Logistik',        image: '/images/tim/Adnin.jpg' },
-    { id: 'm11', name: 'Nisfa Laila Kamila',            prodi: 'S1 Pendidikan Guru Sekolah Dasar',                faculty: 'FIP',   role: 'Logistik',        image: '/images/tim/Nisfa.jpg' },
+    { id: 'm11', name: 'Nisfa Laila Kamila',            prodi: 'S1 Pendidikan Guru Sekolah Dasar',                faculty: 'FIPP',  role: 'Logistik',        image: '/images/tim/Nisfa.jpg' },
   ];
 
   const [featuredVideo, ...restVideos] = videos;
@@ -63,20 +73,21 @@ export default function OthersPage() {
     <div className="bg-[#faf9f7] min-h-screen">
 
       {/* ── Cinematic Full-Bleed Hero ──────────────────────────── */}
-      <section className="relative min-h-[70vh] flex flex-col justify-end overflow-hidden">
+      <section className="relative min-h-[88vh] lg:min-h-[92vh] flex flex-col justify-end overflow-hidden">
         <ZoomableImage
-          src="/images/tim/Foto Bersama DPL.jpeg"
-          alt="Tim UNNES Giat 16 Desa Candiyasan bersama DPL"
-          caption="Foto Bersama Mahasiswa UNNES Giat 16 Desa Candiyasan dengan DPL Dr. Drs. Cahyo Yuwono, M.Pd."
+          src="/images/tim/Foto Bersama Perangkat Desa Candiyasan.jpg"
+          alt="Tim UNNES Giat 16 Desa Candiyasan bersama Perangkat Desa"
+          caption="Foto Bersama Mahasiswa UNNES Giat 16 Candiyasan dengan Perangkat Desa Candiyasan"
           fill
+          unoptimized
           sizes="100vw"
-          className="object-cover"
+          className="object-cover object-center"
           containerClassName="absolute inset-0 w-full h-full"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-900/65 to-stone-900/25 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-900/60 to-stone-900/20 pointer-events-none" />
 
-        <div className="relative max-w-7xl mx-auto w-full px-5 sm:px-8 pb-16 pt-40">
+        <div className="relative max-w-7xl mx-auto w-full px-5 sm:px-8 pb-20 sm:pb-24 pt-44 sm:pt-52">
           <p className="eyebrow text-emerald-400 mb-6">UNNES Giat 16 — Desa Candiyasan</p>
           <h1 className="heading-hero text-stone-100 max-w-4xl mb-6">
             Dokumentasi &amp;<br />
@@ -91,9 +102,9 @@ export default function OthersPage() {
               href="https://www.instagram.com/giat16.desacandiyasan/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-xs font-medium bg-rose-500/10 hover:bg-rose-500/20 text-rose-300 hover:text-rose-200 px-4 py-2.5 rounded-full border border-rose-500/30 transition-all shadow-sm backdrop-blur-sm"
+              className="inline-flex items-center gap-2 text-xs font-medium bg-white/10 hover:bg-white/20 text-stone-200 hover:text-white px-4 py-2.5 rounded-full border border-white/20 hover:border-white/40 transition-all backdrop-blur-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
             >
-              <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 fill-current text-stone-200" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
               </svg>
               <span>Instagram @giat16.desacandiyasan ↗</span>
@@ -102,9 +113,9 @@ export default function OthersPage() {
               href="https://www.tiktok.com/@unnesgiat16.desaca?is_from_webapp=1&sender_device=pc"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-xs font-medium bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 hover:text-cyan-200 px-4 py-2.5 rounded-full border border-cyan-500/30 transition-all shadow-sm backdrop-blur-sm"
+              className="inline-flex items-center gap-2 text-xs font-medium bg-white/10 hover:bg-white/20 text-stone-200 hover:text-white px-4 py-2.5 rounded-full border border-white/20 hover:border-white/40 transition-all backdrop-blur-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
             >
-              <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 fill-current text-stone-200" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.29 0 .56.04.83.1v-3.54a6.34 6.34 0 0 0-.83-.05 6.34 6.34 0 1 0 6.34 6.34V9.33a8.16 8.16 0 0 0 4.77 1.53v-3.4a4.85 4.85 0 0 1-1-.77z"/>
               </svg>
               <span>TikTok @unnesgiat16.desaca ↗</span>
@@ -169,70 +180,420 @@ export default function OthersPage() {
       </section>
 
       {/* ── Photo Gallery Section ─────────────────────────────────── */}
-      <section className="py-20 px-5 sm:px-8 bg-stone-100/70 border-y border-stone-200/80">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-24 px-5 sm:px-8 bg-[#f5f3ef] border-y border-stone-200/80">
+        <div className="max-w-7xl mx-auto space-y-20">
+
+          {/* Section Header */}
           <ScrollReveal>
-            <div className="mb-14">
+            <div className="max-w-3xl">
               <p className="eyebrow text-emerald-700 mb-3">Dokumentasi Momen</p>
-              <h2 className="heading-section text-stone-900">Galeri Foto Kegiatan</h2>
+              <h2 className="heading-section text-stone-900 mb-4">Galeri Foto Kegiatan</h2>
+              <p className="body-lead text-stone-600">
+                Dokumentasi rangkaian pengabdian mahasiswa UNNES Giat 16 di Desa Candiyasan — mencakup koordinasi pemerintahan desa, pendampingan pendidikan, workshop kreativitas anak, hingga pelatihan kesehatan kelompok tani.
+              </p>
             </div>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
-            {/* Kepsek & Guru Photo Card */}
-            <ScrollReveal delay={100}>
-              <div className="bg-white border border-stone-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full group">
-                <div className="relative w-full aspect-[16/10] bg-stone-900 overflow-hidden">
-                  <ZoomableImage
-                    src="/images/tim/Foto Bersama Kepsek dan Para Guru.jpg"
-                    alt="Foto Bersama Kepala Sekolah dan Para Guru Desa Candiyasan"
-                    caption="Foto Bersama Tim UNNES Giat 16 Candiyasan dengan Kepala Sekolah dan Para Guru"
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 600px"
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <span className="absolute top-4 left-4 z-20 eyebrow bg-emerald-900/90 text-emerald-300 px-3 py-1 text-xs">
-                    Edukasi &amp; Sekolah
-                  </span>
+          {/* ── Sub-section 1: Pemerintahan Desa & Monitoring DPL ────── */}
+          <div className="space-y-8">
+            <ScrollReveal>
+              <div className="flex items-center gap-3 border-b border-stone-300/80 pb-3">
+                <span className="w-2.5 h-2.5 rounded-full bg-amber-600" />
+                <h3 className="font-serif text-2xl text-stone-900">
+                  Pemerintahan Desa &amp; Monitoring DPL
+                </h3>
+              </div>
+            </ScrollReveal>
+
+            {/* 2 Landscape Cards for Perangkat Desa (4:3 aspect ratio) */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+              {/* Card 1: Sinergi Perangkat Desa */}
+              <ScrollReveal delay={100}>
+                <div className="bg-white border border-stone-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full group">
+                  <div className="relative w-full aspect-[4/3] bg-stone-950 overflow-hidden">
+                    <ZoomableImage
+                      src="/images/tim/Foto Bersama Perangkat Desa Candiyasan.jpg"
+                      alt="Foto Bersama Perangkat Desa Candiyasan"
+                      caption="Foto Bersama Tim UNNES Giat 16 Candiyasan dengan Perangkat Desa Candiyasan"
+                      fill
+                      unoptimized
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <span className="absolute top-4 left-4 z-20 eyebrow bg-amber-900/90 text-amber-300 px-3 py-1 text-xs rounded-md shadow-sm">
+                      Pemerintahan Desa
+                    </span>
+                  </div>
+                  <div className="p-6 sm:p-7 flex flex-col flex-grow bg-white">
+                    <h4 className="font-serif text-xl sm:text-2xl text-stone-900 mb-2.5 group-hover:text-emerald-800 transition-colors">
+                      Sinergi Bersama Perangkat Desa Candiyasan
+                    </h4>
+                    <p className="body-base text-stone-600 leading-relaxed flex-grow">
+                      Foto bersama seluruh jajaran Perangkat Desa Candiyasan sebagai wujud kolaborasi dan dukungan penuh dari pihak pemerintahan desa terhadap kelancaran program pengabdian UNNES Giat 16.
+                    </p>
+                  </div>
                 </div>
-                <div className="p-6 sm:p-8 flex flex-col flex-grow bg-white">
-                  <h3 className="font-serif text-2xl text-stone-900 mb-3 group-hover:text-emerald-800 transition-colors">
-                    Pendampingan Edukasi Bersama Kepala Sekolah &amp; Para Guru
-                  </h3>
-                  <p className="body-base text-stone-600 leading-relaxed flex-grow">
-                    Dokumentasi kebersamaan tim mahasiswa UNNES Giat 16 Candiyasan bersama Bapak/Ibu Kepala Sekolah serta jajaran guru dalam pelaksanaan sosialisasi dan program pengabdian di lingkungan sekolah setempat.
-                  </p>
+              </ScrollReveal>
+
+              {/* Card 2: Pemaparan Proker */}
+              <ScrollReveal delay={150}>
+                <div className="bg-white border border-stone-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full group">
+                  <div className="relative w-full aspect-[4/3] bg-stone-950 overflow-hidden">
+                    <ZoomableImage
+                      src="/images/tim/Foto Bersama Perangkat Desa Candiyasan Setelah Pemaparan Proker.jpg"
+                      alt="Foto Bersama Perangkat Desa Setelah Pemaparan Program Kerja"
+                      caption="Foto Bersama Perangkat Desa Candiyasan Setelah Pemaparan Program Kerja UNNES Giat 16"
+                      fill
+                      unoptimized
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <span className="absolute top-4 left-4 z-20 eyebrow bg-stone-900/90 text-stone-200 px-3 py-1 text-xs rounded-md shadow-sm">
+                      Program Kerja
+                    </span>
+                  </div>
+                  <div className="p-6 sm:p-7 flex flex-col flex-grow bg-white">
+                    <h4 className="font-serif text-xl sm:text-2xl text-stone-900 mb-2.5 group-hover:text-emerald-800 transition-colors">
+                      Pemaparan Program Kerja Kepada Perangkat Desa
+                    </h4>
+                    <p className="body-base text-stone-600 leading-relaxed flex-grow">
+                      Momen setelah sesi pemaparan program kerja dan diskusi rencana pengabdian UNNES Giat 16 kepada seluruh jajaran perangkat Desa Candiyasan sebagai langkah awal koordinasi kegiatan.
+                    </p>
+                  </div>
+                </div>
+              </ScrollReveal>
+            </div>
+          </div>
+
+          {/* ── Sub-section 2: Edukasi Sekolah & Evaluasi DPL ────────── */}
+          <div className="space-y-8">
+            <ScrollReveal>
+              <div className="flex items-center gap-3 border-b border-stone-300/80 pb-3">
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-600" />
+                <h3 className="font-serif text-2xl text-stone-900">
+                  Edukasi Sekolah &amp; Evaluasi Lapangan DPL
+                </h3>
+              </div>
+            </ScrollReveal>
+
+            {/* Featured Landscape: Kepsek & Guru */}
+            <ScrollReveal delay={100}>
+              <div className="bg-white border border-stone-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 group">
+                <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
+                  <div className="lg:col-span-7 relative w-full aspect-[4/3] bg-stone-950 overflow-hidden">
+                    <ZoomableImage
+                      src="/images/tim/Foto Bersama Kepsek dan Para Guru.jpg"
+                      alt="Foto Bersama Kepala Sekolah dan Para Guru Desa Candiyasan"
+                      caption="Foto Bersama Tim UNNES Giat 16 Candiyasan dengan Kepala Sekolah dan Para Guru"
+                      fill
+                      unoptimized
+                      sizes="(max-width: 1024px) 100vw, 60vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <span className="absolute top-4 left-4 z-20 eyebrow bg-emerald-900/90 text-emerald-300 px-3 py-1 text-xs rounded-md shadow-sm">
+                      Edukasi &amp; Sekolah
+                    </span>
+                  </div>
+                  <div className="lg:col-span-5 p-6 sm:p-10 flex flex-col justify-center bg-white">
+                    <h4 className="font-serif text-2xl sm:text-3xl text-stone-900 mb-3 group-hover:text-emerald-800 transition-colors">
+                      Pendampingan Edukasi Bersama Kepala Sekolah &amp; Guru
+                    </h4>
+                    <p className="body-base text-stone-600 leading-relaxed">
+                      Dokumentasi kebersamaan tim mahasiswa UNNES Giat 16 Candiyasan bersama Bapak/Ibu Kepala Sekolah serta dewan guru dalam pelaksanaan program pendampingan pendidikan dan sosialisasi di lingkungan sekolah setempat.
+                    </p>
+                  </div>
                 </div>
               </div>
             </ScrollReveal>
 
-            {/* DPL & Team Photo Card */}
-            <ScrollReveal delay={200}>
-              <div className="bg-white border border-stone-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full group">
-                <div className="relative w-full aspect-[16/10] bg-stone-900 overflow-hidden">
-                  <ZoomableImage
-                    src="/images/tim/Foto Bersama DPL.jpeg"
-                    alt="Foto Bersama DPL Dr. Drs. Cahyo Yuwono, M.Pd."
-                    caption="Foto Bersama Tim UNNES Giat 16 Candiyasan bersama DPL Dr. Drs. Cahyo Yuwono, M.Pd."
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 600px"
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <span className="absolute top-4 left-4 z-20 eyebrow bg-rose-900/90 text-rose-200 px-3 py-1 text-xs">
-                    Monitoring &amp; Pengabdian
-                  </span>
+            {/* 2 Portrait Cards (3:4 aspect ratio): Anak SD & DPL */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
+              {/* Card 1: Anak-anak SD */}
+              <ScrollReveal delay={100}>
+                <div className="bg-white border border-stone-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full group">
+                  <div className="relative w-full aspect-[3/4] bg-stone-950 overflow-hidden">
+                    <ZoomableImage
+                      src="/images/tim/Foto Bersama Anak-anak SD Candiyasan.jpg"
+                      alt="Foto Bersama Anak-Anak SD Candiyasan"
+                      caption="Foto Bersama Tim UNNES Giat 16 Candiyasan bersama Siswa-Siswi SD Candiyasan"
+                      fill
+                      unoptimized
+                      sizes="(max-width: 640px) 100vw, 50vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <span className="absolute top-4 left-4 z-20 eyebrow bg-emerald-900/90 text-emerald-300 px-3 py-1 text-xs rounded-md shadow-sm">
+                      Edukasi &amp; Sekolah
+                    </span>
+                  </div>
+                  <div className="p-6 flex flex-col flex-grow bg-white">
+                    <h4 className="font-serif text-xl sm:text-2xl text-stone-900 mb-2.5 group-hover:text-emerald-800 transition-colors">
+                      Keceriaan Bersama Siswa-Siswi SD Candiyasan
+                    </h4>
+                    <p className="body-base text-stone-600 leading-relaxed flex-grow">
+                      Keceriaan dan kebersamaan tim mahasiswa UNNES Giat 16 Candiyasan bersama para siswa-siswi SD Candiyasan dalam kegiatan sosialisasi dan pendampingan pendidikan di sekolah.
+                    </p>
+                  </div>
                 </div>
-                <div className="p-6 sm:p-8 flex flex-col flex-grow bg-white">
-                  <h3 className="font-serif text-2xl text-stone-900 mb-3 group-hover:text-emerald-800 transition-colors">
-                    Monitoring &amp; Evaluasi Lapangan Bersama DPL
-                  </h3>
-                  <p className="body-base text-stone-600 leading-relaxed flex-grow">
-                    Momen kebersamaan seluruh anggota mahasiswa UNNES Giat 16 Desa Candiyasan bersama Dosen Pembimbing Lapangan (Dr. Drs. Cahyo Yuwono, M.Pd.) saat evaluasi dan pendampingan program pengabdian.
-                  </p>
+              </ScrollReveal>
+
+              {/* Card 2: DPL Dr. Drs. Cahyo Yuwono */}
+              <ScrollReveal delay={150}>
+                <div className="bg-white border border-stone-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full group">
+                  <div className="relative w-full aspect-[3/4] bg-stone-950 overflow-hidden">
+                    <ZoomableImage
+                      src="/images/tim/Foto Bersama DPL.jpeg"
+                      alt="Foto Bersama DPL Dr. Drs. Cahyo Yuwono, M.Pd."
+                      caption="Foto Bersama Tim UNNES Giat 16 Candiyasan bersama DPL Dr. Drs. Cahyo Yuwono, M.Pd."
+                      fill
+                      unoptimized
+                      sizes="(max-width: 640px) 100vw, 50vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <span className="absolute top-4 left-4 z-20 eyebrow bg-rose-900/90 text-rose-200 px-3 py-1 text-xs rounded-md shadow-sm">
+                      Monitoring &amp; Pengabdian
+                    </span>
+                  </div>
+                  <div className="p-6 flex flex-col flex-grow bg-white">
+                    <h4 className="font-serif text-xl sm:text-2xl text-stone-900 mb-2.5 group-hover:text-emerald-800 transition-colors">
+                      Monitoring &amp; Evaluasi Lapangan Bersama DPL
+                    </h4>
+                    <p className="body-base text-stone-600 leading-relaxed flex-grow">
+                      Momen kebersamaan seluruh tim mahasiswa UNNES Giat 16 Candiyasan bersama Dosen Pembimbing Lapangan (Dr. Drs. Cahyo Yuwono, M.Pd.) saat evaluasi dan pendampingan program pengabdian di lokasi.
+                    </p>
+                  </div>
+                </div>
+              </ScrollReveal>
+            </div>
+          </div>
+
+          {/* ── Sub-section 3: Program Kerja Workshop Sampah Plastik ─── */}
+          <div className="space-y-8">
+            <ScrollReveal>
+              <div className="flex items-center gap-3 border-b border-stone-300/80 pb-3">
+                <span className="w-2.5 h-2.5 rounded-full bg-cyan-600" />
+                <h3 className="font-serif text-2xl text-stone-900">
+                  Workshop Kreativitas Sampah Tutup Botol Plastik
+                </h3>
+              </div>
+            </ScrollReveal>
+
+            {/* Featured Landscape: Full Team Action (4:3) */}
+            <ScrollReveal delay={100}>
+              <div className="bg-white border border-stone-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 group">
+                <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
+                  <div className="lg:col-span-7 relative w-full aspect-[4/3] bg-stone-950 overflow-hidden">
+                    <ZoomableImage
+                      src="/images/tim/Foto Bersama Proker Workshop Pemanfaatan Sampah Tutup Botol Plastik Menjadi Ganci.jpg"
+                      alt="Foto Bersama Kegiatan Workshop Pemanfaatan Sampah Tutup Botol Plastik"
+                      caption="Foto Bersama Seluruh Tim dalam Program Kerja Workshop Pemanfaatan Sampah Tutup Botol Plastik Menjadi Gantungan Kunci"
+                      fill
+                      unoptimized
+                      sizes="(max-width: 1024px) 100vw, 60vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <span className="absolute top-4 left-4 z-20 eyebrow bg-cyan-900/90 text-cyan-300 px-3 py-1 text-xs rounded-md shadow-sm">
+                      Program Kerja Unggulan
+                    </span>
+                  </div>
+                  <div className="lg:col-span-5 p-6 sm:p-10 flex flex-col justify-center bg-white">
+                    <h4 className="font-serif text-2xl sm:text-3xl text-stone-900 mb-3 group-hover:text-emerald-800 transition-colors">
+                      Pelaksanaan Workshop Pemanfaatan Sampah Plastik
+                    </h4>
+                    <p className="body-base text-stone-600 leading-relaxed">
+                      Dokumentasi seluruh tim mahasiswa UNNES Giat 16 Candiyasan dalam penyelenggaraan program kerja inovatif: daur ulang sampah tutup botol plastik menjadi cinderamata gantungan kunci bernilai ekonomis dan ramah lingkungan.
+                    </p>
+                  </div>
                 </div>
               </div>
             </ScrollReveal>
+
+            {/* 3 Portrait Cards (3:4 aspect ratio) */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+              {/* Card 1: Panitia Workshop */}
+              <ScrollReveal delay={100}>
+                <div className="bg-white border border-stone-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full group">
+                  <div className="relative w-full aspect-[3/4] bg-stone-950 overflow-hidden">
+                    <ZoomableImage
+                      src="/images/tim/Foto Bersama Photobooth Panitia Workshop Pemanfaatan Tutup Botol Plastik.jpg"
+                      alt="Foto Photobooth Panitia Workshop Pemanfaatan Tutup Botol Plastik"
+                      caption="Foto Bersama Panitia Workshop Pemanfaatan Tutup Botol Plastik Menjadi Gantungan Kunci"
+                      fill
+                      unoptimized
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <span className="absolute top-4 left-4 z-20 eyebrow bg-cyan-900/90 text-cyan-300 px-3 py-1 text-xs rounded-md shadow-sm">
+                      Panitia Workshop
+                    </span>
+                  </div>
+                  <div className="p-6 flex flex-col flex-grow bg-white">
+                    <h4 className="font-serif text-xl text-stone-900 mb-2 group-hover:text-emerald-800 transition-colors">
+                      Panitia Workshop Tutup Botol Plastik
+                    </h4>
+                    <p className="text-sm text-stone-600 leading-relaxed flex-grow">
+                      Tim panitia pelaksana kegiatan workshop pengolahan limbah plastik menjadi kreasi gantungan kunci di Desa Candiyasan.
+                    </p>
+                  </div>
+                </div>
+              </ScrollReveal>
+
+              {/* Card 2: Panitia & Anak Peserta */}
+              <ScrollReveal delay={150}>
+                <div className="bg-white border border-stone-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full group">
+                  <div className="relative w-full aspect-[3/4] bg-stone-950 overflow-hidden">
+                    <ZoomableImage
+                      src="/images/tim/Foto Bersama Photobooth Panitia & Anak Peserta Workshop Pemanfaatan Tutup Botol Plastik.jpg"
+                      alt="Foto Panitia dan Anak Peserta Workshop Tutup Botol Plastik"
+                      caption="Foto Bersama Panitia dan Anak-Anak Peserta Workshop Tutup Botol Plastik Menjadi Gantungan Kunci"
+                      fill
+                      unoptimized
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <span className="absolute top-4 left-4 z-20 eyebrow bg-cyan-900/90 text-cyan-300 px-3 py-1 text-xs rounded-md shadow-sm">
+                      Kreativitas Bersama
+                    </span>
+                  </div>
+                  <div className="p-6 flex flex-col flex-grow bg-white">
+                    <h4 className="font-serif text-xl text-stone-900 mb-2 group-hover:text-emerald-800 transition-colors">
+                      Panitia &amp; Anak-Anak Peserta
+                    </h4>
+                    <p className="text-sm text-stone-600 leading-relaxed flex-grow">
+                      Momen kebersamaan panitia bersama anak-anak peserta workshop usai menyelesaikan karya kerajinan gantungan kunci buatan sendiri.
+                    </p>
+                  </div>
+                </div>
+              </ScrollReveal>
+
+              {/* Card 3: Anak Peserta Workshop */}
+              <ScrollReveal delay={200}>
+                <div className="bg-white border border-stone-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full group">
+                  <div className="relative w-full aspect-[3/4] bg-stone-950 overflow-hidden">
+                    <ZoomableImage
+                      src="/images/tim/Foto Anak Peserta Workshop Pemanfaatan Tutup Botol Plastik.jpg"
+                      alt="Foto Anak-Anak Peserta Workshop Pemanfaatan Tutup Botol Plastik"
+                      caption="Anak-Anak Peserta Workshop Kreatif Pemanfaatan Tutup Botol Plastik Menjadi Gantungan Kunci"
+                      fill
+                      unoptimized
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <span className="absolute top-4 left-4 z-20 eyebrow bg-rose-900/90 text-rose-200 px-3 py-1 text-xs rounded-md shadow-sm">
+                      Pemberdayaan Anak
+                    </span>
+                  </div>
+                  <div className="p-6 flex flex-col flex-grow bg-white">
+                    <h4 className="font-serif text-xl text-stone-900 mb-2 group-hover:text-emerald-800 transition-colors">
+                      Antusiasme Anak-Anak Peserta
+                    </h4>
+                    <p className="text-sm text-stone-600 leading-relaxed flex-grow">
+                      Semangat dan keceriaan anak-anak desa dalam mempraktikkan proses daur ulang sampah plastik untuk menumbuhkan kepedulian lingkungan sejak dini.
+                    </p>
+                  </div>
+                </div>
+              </ScrollReveal>
+            </div>
           </div>
+
+          {/* ── Sub-section 4: Program Pelatihan Pemulihan Otot (Dusun Grenjeng) ─ */}
+          <div className="space-y-8">
+            <ScrollReveal>
+              <div className="flex items-center gap-3 border-b border-stone-300/80 pb-3">
+                <span className="w-2.5 h-2.5 rounded-full bg-rose-600" />
+                <h3 className="font-serif text-2xl text-stone-900">
+                  Pelatihan Pemulihan Otot &amp; Penanganan Cedera (Dusun Grenjeng)
+                </h3>
+              </div>
+            </ScrollReveal>
+
+            {/* 3 Landscape Cards (4:3 aspect ratio) */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+              {/* Petani I Card */}
+              <ScrollReveal delay={100}>
+                <div className="bg-white border border-stone-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full group">
+                  <div className="relative w-full aspect-[4/3] bg-stone-950 overflow-hidden">
+                    <ZoomableImage
+                      src="/images/tim/Foto Bersama Kelompok Petani I - Dusun Grenjeng - Proker Pelatihan Pemulihan Otot & Penanganan Pertama Cidera.jpg"
+                      alt="Foto Bersama Kelompok Petani I Dusun Grenjeng - Pelatihan Pemulihan Otot"
+                      caption="Foto Bersama Kelompok Petani I Dusun Grenjeng — Proker Pelatihan Pemulihan Otot & Penanganan Pertama Cedera"
+                      fill
+                      unoptimized
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <span className="absolute top-4 left-4 z-20 eyebrow bg-rose-900/90 text-rose-200 px-3 py-1 text-xs rounded-md shadow-sm">
+                      Kelompok Petani I
+                    </span>
+                  </div>
+                  <div className="p-6 flex flex-col flex-grow bg-white">
+                    <h4 className="font-serif text-xl text-stone-900 mb-2.5 group-hover:text-emerald-800 transition-colors">
+                      Pelatihan Bersama Kelompok Petani I
+                    </h4>
+                    <p className="text-sm text-stone-600 leading-relaxed flex-grow">
+                      Pelatihan pemulihan stamina otot dan pertolongan pertama cedera fisik bersama para warga dan Kelompok Petani I di Dusun Grenjeng.
+                    </p>
+                  </div>
+                </div>
+              </ScrollReveal>
+
+              {/* Petani II Card */}
+              <ScrollReveal delay={150}>
+                <div className="bg-white border border-stone-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full group">
+                  <div className="relative w-full aspect-[4/3] bg-stone-950 overflow-hidden">
+                    <ZoomableImage
+                      src="/images/tim/Foto Bersama Kelompok Petani II - Dusun Grenjeng - Proker Pelatihan Pemulihan Otot & Penanganan Pertama Cidera.jpg"
+                      alt="Foto Bersama Kelompok Petani II Dusun Grenjeng - Pelatihan Pemulihan Otot"
+                      caption="Foto Bersama Kelompok Petani II Dusun Grenjeng — Proker Pelatihan Pemulihan Otot & Penanganan Pertama Cedera"
+                      fill
+                      unoptimized
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <span className="absolute top-4 left-4 z-20 eyebrow bg-rose-900/90 text-rose-200 px-3 py-1 text-xs rounded-md shadow-sm">
+                      Kelompok Petani II
+                    </span>
+                  </div>
+                  <div className="p-6 flex flex-col flex-grow bg-white">
+                    <h4 className="font-serif text-xl text-stone-900 mb-2.5 group-hover:text-emerald-800 transition-colors">
+                      Pelatihan Bersama Kelompok Petani II
+                    </h4>
+                    <p className="text-sm text-stone-600 leading-relaxed flex-grow">
+                      Penyuluhan peregangan otot, pencegahan kram kerja, serta penanganan awal cedera fisik untuk mendukung stamina para petani lokal.
+                    </p>
+                  </div>
+                </div>
+              </ScrollReveal>
+
+              {/* Kelompok Jurangjero Card */}
+              <ScrollReveal delay={200}>
+                <div className="bg-white border border-stone-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full group">
+                  <div className="relative w-full aspect-[4/3] bg-stone-950 overflow-hidden">
+                    <ZoomableImage
+                      src="/images/tim/Foto Bersama Kelompok Jurangjero - Dusun Grenjeng - Proker Pelatihan Pemulihan Otot & Penanganan Pertama Cidera.jpg"
+                      alt="Foto Bersama Kelompok Warga Jurangjero Dusun Grenjeng"
+                      caption="Foto Bersama Warga Kelompok Jurangjero Dusun Grenjeng — Pelatihan Pemulihan Otot & Penanganan Pertama Cedera"
+                      fill
+                      unoptimized
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <span className="absolute top-4 left-4 z-20 eyebrow bg-rose-900/90 text-rose-200 px-3 py-1 text-xs rounded-md shadow-sm">
+                      Kelompok Warga
+                    </span>
+                  </div>
+                  <div className="p-6 flex flex-col flex-grow bg-white">
+                    <h4 className="font-serif text-xl text-stone-900 mb-2.5 group-hover:text-emerald-800 transition-colors">
+                      Sinergi Bersama Warga Dusun Grenjeng
+                    </h4>
+                    <p className="text-sm text-stone-600 leading-relaxed flex-grow">
+                      Kebersamaan tim UNNES Giat 16 bersama warga Dusun Grenjeng &amp; Jurangjero usai mempraktikkan metode relaksasi otot dan penanganan cedera.
+                    </p>
+                  </div>
+                </div>
+              </ScrollReveal>
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -244,7 +605,17 @@ export default function OthersPage() {
           <ScrollReveal>
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 mb-20">
               <div className="lg:col-span-4">
-                <p className="eyebrow text-rose-400 mb-4">Mahasiswa KKN</p>
+                <div className="flex items-center gap-3.5 mb-4">
+                  <Image
+                    src="/images/elemen/LOGO GIAT 16 Desa Candiyasan.png"
+                    alt="Logo UNNES Giat 16 Desa Candiyasan"
+                    width={40}
+                    height={40}
+                    className="w-10 h-10 object-contain"
+                    unoptimized
+                  />
+                  <p className="eyebrow text-rose-400">Mahasiswa KKN</p>
+                </div>
                 <h2 className="heading-section text-stone-100">
                   Tim Penggerak<br />Program
                 </h2>
@@ -385,7 +756,7 @@ export default function OthersPage() {
                         fill
                         unoptimized
                         sizes="(max-width: 768px) 208px, 208px"
-                        className="object-contain p-0 scale-[1.12] group-hover:scale-[1.18] transition-transform duration-500 drop-shadow-lg"
+                        className="object-contain p-0 scale-[1.12] group-hover:scale-[1.18] transition-transform duration-500"
                       />
                     </div>
                   </div>
