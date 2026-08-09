@@ -522,7 +522,7 @@ export default function OthersPage() {
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <span className="absolute top-4 left-4 z-20 eyebrow bg-rose-900/90 text-rose-200 px-3 py-1 text-xs rounded-md shadow-sm">
-                      Kelompok Petani I
+                      Dusun Grenjeng
                     </span>
                   </div>
                   <div className="p-6 flex flex-col flex-grow bg-white">
@@ -550,7 +550,7 @@ export default function OthersPage() {
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <span className="absolute top-4 left-4 z-20 eyebrow bg-rose-900/90 text-rose-200 px-3 py-1 text-xs rounded-md shadow-sm">
-                      Kelompok Petani II
+                      Dusun Grenjeng
                     </span>
                   </div>
                   <div className="p-6 flex flex-col flex-grow bg-white">
