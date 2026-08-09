@@ -569,24 +569,24 @@ export default function OthersPage() {
                 <div className="bg-white border border-stone-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full group">
                   <div className="relative w-full aspect-[4/3] bg-stone-950 overflow-hidden">
                     <ZoomableImage
-                      src="/images/tim/Foto Bersama Kelompok Jurangjero - Dusun Grenjeng - Proker Pelatihan Pemulihan Otot & Penanganan Pertama Cidera.jpg"
-                      alt="Foto Bersama Kelompok Warga Jurangjero Dusun Grenjeng"
-                      caption="Foto Bersama Warga Kelompok Jurangjero Dusun Grenjeng — Pelatihan Pemulihan Otot & Penanganan Pertama Cedera"
+                      src="/images/tim/Foto Bersama Kelompok Petani - Dusun Jurangjero - Proker Pelatihan Pemulihan Otot & Penanganan Pertama Cidera.jpg"
+                      alt="Foto Bersama Kelompok Petani Dusun Jurangjero"
+                      caption="Foto Bersama Kelompok Petani Dusun Jurangjero — Pelatihan Pemulihan Otot & Penanganan Pertama Cedera"
                       fill
                       unoptimized
                       sizes="(max-width: 768px) 100vw, 33vw"
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <span className="absolute top-4 left-4 z-20 eyebrow bg-rose-900/90 text-rose-200 px-3 py-1 text-xs rounded-md shadow-sm">
-                      Kelompok Warga
+                      Dusun Jurangjero
                     </span>
                   </div>
                   <div className="p-6 flex flex-col flex-grow bg-white">
                     <h4 className="font-serif text-xl text-stone-900 mb-2.5 group-hover:text-emerald-800 transition-colors">
-                      Sinergi Bersama Warga Dusun Grenjeng
+                      Pelatihan Bersama Petani Jurangjero
                     </h4>
                     <p className="text-sm text-stone-600 leading-relaxed flex-grow">
-                      Kebersamaan tim UNNES Giat 16 bersama warga Dusun Grenjeng &amp; Jurangjero usai mempraktikkan metode relaksasi otot dan penanganan cedera.
+                      Kebersamaan tim UNNES Giat 16 bersama kelompok petani Dusun Jurangjero usai mempraktikkan metode relaksasi otot dan penanganan cedera.
                     </p>
                   </div>
                 </div>
