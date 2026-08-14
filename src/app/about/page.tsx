@@ -13,12 +13,11 @@ export const metadata: Metadata = {
   },
 };
 
-const INSTITUTIONS = [
-  'Kemendikbudristek',
-  'Diktisaintek Berdampak',
-  'Universitas Negeri Semarang',
-  'KKN UNNES',
-  'UNNES GIAT 16 Desa Candiyasan',
+const FOKUS_KATALOG = [
+  'Pemberdayaan UMKM Lokal',
+  'Perluasan Jangkauan Pasar Digital',
+  'Peningkatan Ekonomi Warga',
+  'Promosi Potensi Desa Candiyasan',
 ];
 
 const DUSUN_LIST = [
@@ -58,12 +57,12 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── Institutional Supporters Bar ────────────────────────── */}
+      {/* ── Fokus Katalog Bar ────────────────────────── */}
       <section className="bg-emerald-950 border-b border-emerald-900/80 py-5 text-stone-200">
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
-          <p className="eyebrow text-emerald-400 text-center mb-3">Penyelenggara &amp; Mitra Program</p>
+          <p className="eyebrow text-emerald-400 text-center mb-3">Visi &amp; Fokus Utama Katalog</p>
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-medium text-stone-300">
-            {INSTITUTIONS.map((item, i) => (
+            {FOKUS_KATALOG.map((item, i) => (
               <span key={i} className="inline-flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
                 <span>{item}</span>
