@@ -111,6 +111,8 @@ export default function UMKMSearch() {
         u.name.toLowerCase().includes(query) ||
         u.description.toLowerCase().includes(query) ||
         u.category.toLowerCase().includes(query) ||
+        u.dusun.toLowerCase().includes(query) ||
+        u.address.toLowerCase().includes(query) ||
         u.products.some((p) => p.name.toLowerCase().includes(query))
     );
   }, [isSearching, data, searchTerm]);
@@ -183,7 +185,7 @@ export default function UMKMSearch() {
               setActiveIndex(-1);
               inputRef.current?.focus();
             }}
-            className="text-stone-500 hover:text-rose-600 transition-colors shrink-0 p-2 min-w-[44px] min-h-[44px] flex items-center justify-center focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:outline-none rounded"
+            className="text-stone-500 hover:text-rose-600 transition-all active:scale-90 shrink-0 p-2 min-w-[44px] min-h-[44px] flex items-center justify-center focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:outline-none rounded"
             aria-label="Hapus teks pencarian"
           >
             <X className="h-4 w-4" />

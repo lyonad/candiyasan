@@ -8,15 +8,13 @@ import ScrollReveal from '@/components/ScrollReveal';
 import { notFound } from 'next/navigation';
 import { ChevronRight } from 'lucide-react';
 
-const CATEGORIES = ['Semua', 'Makanan & Minuman', 'Kerajinan', 'Fesyen', 'Agroindustri'];
+const CATEGORIES = ['Semua', 'Makanan & Minuman', 'Agroindustri'];
 
 const createSlug = (text: string) =>
   text.toLowerCase().replace(/ & /g, '-').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
 const CATEGORY_IMAGES: Record<string, string> = {
   'Makanan & Minuman': '/images/umkm/cimoring-jhofani.jpg',
-  'Kerajinan': '/images/categories/kerajinan.jpg',
-  'Fesyen': '/images/categories/fesyen.jpg',
   'Agroindustri': '/images/umkm/kopi-nastiti.jpg',
 };
 
@@ -181,7 +179,7 @@ export default async function UMKMCategory({ params }: PageProps) {
 }
 
 export function generateStaticParams() {
-  return ['Makanan & Minuman', 'Kerajinan', 'Fesyen', 'Agroindustri'].map((cat) => ({
+  return ['Makanan & Minuman', 'Agroindustri'].map((cat) => ({
     category: createSlug(cat),
   }));
 }

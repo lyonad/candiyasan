@@ -3,14 +3,19 @@ export interface Product {
   name: string;
   description: string;
   price: number;
+  priceFormatted?: string;
+  variants?: string[];
   imageUrl: string;
 }
+
+export type DusunName = 'Dusun Jurangjero' | 'Dusun Kabelukan' | 'Dusun Grenjeng' | 'Dusun Banjaran';
 
 export interface UMKM {
   id: string;
   name: string;
   ownerName: string;
-  category: 'Makanan & Minuman' | 'Kerajinan' | 'Fesyen' | 'Agroindustri' | 'Jasa' | 'Lainnya';
+  category: 'Makanan & Minuman' | 'Agroindustri';
+  dusun: DusunName;
   description: string;
   address: string;
   phone: string;
@@ -18,6 +23,6 @@ export interface UMKM {
   instagram?: string;
   imageUrl: string;
   youtubeId?: string;
-  mapsUrl?: string;
+
   products: Product[];
 }

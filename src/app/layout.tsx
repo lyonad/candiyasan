@@ -59,8 +59,16 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Candiyasan — Katalog Industri Lokal Desa",
-    description: "Etalase digital resmi produk industri lokal dari Desa Candiyasan, Wonosobo.",
+    title: "Candiyasan — Katalog Industri Lokal",
+    description: "Etalase digital produk industri lokal Desa Candiyasan.",
+  },
+  appleWebApp: {
+    title: "Candiyasan",
+    statusBarStyle: "black-translucent",
+    capable: true,
+  },
+  formatDetection: {
+    telephone: false,
   },
   robots: {
     index: true,

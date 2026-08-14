@@ -7,25 +7,25 @@ import UMKMSearch from '@/components/UMKMSearch';
 import ScrollReveal from '@/components/ScrollReveal';
 
 export const metadata: Metadata = {
-  title: 'Katalog Industri & Produsen Lokal',
-  description: 'Eksplorasi seluruh lini produksi dan komoditas unggulan dari para produsen dan pengrajin resmi Desa Candiyasan, Kertek, Wonosobo.',
+  title: 'Katalog Produk & Industri Lokal Desa Candiyasan',
+  description: 'Eksplorasi seluruh olahan pangan, hasil bumi, teh, kopi, dan tembakau dari Dusun Jurangjero, Dusun Kabelukan, Dusun Grenjeng & Dusun Banjaran Desa Candiyasan.',
   openGraph: {
-    title: 'Katalog Industri & Produsen Lokal — Candiyasan',
-    description: 'Direktori resmi produsen, pabrik, dan industri lokal Desa Candiyasan.',
+    title: 'Katalog Produk & Industri Lokal — Desa Candiyasan',
+    description: 'Direktori resmi produk lokal dan produsen industri Desa Candiyasan, Kertek, Wonosobo.',
   },
 };
 
-const CATEGORIES = ['Semua', 'Makanan & Minuman', 'Kerajinan', 'Fesyen', 'Agroindustri'];
+const CATEGORIES = ['Semua', 'Makanan & Minuman', 'Agroindustri'];
 
 const createSlug = (text: string) =>
   text.toLowerCase().replace(/ & /g, '-').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
 const CATEGORY_IMAGES: Record<string, string> = {
   'Makanan & Minuman': '/images/umkm/cimoring-jhofani.jpg',
-  'Kerajinan': '/images/categories/kerajinan.jpg',
-  'Fesyen': '/images/categories/fesyen.jpg',
   'Agroindustri': '/images/umkm/kopi-nastiti.jpg',
 };
+
+
 
 export default function UMKMDirectory() {
   const categoryCounts = CATEGORIES.slice(1).map(cat => ({
@@ -40,7 +40,7 @@ export default function UMKMDirectory() {
       <section className="relative min-h-[65vh] flex flex-col justify-end overflow-hidden">
         <Image
           src="/images/hero/candiyasan-landscape.jpg"
-          alt="Katalog Industri Lokal Desa Candiyasan"
+          alt="Katalog Produk Lokal Desa Candiyasan"
           fill
           className="object-cover"
           priority
@@ -49,33 +49,33 @@ export default function UMKMDirectory() {
         <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/50 to-stone-900/20" />
 
         <div className="relative max-w-7xl mx-auto w-full px-5 sm:px-8 pb-16 pt-40">
-          <p className="eyebrow text-emerald-400 mb-4">Direktori Produsen</p>
+          <p className="eyebrow text-emerald-400 mb-4">Booklet &amp; Direktori Resmi</p>
           <h1 className="heading-hero text-stone-100 mb-5">
             Katalog Produk<br />
-            <em className="text-emerald-400 font-normal">Industri Lokal</em>
+            <em className="text-emerald-400 font-normal">Lokal Desa Candiyasan</em>
           </h1>
           <p className="body-lead text-stone-300 max-w-xl">
-            Eksplorasi seluruh lini produksi dari para produsen dan pengrajin resmi Desa Candiyasan.
+            Eksplorasi seluruh produk olahan pangan, teh, kopi, tembakau, dan hasil bumi dari 4 pedukuhan resmi Desa Candiyasan.
           </p>
         </div>
       </section>
 
       {/* ── Category visual cards ──────────────────────────────── */}
-      <section className="bg-stone-900 py-12 px-5 sm:px-8" aria-label="Jelajahi Berdasarkan Kategori">
+      <section className="bg-stone-900 py-12 px-5 sm:px-8" aria-label="Jelajahi Berdasarkan Sektor">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             {categoryCounts.map(({ name, count }) => (
               <Link
                 key={name}
                 href={`/umkm/kategori/${createSlug(name)}`}
-                className="group relative h-36 sm:h-44 overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2"
-                aria-label={`Kategori ${name} — ${count} Produsen`}
+                className="group relative h-48 sm:h-56 overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2"
+                aria-label={`Sektor ${name} — ${count} Produsen`}
               >
                 <Image
                   src={CATEGORY_IMAGES[name] || ''}
-                  alt={`Kategori ${name}`}
+                  alt={`Sektor ${name}`}
                   fill
-                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover group-hover:scale-110 transition-transform duration-700"
                   unoptimized
                 />
@@ -83,7 +83,7 @@ export default function UMKMDirectory() {
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-3">
                   <span className="eyebrow text-stone-200 group-hover:text-white transition-colors">{name}</span>
                   <span className="font-serif text-3xl sm:text-4xl text-white mt-1">{count}</span>
-                  <span className="eyebrow text-stone-300 text-[0.65rem] mt-1">Produsen</span>
+                  <span className="eyebrow text-stone-300 text-[0.65rem] mt-1">Produsen / Usaha</span>
                 </div>
               </Link>
             ))}
@@ -95,9 +95,9 @@ export default function UMKMDirectory() {
       <div className="max-w-7xl mx-auto px-5 sm:px-8 py-16">
 
         {/* Search + filters row */}
-        <div className="flex flex-col lg:flex-row lg:items-end gap-6 lg:gap-12 mb-14">
+        <div className="flex flex-col lg:flex-row lg:items-end gap-6 lg:gap-12 mb-10">
           <UMKMSearch />
-          <div className="flex flex-wrap gap-3" role="toolbar" aria-label="Filter Kategori">
+          <div className="flex flex-wrap gap-2.5" role="toolbar" aria-label="Filter Sektor">
             {CATEGORIES.map((category) => (
               <Link
                 key={category}
@@ -116,15 +116,15 @@ export default function UMKMDirectory() {
         </div>
 
         {/* Produsen count */}
-        <div className="flex items-center gap-4 mb-8 border-b border-stone-200 pb-4">
-          <h2 className="heading-card text-stone-900">Semua Produsen</h2>
-          <span className="eyebrow text-stone-600">{umkmData.length} terdaftar</span>
+        <div className="flex items-center justify-between mb-8 border-b border-stone-200 pb-4">
+          <h2 className="heading-card text-stone-900">Semua Produk &amp; Usaha Lokal</h2>
+          <span className="eyebrow text-stone-600">{umkmData.length} Usaha Terdaftar</span>
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {umkmData.map((umkm, i) => (
-            <ScrollReveal key={umkm.id} delay={i * 80}>
+            <ScrollReveal key={umkm.id} delay={i * 60}>
               <UMKMCard umkm={umkm} />
             </ScrollReveal>
           ))}

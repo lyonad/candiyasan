@@ -9,10 +9,10 @@ import CountUp from '@/components/CountUp';
 const TICKER_ITEMS = [
   'Kopi Arabika Nastiti',
   'Cimoring Jurangjero',
-  'Teh Hijau Candiyasan',
-  'Pabrik Tahu Jurangjero',
-  'Kuliner Nasi Jagung',
-  'Mitra Mandiri Farm',
+  'Teh Alam Ibu Tarmi',
+  'Tahu Candiyasan',
+  'Oyek & Opak Jagung',
+  'Donat Mini Pancake',
   'Industri Lokal Candiyasan',
   'Lereng Gunung Sindoro',
 ];
@@ -101,9 +101,9 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
           <div className="grid grid-cols-3 divide-x divide-stone-800">
             {[
-              { target: 50, suffix: '+', label: 'Lini Produk' },
-              { target: 24, suffix: '',  label: 'Produsen Aktif' },
-              { target: 4,  suffix: '',  label: 'Sektor Industri' },
+              { target: 14, suffix: '+', label: 'Lini Produk' },
+              { target: 9, suffix: '',  label: 'Produsen Aktif' },
+              { target: 4,  suffix: '',  label: 'Wilayah Dusun' },
             ].map(({ target, suffix, label }) => (
               <div key={label} className="flex flex-col items-center py-10 sm:py-14">
                 <CountUp

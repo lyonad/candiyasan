@@ -123,7 +123,7 @@ export default function Navbar() {
           {/* Mobile Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={`md:hidden p-2 rounded -mr-2 min-w-[44px] min-h-[44px] flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 ${useDarkText ? 'text-stone-800' : 'text-stone-100'}`}
+            className={`md:hidden p-2 rounded -mr-2 min-w-[44px] min-h-[44px] flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 transition-transform active:scale-90 ${useDarkText ? 'text-stone-800' : 'text-stone-100'}`}
             aria-label={isOpen ? "Tutup menu navigasi" : "Buka menu navigasi"}
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
@@ -133,27 +133,44 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Backdrop & Container */}
       {isOpen && (
-        <div
-          id="mobile-menu"
-          className="md:hidden bg-[#faf9f7] border-t border-b border-stone-200 max-h-[calc(100vh-5rem)] overflow-y-auto"
-          style={{ paddingBottom: 'max(1.5rem, env(safe-area-inset-bottom, 0px))' }}
-        >
-          <div className="px-6 pt-6 pb-10 flex flex-col gap-6">
-            {NAV_LINKS.map(({ href, label }) => (
-              <Link
-                key={href}
-                href={href}
-                className={`font-serif text-3xl py-1 transition-colors rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 ${
-                  isActive(href) ? 'text-emerald-800 font-medium' : 'text-stone-800 hover:text-emerald-800'
-                }`}
-                onClick={() => setIsOpen(false)}
-                aria-current={isActive(href) ? 'page' : undefined}
-              >
-                {label}
-              </Link>
-            ))}
+        <div className="md:hidden fixed inset-0 top-20 z-40 flex flex-col">
+          {/* Backdrop overlay */}
+          <div 
+            className="absolute inset-0 bg-stone-900/20 backdrop-blur-sm"
+            onClick={() => setIsOpen(false)}
+            aria-hidden="true"
+          />
+          {/* Menu panel */}
+          <div
+            id="mobile-menu"
+            className="relative bg-[#faf9f7] border-b border-stone-200/80 shadow-2xl max-h-[calc(100vh-5rem)] overflow-y-auto"
+            style={{ paddingBottom: 'max(1.5rem, env(safe-area-inset-bottom, 0px))' }}
+          >
+            <div className="px-6 pt-8 pb-10 flex flex-col gap-6">
+              {NAV_LINKS.map(({ href, label }) => {
+                const active = isActive(href);
+                return (
+                  <Link
+                    key={href}
+                    href={href}
+                    className={`group flex items-center gap-4 font-serif text-3xl py-1 transition-all duration-200 rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 ${
+                      active ? 'text-emerald-800' : 'text-stone-700 hover:text-emerald-700'
+                    }`}
+                    onClick={() => setIsOpen(false)}
+                    aria-current={active ? 'page' : undefined}
+                  >
+                    <span className={`transition-transform duration-300 ${active ? 'translate-x-2 font-medium' : 'group-hover:translate-x-2'}`}>
+                      {label}
+                    </span>
+                    {active && (
+                      <span className="w-2 h-2 rounded-full bg-rose-400 ml-2 animate-pulse" />
+                    )}
+                  </Link>
+                );
+              })}
+            </div>
           </div>
         </div>
       )}

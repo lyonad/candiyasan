@@ -255,14 +255,7 @@ export default async function UMKMDetail({ params }: PageProps) {
                   <div>
                     <p className="text-stone-400 text-xs mb-0.5">Alamat</p>
                     <p className="text-stone-200 mb-1.5">{umkm.address}</p>
-                    <a
-                      href={umkm.mapsUrl || 'https://maps.app.goo.gl/rcLMD7fut89sNeT86'}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs text-emerald-400 hover:text-emerald-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 transition-colors font-medium border-b border-emerald-400/40 pb-0.5"
-                    >
-                      Buka di Google Maps ↗
-                    </a>
+
                   </div>
                 </div>
 

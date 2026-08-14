@@ -125,7 +125,7 @@ export default function OthersPage() {
       </section>
 
       {/* ── Video Section ────────────────────────────────────────── */}
-      <section className="py-24 px-5 sm:px-8 dot-grid">
+      <section className="py-16 px-5 sm:px-8 dot-grid">
         <div className="max-w-7xl mx-auto">
           
           <ScrollReveal>
@@ -156,7 +156,7 @@ export default function OthersPage() {
           </ScrollReveal>
 
           {/* Other Videos Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {restVideos.map((video, i) => (
               <ScrollReveal key={video.id} delay={i * 100}>
                 <div className="bg-white border border-stone-100 group hover:shadow-md transition-all duration-300 h-full flex flex-col">
@@ -180,8 +180,8 @@ export default function OthersPage() {
       </section>
 
       {/* ── Photo Gallery Section ─────────────────────────────────── */}
-      <section className="py-24 px-5 sm:px-8 bg-[#f5f3ef] border-y border-stone-200/80">
-        <div className="max-w-7xl mx-auto space-y-20">
+      <section className="py-16 px-5 sm:px-8 bg-[#f5f3ef] border-y border-stone-200/80">
+        <div className="max-w-7xl mx-auto space-y-12">
 
           {/* Section Header */}
           <ScrollReveal>
@@ -195,7 +195,7 @@ export default function OthersPage() {
           </ScrollReveal>
 
           {/* ── Sub-section 1: Pemerintahan Desa & Monitoring DPL ────── */}
-          <div className="space-y-8">
+          <div className="space-y-6">
             <ScrollReveal>
               <div className="flex items-center gap-3 border-b border-stone-300/80 pb-3">
                 <span className="w-2.5 h-2.5 rounded-full bg-amber-600" />
@@ -206,11 +206,11 @@ export default function OthersPage() {
             </ScrollReveal>
 
             {/* 2 Landscape Cards for Perangkat Desa (4:3 aspect ratio) */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               {/* Card 1: Sinergi Perangkat Desa */}
               <ScrollReveal delay={100}>
                 <div className="bg-white border border-stone-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full group">
-                  <div className="relative w-full aspect-[4/3] bg-stone-950 overflow-hidden">
+                  <div className="relative w-full aspect-video bg-stone-950 overflow-hidden">
                     <ZoomableImage
                       src="/images/tim/Foto Bersama Perangkat Desa Candiyasan.jpg"
                       alt="Foto Bersama Perangkat Desa Candiyasan"
@@ -224,11 +224,11 @@ export default function OthersPage() {
                       Pemerintahan Desa
                     </span>
                   </div>
-                  <div className="p-6 sm:p-7 flex flex-col flex-grow bg-white">
-                    <h4 className="font-serif text-xl sm:text-2xl text-stone-900 mb-2.5 group-hover:text-emerald-800 transition-colors">
+                  <div className="p-4 sm:p-5 flex flex-col flex-grow bg-white">
+                    <h4 className="font-serif text-lg font-bold text-stone-900 mb-2 group-hover:text-emerald-800 transition-colors">
                       Sinergi Bersama Perangkat Desa Candiyasan
                     </h4>
-                    <p className="body-base text-stone-600 leading-relaxed flex-grow">
+                    <p className="text-sm text-stone-600 leading-relaxed flex-grow">
                       Foto bersama seluruh jajaran Perangkat Desa Candiyasan sebagai wujud kolaborasi dan dukungan penuh dari pihak pemerintahan desa terhadap kelancaran program pengabdian UNNES Giat 16.
                     </p>
                   </div>
@@ -238,7 +238,7 @@ export default function OthersPage() {
               {/* Card 2: Pemaparan Proker */}
               <ScrollReveal delay={150}>
                 <div className="bg-white border border-stone-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full group">
-                  <div className="relative w-full aspect-[4/3] bg-stone-950 overflow-hidden">
+                  <div className="relative w-full aspect-video bg-stone-950 overflow-hidden">
                     <ZoomableImage
                       src="/images/tim/Foto Bersama Perangkat Desa Candiyasan Setelah Pemaparan Proker.jpg"
                       alt="Foto Bersama Perangkat Desa Setelah Pemaparan Program Kerja"
@@ -252,11 +252,11 @@ export default function OthersPage() {
                       Program Kerja
                     </span>
                   </div>
-                  <div className="p-6 sm:p-7 flex flex-col flex-grow bg-white">
-                    <h4 className="font-serif text-xl sm:text-2xl text-stone-900 mb-2.5 group-hover:text-emerald-800 transition-colors">
+                  <div className="p-4 sm:p-5 flex flex-col flex-grow bg-white">
+                    <h4 className="font-serif text-lg font-bold text-stone-900 mb-2 group-hover:text-emerald-800 transition-colors">
                       Pemaparan Program Kerja Kepada Perangkat Desa
                     </h4>
-                    <p className="body-base text-stone-600 leading-relaxed flex-grow">
+                    <p className="text-sm text-stone-600 leading-relaxed flex-grow">
                       Momen setelah sesi pemaparan program kerja dan diskusi rencana pengabdian UNNES Giat 16 kepada seluruh jajaran perangkat Desa Candiyasan sebagai langkah awal koordinasi kegiatan.
                     </p>
                   </div>
@@ -266,7 +266,7 @@ export default function OthersPage() {
           </div>
 
           {/* ── Sub-section 2: Edukasi Sekolah & Evaluasi DPL ────────── */}
-          <div className="space-y-8">
+          <div className="space-y-6">
             <ScrollReveal>
               <div className="flex items-center gap-3 border-b border-stone-300/80 pb-3">
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-600" />
@@ -280,7 +280,7 @@ export default function OthersPage() {
             <ScrollReveal delay={100}>
               <div className="bg-white border border-stone-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 group">
                 <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
-                  <div className="lg:col-span-7 relative w-full aspect-[4/3] bg-stone-950 overflow-hidden">
+                  <div className="lg:col-span-7 relative w-full aspect-video bg-stone-950 overflow-hidden">
                     <ZoomableImage
                       src="/images/tim/Foto Bersama Kepsek dan Para Guru.jpg"
                       alt="Foto Bersama Kepala Sekolah dan Para Guru Desa Candiyasan"
@@ -294,11 +294,11 @@ export default function OthersPage() {
                       Edukasi &amp; Sekolah
                     </span>
                   </div>
-                  <div className="lg:col-span-5 p-6 sm:p-10 flex flex-col justify-center bg-white">
-                    <h4 className="font-serif text-2xl sm:text-3xl text-stone-900 mb-3 group-hover:text-emerald-800 transition-colors">
+                  <div className="lg:col-span-5 p-5 sm:p-8 flex flex-col justify-center bg-white">
+                    <h4 className="font-serif text-xl font-bold text-stone-900 mb-2 group-hover:text-emerald-800 transition-colors">
                       Pendampingan Edukasi Bersama Kepala Sekolah &amp; Guru
                     </h4>
-                    <p className="body-base text-stone-600 leading-relaxed">
+                    <p className="text-sm text-stone-600 leading-relaxed">
                       Dokumentasi kebersamaan tim mahasiswa UNNES Giat 16 Candiyasan bersama Bapak/Ibu Kepala Sekolah serta dewan guru dalam pelaksanaan program pendampingan pendidikan dan sosialisasi di lingkungan sekolah setempat.
                     </p>
                   </div>
@@ -307,11 +307,11 @@ export default function OthersPage() {
             </ScrollReveal>
 
             {/* 2 Portrait Cards (3:4 aspect ratio): Anak SD & DPL */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               {/* Card 1: Anak-anak SD */}
               <ScrollReveal delay={100}>
                 <div className="bg-white border border-stone-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full group">
-                  <div className="relative w-full aspect-[3/4] bg-stone-950 overflow-hidden">
+                  <div className="relative w-full aspect-square bg-stone-950 overflow-hidden">
                     <ZoomableImage
                       src="/images/tim/Foto Bersama Anak-anak SD Candiyasan.jpg"
                       alt="Foto Bersama Anak-Anak SD Candiyasan"
@@ -325,11 +325,11 @@ export default function OthersPage() {
                       Edukasi &amp; Sekolah
                     </span>
                   </div>
-                  <div className="p-6 flex flex-col flex-grow bg-white">
-                    <h4 className="font-serif text-xl sm:text-2xl text-stone-900 mb-2.5 group-hover:text-emerald-800 transition-colors">
+                  <div className="p-4 sm:p-5 flex flex-col flex-grow bg-white">
+                    <h4 className="font-serif text-lg font-bold text-stone-900 mb-2 group-hover:text-emerald-800 transition-colors">
                       Keceriaan Bersama Siswa-Siswi SD Candiyasan
                     </h4>
-                    <p className="body-base text-stone-600 leading-relaxed flex-grow">
+                    <p className="text-sm text-stone-600 leading-relaxed flex-grow">
                       Keceriaan dan kebersamaan tim mahasiswa UNNES Giat 16 Candiyasan bersama para siswa-siswi SD Candiyasan dalam kegiatan sosialisasi dan pendampingan pendidikan di sekolah.
                     </p>
                   </div>
@@ -339,7 +339,7 @@ export default function OthersPage() {
               {/* Card 2: DPL Dr. Drs. Cahyo Yuwono */}
               <ScrollReveal delay={150}>
                 <div className="bg-white border border-stone-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full group">
-                  <div className="relative w-full aspect-[3/4] bg-stone-950 overflow-hidden">
+                  <div className="relative w-full aspect-square bg-stone-950 overflow-hidden">
                     <ZoomableImage
                       src="/images/tim/Foto Bersama DPL.jpeg"
                       alt="Foto Bersama DPL Dr. Drs. Cahyo Yuwono, M.Pd."
@@ -353,11 +353,11 @@ export default function OthersPage() {
                       Monitoring &amp; Pengabdian
                     </span>
                   </div>
-                  <div className="p-6 flex flex-col flex-grow bg-white">
-                    <h4 className="font-serif text-xl sm:text-2xl text-stone-900 mb-2.5 group-hover:text-emerald-800 transition-colors">
+                  <div className="p-4 sm:p-5 flex flex-col flex-grow bg-white">
+                    <h4 className="font-serif text-lg font-bold text-stone-900 mb-2 group-hover:text-emerald-800 transition-colors">
                       Monitoring &amp; Evaluasi Lapangan Bersama DPL
                     </h4>
-                    <p className="body-base text-stone-600 leading-relaxed flex-grow">
+                    <p className="text-sm text-stone-600 leading-relaxed flex-grow">
                       Momen kebersamaan seluruh tim mahasiswa UNNES Giat 16 Candiyasan bersama Dosen Pembimbing Lapangan (Dr. Drs. Cahyo Yuwono, M.Pd.) saat evaluasi dan pendampingan program pengabdian di lokasi.
                     </p>
                   </div>
@@ -367,7 +367,7 @@ export default function OthersPage() {
           </div>
 
           {/* ── Sub-section 3: Program Kerja Workshop Sampah Plastik ─── */}
-          <div className="space-y-8">
+          <div className="space-y-6">
             <ScrollReveal>
               <div className="flex items-center gap-3 border-b border-stone-300/80 pb-3">
                 <span className="w-2.5 h-2.5 rounded-full bg-cyan-600" />
@@ -381,7 +381,7 @@ export default function OthersPage() {
             <ScrollReveal delay={100}>
               <div className="bg-white border border-stone-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 group">
                 <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
-                  <div className="lg:col-span-7 relative w-full aspect-[4/3] bg-stone-950 overflow-hidden">
+                  <div className="lg:col-span-7 relative w-full aspect-video bg-stone-950 overflow-hidden">
                     <ZoomableImage
                       src="/images/tim/Foto Bersama Proker Workshop Pemanfaatan Sampah Tutup Botol Plastik Menjadi Ganci.jpg"
                       alt="Foto Bersama Kegiatan Workshop Pemanfaatan Sampah Tutup Botol Plastik"
@@ -395,11 +395,11 @@ export default function OthersPage() {
                       Program Kerja Unggulan
                     </span>
                   </div>
-                  <div className="lg:col-span-5 p-6 sm:p-10 flex flex-col justify-center bg-white">
-                    <h4 className="font-serif text-2xl sm:text-3xl text-stone-900 mb-3 group-hover:text-emerald-800 transition-colors">
+                  <div className="lg:col-span-5 p-5 sm:p-8 flex flex-col justify-center bg-white">
+                    <h4 className="font-serif text-xl font-bold text-stone-900 mb-2 group-hover:text-emerald-800 transition-colors">
                       Pelaksanaan Workshop Pemanfaatan Sampah Plastik
                     </h4>
-                    <p className="body-base text-stone-600 leading-relaxed">
+                    <p className="text-sm text-stone-600 leading-relaxed">
                       Dokumentasi seluruh tim mahasiswa UNNES Giat 16 Candiyasan dalam penyelenggaraan program kerja inovatif: daur ulang sampah tutup botol plastik menjadi cinderamata gantungan kunci bernilai ekonomis dan ramah lingkungan.
                     </p>
                   </div>
@@ -408,11 +408,11 @@ export default function OthersPage() {
             </ScrollReveal>
 
             {/* 3 Portrait Cards (3:4 aspect ratio) */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {/* Card 1: Panitia Workshop */}
               <ScrollReveal delay={100}>
                 <div className="bg-white border border-stone-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full group">
-                  <div className="relative w-full aspect-[3/4] bg-stone-950 overflow-hidden">
+                  <div className="relative w-full aspect-square bg-stone-950 overflow-hidden">
                     <ZoomableImage
                       src="/images/tim/Foto Bersama Photobooth Panitia Workshop Pemanfaatan Tutup Botol Plastik.jpg"
                       alt="Foto Photobooth Panitia Workshop Pemanfaatan Tutup Botol Plastik"
@@ -426,8 +426,8 @@ export default function OthersPage() {
                       Panitia Workshop
                     </span>
                   </div>
-                  <div className="p-6 flex flex-col flex-grow bg-white">
-                    <h4 className="font-serif text-xl text-stone-900 mb-2 group-hover:text-emerald-800 transition-colors">
+                  <div className="p-4 sm:p-5 flex flex-col flex-grow bg-white">
+                    <h4 className="font-serif text-lg font-bold text-stone-900 mb-2 group-hover:text-emerald-800 transition-colors">
                       Panitia Workshop Tutup Botol Plastik
                     </h4>
                     <p className="text-sm text-stone-600 leading-relaxed flex-grow">
@@ -440,7 +440,7 @@ export default function OthersPage() {
               {/* Card 2: Panitia & Anak Peserta */}
               <ScrollReveal delay={150}>
                 <div className="bg-white border border-stone-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full group">
-                  <div className="relative w-full aspect-[3/4] bg-stone-950 overflow-hidden">
+                  <div className="relative w-full aspect-square bg-stone-950 overflow-hidden">
                     <ZoomableImage
                       src="/images/tim/Foto Bersama Photobooth Panitia & Anak Peserta Workshop Pemanfaatan Tutup Botol Plastik.jpg"
                       alt="Foto Panitia dan Anak Peserta Workshop Tutup Botol Plastik"
@@ -454,8 +454,8 @@ export default function OthersPage() {
                       Kreativitas Bersama
                     </span>
                   </div>
-                  <div className="p-6 flex flex-col flex-grow bg-white">
-                    <h4 className="font-serif text-xl text-stone-900 mb-2 group-hover:text-emerald-800 transition-colors">
+                  <div className="p-4 sm:p-5 flex flex-col flex-grow bg-white">
+                    <h4 className="font-serif text-lg font-bold text-stone-900 mb-2 group-hover:text-emerald-800 transition-colors">
                       Panitia &amp; Anak-Anak Peserta
                     </h4>
                     <p className="text-sm text-stone-600 leading-relaxed flex-grow">
@@ -468,7 +468,7 @@ export default function OthersPage() {
               {/* Card 3: Anak Peserta Workshop */}
               <ScrollReveal delay={200}>
                 <div className="bg-white border border-stone-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full group">
-                  <div className="relative w-full aspect-[3/4] bg-stone-950 overflow-hidden">
+                  <div className="relative w-full aspect-square bg-stone-950 overflow-hidden">
                     <ZoomableImage
                       src="/images/tim/Foto Anak Peserta Workshop Pemanfaatan Tutup Botol Plastik.jpg"
                       alt="Foto Anak-Anak Peserta Workshop Pemanfaatan Tutup Botol Plastik"
@@ -482,8 +482,8 @@ export default function OthersPage() {
                       Pemberdayaan Anak
                     </span>
                   </div>
-                  <div className="p-6 flex flex-col flex-grow bg-white">
-                    <h4 className="font-serif text-xl text-stone-900 mb-2 group-hover:text-emerald-800 transition-colors">
+                  <div className="p-4 sm:p-5 flex flex-col flex-grow bg-white">
+                    <h4 className="font-serif text-lg font-bold text-stone-900 mb-2 group-hover:text-emerald-800 transition-colors">
                       Antusiasme Anak-Anak Peserta
                     </h4>
                     <p className="text-sm text-stone-600 leading-relaxed flex-grow">
@@ -496,7 +496,7 @@ export default function OthersPage() {
           </div>
 
           {/* ── Sub-section 4: Program Pelatihan Pemulihan Otot (Dusun Grenjeng) ─ */}
-          <div className="space-y-8">
+          <div className="space-y-6">
             <ScrollReveal>
               <div className="flex items-center gap-3 border-b border-stone-300/80 pb-3">
                 <span className="w-2.5 h-2.5 rounded-full bg-rose-600" />
@@ -507,11 +507,11 @@ export default function OthersPage() {
             </ScrollReveal>
 
             {/* 3 Landscape Cards (4:3 aspect ratio) */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
               {/* Petani I Card */}
               <ScrollReveal delay={100}>
                 <div className="bg-white border border-stone-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full group">
-                  <div className="relative w-full aspect-[4/3] bg-stone-950 overflow-hidden">
+                  <div className="relative w-full aspect-video bg-stone-950 overflow-hidden">
                     <ZoomableImage
                       src="/images/tim/Foto Bersama Kelompok Petani I - Dusun Grenjeng - Proker Pelatihan Pemulihan Otot & Penanganan Pertama Cidera.jpg"
                       alt="Foto Bersama Kelompok Petani I Dusun Grenjeng - Pelatihan Pemulihan Otot"
@@ -525,8 +525,8 @@ export default function OthersPage() {
                       Dusun Grenjeng
                     </span>
                   </div>
-                  <div className="p-6 flex flex-col flex-grow bg-white">
-                    <h4 className="font-serif text-xl text-stone-900 mb-2.5 group-hover:text-emerald-800 transition-colors">
+                  <div className="p-4 sm:p-5 flex flex-col flex-grow bg-white">
+                    <h4 className="font-serif text-lg font-bold text-stone-900 mb-2 group-hover:text-emerald-800 transition-colors">
                       Pelatihan Bersama Kelompok Petani I
                     </h4>
                     <p className="text-sm text-stone-600 leading-relaxed flex-grow">
@@ -539,7 +539,7 @@ export default function OthersPage() {
               {/* Petani II Card */}
               <ScrollReveal delay={150}>
                 <div className="bg-white border border-stone-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full group">
-                  <div className="relative w-full aspect-[4/3] bg-stone-950 overflow-hidden">
+                  <div className="relative w-full aspect-video bg-stone-950 overflow-hidden">
                     <ZoomableImage
                       src="/images/tim/Foto Bersama Kelompok Petani II - Dusun Grenjeng - Proker Pelatihan Pemulihan Otot & Penanganan Pertama Cidera.jpg"
                       alt="Foto Bersama Kelompok Petani II Dusun Grenjeng - Pelatihan Pemulihan Otot"
@@ -553,8 +553,8 @@ export default function OthersPage() {
                       Dusun Grenjeng
                     </span>
                   </div>
-                  <div className="p-6 flex flex-col flex-grow bg-white">
-                    <h4 className="font-serif text-xl text-stone-900 mb-2.5 group-hover:text-emerald-800 transition-colors">
+                  <div className="p-4 sm:p-5 flex flex-col flex-grow bg-white">
+                    <h4 className="font-serif text-lg font-bold text-stone-900 mb-2 group-hover:text-emerald-800 transition-colors">
                       Pelatihan Bersama Kelompok Petani II
                     </h4>
                     <p className="text-sm text-stone-600 leading-relaxed flex-grow">
@@ -567,7 +567,7 @@ export default function OthersPage() {
               {/* Kelompok Jurangjero Card */}
               <ScrollReveal delay={200}>
                 <div className="bg-white border border-stone-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full group">
-                  <div className="relative w-full aspect-[4/3] bg-stone-950 overflow-hidden">
+                  <div className="relative w-full aspect-video bg-stone-950 overflow-hidden">
                     <ZoomableImage
                       src="/images/tim/Foto Bersama Kelompok Petani - Dusun Jurangjero - Proker Pelatihan Pemulihan Otot & Penanganan Pertama Cidera.jpg"
                       alt="Foto Bersama Kelompok Petani Dusun Jurangjero"
@@ -581,8 +581,8 @@ export default function OthersPage() {
                       Dusun Jurangjero
                     </span>
                   </div>
-                  <div className="p-6 flex flex-col flex-grow bg-white">
-                    <h4 className="font-serif text-xl text-stone-900 mb-2.5 group-hover:text-emerald-800 transition-colors">
+                  <div className="p-4 sm:p-5 flex flex-col flex-grow bg-white">
+                    <h4 className="font-serif text-lg font-bold text-stone-900 mb-2 group-hover:text-emerald-800 transition-colors">
                       Pelatihan Bersama Petani Jurangjero
                     </h4>
                     <p className="text-sm text-stone-600 leading-relaxed flex-grow">
