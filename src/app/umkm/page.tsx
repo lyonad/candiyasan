@@ -49,7 +49,7 @@ export default function UMKMDirectory() {
         <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/50 to-stone-900/20" />
 
         <div className="relative max-w-7xl mx-auto w-full px-5 sm:px-8 pb-16 pt-40">
-          <p className="eyebrow text-emerald-400 mb-4">Booklet &amp; Direktori Resmi</p>
+          <p className="eyebrow text-emerald-400 mb-4">Katalog &amp; Direktori Resmi</p>
           <h1 className="heading-hero text-stone-100 mb-5">
             Katalog Produk<br />
             <em className="text-emerald-400 font-normal">Lokal Desa Candiyasan</em>

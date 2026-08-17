@@ -5,8 +5,8 @@ import ZoomableImage from '@/components/ZoomableImage';
 import { MapPin, Compass, Mountain, Sprout, Award, Building2 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Latar Belakang Booklet & Profil Desa Candiyasan',
-  description: 'Informasi resmi Booklet Produk Lokal Desa Candiyasan, profil pedukuhan, potensi pertanian, kopi, tembakau, serta kolaborasi UNNES Giat 16.',
+  title: 'Latar Belakang & Profil Desa Candiyasan',
+  description: 'Informasi resmi Katalog Produk Lokal Desa Candiyasan, profil pedukuhan, potensi pertanian, kopi, tembakau, serta kolaborasi UNNES Giat 16.',
   openGraph: {
     title: 'Latar Belakang & Profil Potensi Desa Candiyasan',
     description: 'Menggali Potensi, Mengangkat Produk Lokal Desa Candiyasan, Kertek, Wonosobo.',
@@ -44,7 +44,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-900/60 to-stone-900/20" />
 
         <div className="relative max-w-7xl mx-auto w-full px-5 sm:px-8 pb-20 pt-40">
-          <p className="eyebrow text-emerald-400 mb-4">Booklet &amp; Profil Resmi</p>
+          <p className="eyebrow text-emerald-400 mb-4">Katalog &amp; Profil Resmi</p>
           <h1 className="heading-hero text-stone-100 max-w-4xl mb-6">
             Produk Lokal<br />
             <em className="text-emerald-400 font-normal">Desa Candiyasan.</em>
@@ -77,15 +77,27 @@ export default function AboutPage() {
       <section className="py-20 lg:py-28 px-5 sm:px-8 dot-grid">
         <div className="max-w-4xl mx-auto bg-white border border-stone-200 p-8 sm:p-14 shadow-sm relative">
           <div className="absolute top-0 left-0 w-2 h-full bg-emerald-800" />
-          <p className="eyebrow text-rose-600 mb-3">Kata Pengantar Booklet</p>
-          <h2 className="font-serif text-3xl sm:text-4xl text-stone-900 mb-6">Prakata KKN UNNES Giat 16</h2>
+          <div className="flex items-center gap-6 mb-6">
+            <Image
+              src="/images/elemen/Logo UNNES.png"
+              alt="Logo Universitas Negeri Semarang"
+              width={70}
+              height={70}
+              className="object-contain shrink-0"
+              unoptimized
+            />
+            <div>
+              <p className="eyebrow text-rose-600 mb-3">Kata Pengantar</p>
+              <h2 className="font-serif text-2xl sm:text-4xl text-stone-900">Prakata KKN UNNES Giat 16</h2>
+            </div>
+          </div>
           
           <div className="space-y-4 body-lead text-stone-700 leading-relaxed font-sans text-base sm:text-lg">
             <p>
-              Puji syukur atas kehadirat Tuhan Yang Maha Esa atas tersusunnya booklet &amp; direktori digital <strong>“Produk Lokal Desa Candiyasan”</strong>.
+              Puji syukur atas kehadirat Tuhan Yang Maha Esa atas tersusunnya katalog &amp; direktori digital <strong>“Produk Lokal Desa Candiyasan”</strong>.
             </p>
             <p>
-              Booklet ini disusun secara kolaboratif oleh mahasiswa Kuliah Kerja Nyata (KKN) Program Giat 16 Universitas Negeri Semarang (UNNES) sebagai wujud pengabdian masyarakat.
+              Katalog ini disusun secara kolaboratif oleh mahasiswa Kuliah Kerja Nyata (KKN) Program Giat 16 Universitas Negeri Semarang (UNNES) sebagai wujud pengabdian masyarakat.
             </p>
             <p className="bg-stone-50 border-l-4 border-emerald-600 p-4 italic text-stone-800 font-serif text-lg">
               Tujuan Utama: Mendukung promosi potensi desa melalui penyediaan informasi yang mudah dipahami dan dapat dimanfaatkan oleh masyarakat umum, pelaku usaha, maupun mitra kerja sama pihak terkait.

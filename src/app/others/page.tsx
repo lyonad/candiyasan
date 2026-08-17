@@ -88,11 +88,23 @@ export default function OthersPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-900/60 to-stone-900/20 pointer-events-none" />
 
         <div className="relative max-w-7xl mx-auto w-full px-5 sm:px-8 pb-20 sm:pb-24 pt-44 sm:pt-52">
-          <p className="eyebrow text-emerald-400 mb-6">UNNES Giat 16 — Desa Candiyasan</p>
-          <h1 className="heading-hero text-stone-100 max-w-4xl mb-6">
-            Dokumentasi &amp;<br />
-            <em className="text-emerald-400 font-normal">Tim Pengabdian.</em>
-          </h1>
+          <div className="flex flex-col sm:flex-row items-start gap-6 sm:gap-8 mb-6">
+            <Image
+              src="/images/elemen/Logo UNNES.png"
+              alt="Logo Universitas Negeri Semarang"
+              width={90}
+              height={90}
+              className="object-contain shrink-0 w-16 h-16 sm:w-[90px] sm:h-[90px]"
+              unoptimized
+            />
+            <div>
+              <p className="eyebrow text-emerald-400 mb-4 sm:mb-6">UNNES Giat 16 — Desa Candiyasan</p>
+              <h1 className="heading-hero text-stone-100 max-w-4xl">
+                Dokumentasi &amp;<br />
+                <em className="text-emerald-400 font-normal">Tim Pengabdian.</em>
+              </h1>
+            </div>
+          </div>
           <p className="body-lead text-stone-300 max-w-2xl mb-6">
             Kumpulan video dokumentasi kegiatan dan profil mahasiswa UNNES Giat 16 yang bertugas mendampingi pemberdayaan ekonomi dan industri lokal Desa Candiyasan.
           </p>
