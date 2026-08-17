@@ -130,6 +130,13 @@ export default function UMKMDirectory() {
           ))}
         </div>
 
+        {/* Disclaimer */}
+        <div className="mt-12 border border-stone-200 bg-stone-50 px-6 py-5 text-center">
+          <p className="text-sm text-stone-500 leading-relaxed">
+            <span className="font-semibold text-stone-600">Catatan:</span> Katalog ini belum mencakup seluruh pelaku usaha di Desa Candiyasan. Beberapa produsen belum berkesempatan ditemui atau belum teridentifikasi oleh tim pengembang dan KKN UNNES Giat 16 selama periode pengabdian. Pembaruan data akan dilakukan secara berkala.
+          </p>
+        </div>
+
       </div>
     </div>
   );
