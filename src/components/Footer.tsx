@@ -113,7 +113,9 @@ export default function Footer() {
       <div className="border-t border-stone-800">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 py-5 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-stone-400">
           <p>&copy; {year} Pemerintah Desa Candiyasan. Semua hak dilindungi.</p>
-          <p>Dibangun untuk kemajuan ekonomi lokal.</p>
+          <p>
+            Dikembangkan oleh <span className="text-stone-300">Tim KKN UNNES Giat 16</span> dan diserahkan kepada Perangkat Desa.
+          </p>
         </div>
       </div>
     </footer>
