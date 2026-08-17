@@ -17,7 +17,7 @@ export default function OthersPage() {
   const videos = [
     {
       id: 'v-cedera',
-      title: 'Tutorial Pelatihan Pemulihan Otot & Penanganan Pertama Cidera',
+      title: 'Tutorial Pelatihan Pemulihan Otot & Penanganan Pertama Cedera',
       description: 'Video panduan dan edukasi kesehatan pemulihan otot serta pertolongan pertama pada cedera oleh tim UNNES Giat 16 Desa Candiyasan.',
       youtubeId: '4Q7l4_cOiSM',
     },

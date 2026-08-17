@@ -59,6 +59,7 @@ export default function LiteYouTube({
         fill
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         className="object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100"
+        unoptimized
       />
       <div className="absolute inset-0 bg-stone-950/30 group-hover:bg-stone-950/10 transition-colors duration-300" />
 

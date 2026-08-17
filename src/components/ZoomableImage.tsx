@@ -104,9 +104,9 @@ export default function ZoomableImage({
         />
 
         {enableZoom && (
-          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100 pointer-events-none z-10">
-            <span className="bg-stone-900/85 backdrop-blur-sm text-white p-2.5 rounded-full transform scale-90 group-hover:scale-100 transition-all duration-300">
-              <ZoomIn className="w-5 h-5 text-emerald-400" />
+          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10">
+            <span className="bg-black/40 border border-white/20 text-white p-2 rounded-full inline-flex">
+              <ZoomIn className="w-4 h-4" />
             </span>
           </div>
         )}

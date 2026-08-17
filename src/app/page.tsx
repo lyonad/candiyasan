@@ -31,6 +31,7 @@ export default function Home() {
           fill
           className="object-cover"
           priority
+          unoptimized
         />
         {/* Multi-layer gradient */}
         <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/40 to-stone-900/20" />

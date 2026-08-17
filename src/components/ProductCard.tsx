@@ -34,6 +34,7 @@ export default function ProductCard({ product, whatsappNumber }: ProductCardProp
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           className="object-cover group-hover:scale-[1.05] transition-transform duration-700 ease-out"
           containerClassName="w-full h-full"
+          unoptimized
         />
         {/* Price badge */}
         <div className="absolute bottom-3 left-3 z-20 pointer-events-none max-w-[85%]">

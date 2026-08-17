@@ -30,6 +30,7 @@ export default function UMKMCard({ umkm, size = 'medium' }: UMKMCardProps) {
         fill
         className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        unoptimized
       />
 
       {/* Gradient overlay — always present, intensifies on hover */}

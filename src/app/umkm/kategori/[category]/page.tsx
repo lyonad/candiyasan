@@ -14,8 +14,8 @@ const createSlug = (text: string) =>
   text.toLowerCase().replace(/ & /g, '-').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
 const CATEGORY_IMAGES: Record<string, string> = {
-  'Makanan & Minuman': '/images/umkm/cimoring-jhofani.jpg',
-  'Agroindustri': '/images/umkm/kopi-nastiti.jpg',
+  'Makanan & Minuman': '/images/umkm/Cimoring Jhofani.jpg',
+  'Agroindustri': '/images/umkm/Kopi Nastiti.jpg',
 };
 
 interface PageProps {

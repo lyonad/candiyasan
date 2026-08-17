@@ -9,9 +9,9 @@ export const umkmData: UMKM[] = [
     dusun: 'Dusun Jurangjero',
     description: 'Produk olahan kedelai yang dibuat dengan proses pengolahan secara sederhana oleh masyarakat Desa Candiyasan. Menghasilkan tahu putih dan tahu kuning berkualitas, lembut, dan gurih alami.',
     address: 'RT. 001/RW. 003, Dusun Jurangjero, Desa Candiyasan, Kec. Kertek, Wonosobo',
-    phone: '088215629804',
-    whatsapp: '088215629804',
-    imageUrl: '/images/umkm/pabrik-tahu.jpg',
+    phone: '+6288215629804',
+    whatsapp: '+6288215629804',
+    imageUrl: '/images/umkm/Aska Tahu.jpg',
     products: [
       {
         id: 'p-aska-1',
@@ -20,7 +20,7 @@ export const umkmData: UMKM[] = [
         price: 22000,
         priceFormatted: 'Rp 22.000 / 150 biji (ember)',
         variants: ['Tahu Putih', 'Tahu Kuning'],
-        imageUrl: '/images/umkm/pabrik-tahu.jpg',
+        imageUrl: '/images/umkm/Aska Tahu.jpg',
       },
       {
         id: 'p-aska-2',
@@ -29,7 +29,7 @@ export const umkmData: UMKM[] = [
         price: 4000,
         priceFormatted: 'Rp 4.000 / 10 biji (plastik)',
         variants: ['Tahu Putih', 'Tahu Kuning'],
-        imageUrl: '/images/umkm/pabrik-tahu.jpg',
+        imageUrl: '/images/umkm/Aska Tahu.jpg',
       }
     ]
   },
@@ -41,10 +41,10 @@ export const umkmData: UMKM[] = [
     dusun: 'Dusun Jurangjero',
     description: 'Camilan renyah dan gurih dari tepung pilihan dengan racikan rempah bawang putih, garam, dan penyedap rasa berkualitas. Diminati oleh warga lokal hingga luar kota.',
     address: 'RT. 002/RW. 004, Dusun Jurangjero, Desa Candiyasan, Kec. Kertek, Wonosobo',
-    phone: '081977732605',
-    whatsapp: '081977732605',
+    phone: '+6281977732605',
+    whatsapp: '+6281977732605',
     youtubeId: 'uwhfARqJeQo',
-    imageUrl: '/images/umkm/cimoring-jhofani.jpg',
+    imageUrl: '/images/umkm/Cimoring Jhofani.jpg',
     products: [
       {
         id: 'p-cimoring-1',
@@ -53,7 +53,7 @@ export const umkmData: UMKM[] = [
         price: 22000,
         priceFormatted: 'Rp 22.000 / 500 gram',
         variants: ['Original', 'Pedas', 'Balado', 'Jagung Manis'],
-        imageUrl: '/images/umkm/cimoring-jhofani.jpg',
+        imageUrl: '/images/umkm/Cimoring Jhofani.jpg',
       }
     ]
   },
@@ -65,9 +65,9 @@ export const umkmData: UMKM[] = [
     dusun: 'Dusun Jurangjero',
     description: 'Camilan manis berukuran mini bertekstur lembut dengan berbagai pilihan topping lezat dan rasa kekinian yang digemari anak-anak hingga dewasa.',
     address: 'RT. 001/RW. 004, Dusun Jurangjero, Desa Candiyasan, Kec. Kertek, Wonosobo',
-    phone: '08871252706',
-    whatsapp: '08871252706',
-    imageUrl: '/images/umkm/cimoring-jhofani.jpg',
+    phone: '+628871252706',
+    whatsapp: '+628871252706',
+    imageUrl: '/images/umkm/Donat Mini Pancake.png',
     products: [
       {
         id: 'p-donatmini-1',
@@ -76,7 +76,7 @@ export const umkmData: UMKM[] = [
         price: 1000,
         priceFormatted: 'Rp 1.000 / biji',
         variants: ['Cokelat', 'Strawberry', 'Matcha', 'Taro', 'Keju', 'Vanilla', 'Redvelvet', 'Bubble gum', 'Tiramisu', 'Mangga'],
-        imageUrl: '/images/umkm/cimoring-jhofani.jpg',
+        imageUrl: '/images/umkm/Donat Mini Pancake.png',
       }
     ]
   },
@@ -88,9 +88,9 @@ export const umkmData: UMKM[] = [
     dusun: 'Dusun Jurangjero',
     description: 'Donat dengan bahan baku berkualitas premium dengan harga terjangkau, rasa lezat, dan tekstur empuk yang tahan lama.',
     address: 'RT. 001/RW. 003, Dusun Jurangjero, Desa Candiyasan, Kec. Kertek, Wonosobo',
-    phone: '081238676988',
-    whatsapp: '081238676988',
-    imageUrl: '/images/umkm/cimoring-jhofani.jpg',
+    phone: '+6281238676988',
+    whatsapp: '+6281238676988',
+    imageUrl: '/images/umkm/Hana Donat.jpg',
     products: [
       {
         id: 'p-hana-1',
@@ -99,7 +99,7 @@ export const umkmData: UMKM[] = [
         price: 2500,
         priceFormatted: 'Rp 2.500 / biji',
         variants: ['Blueberry', 'Cokelat', 'Matcha', 'Taro', 'Tiramisu', 'Strawberry'],
-        imageUrl: '/images/umkm/cimoring-jhofani.jpg',
+        imageUrl: '/images/umkm/Hana Donat.jpg',
       },
       {
         id: 'p-hana-2',
@@ -108,7 +108,7 @@ export const umkmData: UMKM[] = [
         price: 2000,
         priceFormatted: 'Rp 2.000 / biji',
         variants: ['Cokelat', 'Matcha', 'Taro', 'Vanilla'],
-        imageUrl: '/images/umkm/cimoring-jhofani.jpg',
+        imageUrl: '/images/umkm/Hana Donat.jpg',
       }
     ]
   },
@@ -120,9 +120,9 @@ export const umkmData: UMKM[] = [
     dusun: 'Dusun Jurangjero',
     description: 'Produk olahan kedelai yang diproduksi oleh masyarakat Desa Candiyasan untuk mendukung kegiatan usaha lokal dan pemenuhan konsumsi masyarakat.',
     address: 'RT. 004/RW. 003, Dusun Jurangjero, Desa Candiyasan, Kec. Kertek, Wonosobo',
-    phone: '081238676988',
-    whatsapp: '081238676988',
-    imageUrl: '/images/umkm/pabrik-tahu.jpg',
+    phone: '+6281238676988',
+    whatsapp: '+6281238676988',
+    imageUrl: '/images/umkm/Slamet Tahu.jpg',
     products: [
       {
         id: 'p-slamet-1',
@@ -131,7 +131,7 @@ export const umkmData: UMKM[] = [
         price: 4000,
         priceFormatted: 'Rp 4.000 / 10 biji (plastik)',
         variants: ['Tahu Putih', 'Tahu Kuning'],
-        imageUrl: '/images/umkm/pabrik-tahu.jpg',
+        imageUrl: '/images/umkm/Slamet Tahu.jpg',
       }
     ]
   },
@@ -143,9 +143,9 @@ export const umkmData: UMKM[] = [
     dusun: 'Dusun Kabelukan',
     description: 'Olahan jagung khas Desa Candiyasan. Oyek basah berwarna oranye alami, sedangkan oyek kering berwarna putih karena melalui proses penjemuran panas matahari, serta opak jagung renyah khas pedesaan.',
     address: 'RT. 001/RW. 005, Dusun Kabelukan, Desa Candiyasan, Kec. Kertek, Wonosobo',
-    phone: '08871252890',
-    whatsapp: '08871252890',
-    imageUrl: '/images/umkm/nasi-jagung.jpg',
+    phone: '+628871252890',
+    whatsapp: '+628871252890',
+    imageUrl: '/images/umkm/Oyek & Opak Jagung.jpg',
     products: [
       {
         id: 'p-oyek-1',
@@ -153,7 +153,7 @@ export const umkmData: UMKM[] = [
         description: 'Oyek basah segar khas berbahan jagung murni.',
         price: 12000,
         priceFormatted: 'Rp 12.000 / rantang',
-        imageUrl: '/images/umkm/nasi-jagung.jpg',
+        imageUrl: '/images/umkm/Oyek & Opak Jagung.jpg',
       },
       {
         id: 'p-oyek-2',
@@ -161,7 +161,7 @@ export const umkmData: UMKM[] = [
         description: 'Oyek kering tahan lama, siap diolah kapan saja.',
         price: 20000,
         priceFormatted: 'Rp 20.000 / kg',
-        imageUrl: '/images/umkm/nasi-jagung.jpg',
+        imageUrl: '/images/umkm/Oyek & Opak Jagung.jpg',
       },
       {
         id: 'p-oyek-3',
@@ -169,7 +169,7 @@ export const umkmData: UMKM[] = [
         description: 'Opak jagung gurih renyah cemilan sehat tradisional.',
         price: 12000,
         priceFormatted: 'Rp 12.000 / ½ kg',
-        imageUrl: '/images/umkm/nasi-jagung.jpg',
+        imageUrl: '/images/umkm/Oyek & Opak Jagung.jpg',
       }
     ]
   },
@@ -181,9 +181,9 @@ export const umkmData: UMKM[] = [
     dusun: 'Dusun Jurangjero',
     description: 'Produk teh alami yang diolah dari bahan pilihan tanpa bahan kimia pengawet, memiliki aroma dan rasa khas yang terjaga dari pegunungan Sindoro-Sumbing.',
     address: 'RT. 002/RW. 003, Dusun Jurangjero, Desa Candiyasan, Kec. Kertek, Wonosobo',
-    phone: '083131734050',
-    whatsapp: '083131734050',
-    imageUrl: '/images/umkm/teh-candiyasan.jpg',
+    phone: '+6283131734050',
+    whatsapp: '+6283131734050',
+    imageUrl: '/images/umkm/Teh Ibu Tarmi.jpg',
     products: [
       {
         id: 'p-teh-1',
@@ -191,7 +191,7 @@ export const umkmData: UMKM[] = [
         description: 'Daun teh olahan alami tanpa pengawet atau pewarna buatan.',
         price: 85000,
         priceFormatted: 'Rp 85.000 / kg',
-        imageUrl: '/images/umkm/teh-candiyasan.jpg',
+        imageUrl: '/images/umkm/Teh Ibu Tarmi.jpg',
       }
     ]
   },
@@ -203,9 +203,9 @@ export const umkmData: UMKM[] = [
     dusun: 'Dusun Jurangjero',
     description: 'Produk tembakau olahan khas masyarakat lokal Desa Candiyasan. Tembakau merupakan salah satu komoditas pertanian unggulan utama desa.',
     address: 'RT. 002/RW. 003, Dusun Jurangjero, Desa Candiyasan, Kec. Kertek, Wonosobo',
-    phone: '083131734050',
-    whatsapp: '083131734050',
-    imageUrl: '/images/umkm/kopi-nastiti.jpg',
+    phone: '+6283131734050',
+    whatsapp: '+6283131734050',
+    imageUrl: '/images/umkm/Tembakau Pak Sumarko.jpg',
     products: [
       {
         id: 'p-tembakau-1',
@@ -213,7 +213,7 @@ export const umkmData: UMKM[] = [
         description: 'Hasil rajangan tembakau asli lereng Gunung Sindoro-Sumbing.',
         price: 85000,
         priceFormatted: 'Rp 85.000 / kg',
-        imageUrl: '/images/umkm/kopi-nastiti.jpg',
+        imageUrl: '/images/umkm/Tembakau Pak Sumarko.jpg',
       }
     ]
   },
@@ -225,9 +225,9 @@ export const umkmData: UMKM[] = [
     dusun: 'Dusun Kabelukan',
     description: 'Produk kopi dari kelompok tani Kopi Arabica Nastiti yang diproduksi secara musiman sesuai ketersediaan dan pesanan. Dipasarkan hingga luar kota dan diekspor dalam bentuk green bean (biji kopi mentah) ke Korea.',
     address: 'RT. 002/RW. 003, Dusun Kabelukan, Desa Candiyasan, Kec. Kertek, Wonosobo',
-    phone: '083131734050',
-    whatsapp: '083131734050',
-    imageUrl: '/images/umkm/kopi-nastiti.jpg',
+    phone: '+6283131734050',
+    whatsapp: '+6283131734050',
+    imageUrl: '/images/umkm/Kopi Nastiti.jpg',
     products: [
       {
         id: 'p-kopi-1',
@@ -235,7 +235,7 @@ export const umkmData: UMKM[] = [
         description: 'Kopi Arabica racikan murni dengan aroma khas lereng gunung.',
         price: 25000,
         priceFormatted: 'Rp 25.000 / kg',
-        imageUrl: '/images/umkm/kopi-nastiti.jpg',
+        imageUrl: '/images/umkm/Kopi Nastiti.jpg',
       },
       {
         id: 'p-kopi-2',
@@ -243,7 +243,7 @@ export const umkmData: UMKM[] = [
         description: 'Biji kopi mentah pilihan siap ekspor.',
         price: 25000,
         priceFormatted: 'Green Bean (Sesuai Pesanan)',
-        imageUrl: '/images/umkm/kopi-nastiti.jpg',
+        imageUrl: '/images/umkm/Kopi Nastiti.jpg',
       }
     ]
   }
